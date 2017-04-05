@@ -29,16 +29,36 @@ class DataBaseConection(object):
         cursor = conn.cursor()         # Crear un cursor 
         cursor.execute(query)          # Ejecutar una consulta 
  
-        if query.upper().startswith('SELECT'): 
-            data = cursor.fetchall()   # Traer los resultados de un select 
+        if query.upper().startswith('SELECT'):
+            count = 0
+            data = {}
+            
+            for datos in cursor.fetchall():  
+                data[count] = datos
+                count += 1
+        elif query.upper().startswith('DESCRIBE'):
+            data = []
+
+            for datos in cursor.fetchall():
+                data.append(datos[0])
+            
+        elif query.upper().startswith('SHOW'):
+            data = []
+
+            for datos in cursor.fetchall():
+                datos = datos[0]
+                data.append(datos[0].upper() + datos[1:])# Poner la primera letra en mayuscula
+
+            
         else: 
             conn.commit()              # Hacer efectiva la escritura de datos 
-            data = True 
+            data = None 
  
         cursor.close()                 # Cerrar el cursor 
         conn.close()                   # Cerrar la conexión 
  
         return data
+    
 
 
 
