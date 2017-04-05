@@ -16,16 +16,17 @@ class DbFunctions(DataBaseConection):
         query = "SELECT {} FROM {}".format(atributes,table)
         return self.run_query(query)
     
-    def insert(self):
+    def insert(self,country, values):
 
-        query = "insert into pais (idPais,nombreP) values ('03', 'Alemania Mostro ')"
+        
         lista = {"pais":("idPais","nombreP")}
 
-        query = "insert into pais {} values ('04', 'Alemania Renace ')".format(lista["pais"])
+        query = "insert into {} values {}".format(country,values)#,lista[country])
         print self.run_query(query)
 
     
 
     
 exampleClass = DbFunctions()
+exampleClass.insert("pais",('111"', 'Geortge'))
 print exampleClass.select("*","pais")

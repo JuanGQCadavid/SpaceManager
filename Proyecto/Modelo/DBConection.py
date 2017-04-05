@@ -40,31 +40,5 @@ class DataBaseConection(object):
  
         return data
 
-#exampleClass = DataBaseConection()
-#exampleClass.select("*","pais")
-
-'''
-lista = {"pais":("idPais","nombreP")}
-
-query = "insert into pais {} values ('04', 'Alemania Renace ')".format(lista["pais"])
-print query
-
-##exampleClass.run_query(query)
-'''
-
-
-'''
-query = "SELECT * FROM pais" 
-result = run_query(query) 
-print result
-
-query = "insert into pais (idPais,nombreP) values ('03', 'Alemania Mostro ')"
-result = run_query(query)
-print result
-
-query = "SELECT * FROM pais" 
-result = run_query(query) 
-print result
-'''
 
 
