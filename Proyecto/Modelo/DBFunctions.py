@@ -4,7 +4,7 @@ from DBConection import DataBaseConection
 
 class DbFunctions(DataBaseConection):
     def __init__(self):
-        self.initialized()
+        self.createDBData()
         pass
 
     def generateMap(self):

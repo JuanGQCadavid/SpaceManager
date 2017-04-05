@@ -10,17 +10,14 @@ class DataBaseConection(object):
         
     '''
     def __init__(self):
- 
-        self.DB_HOST = '127.0.0.1' 
-        self.DB_USER = 'ejemplo' 
-        self.DB_PASS = 'asd123' 
-        self.DB_NAME = 'spaceadmind'
+         self.createDBData()
 
-    def initialized(self):
+    def createDBData(self):
         self.DB_HOST = '127.0.0.1' 
-        self.DB_USER = 'ejemplo' 
+        self.DB_USER = 'adminMySpace' 
         self.DB_PASS = 'asd123' 
         self.DB_NAME = 'spaceadmind'
+        
         
 
 
