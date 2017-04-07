@@ -1,0 +1,13 @@
+$def with (posts)
+
+<h1>Blog posts</h1>
+
+<ul>
+$for post in posts:
+    <li>
+        <a href="/view/$post[0]">$post[1]</a> 
+        from $datestr(post.[3])
+        
+        <a href="">Edit</a>
+    </li>
+</ul>
