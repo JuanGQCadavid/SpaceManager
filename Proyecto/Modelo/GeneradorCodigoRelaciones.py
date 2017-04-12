@@ -72,6 +72,7 @@ class GeneradorCodigo(DbFunctions):
         #lineaC = 'self'
 
         for atribute in columns:
+            atribute = self.minusculasPrimerCaracter(atribute)
             lineaS += ', '+ atribute +'= None'
             #lineaC += ', '+ atribute
             atributos += '\t\tself.{A} = {A} \n'.format(A = self.minusculasPrimerCaracter(atribute))

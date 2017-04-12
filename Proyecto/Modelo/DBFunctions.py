@@ -15,6 +15,10 @@ class DbFunctions(DataBaseConection):
         #Listo
         query = "SELECT {} FROM {}".format(atributes,table)
         return self.run_query(query)
+
+    def selectWhere(self,atributes, table, condition):
+        query = "SELECT {} FROM {} WHEREE {}".format(atributes,table,condition)
+        return self.run_query(query)
     
     def insert(self,country, values):
         #Falta
