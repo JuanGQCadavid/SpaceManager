@@ -5,10 +5,10 @@ class Horariosede(object):
 	de la relacion Horariosede
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idHorarioSede= None, idDiasHabiles= None, idOrganizacion= None, horaApertura= None, horaCierre= None):
+	def __init__(self, idHorarioSede= None, idDiasHabiles= None, idSede= None, horaApertura= None, horaCierre= None):
 		self.idHorarioSede = idHorarioSede 
 		self.idDiasHabiles = idDiasHabiles 
-		self.idOrganizacion = idOrganizacion 
+		self.idSede = idSede 
 		self.horaApertura = horaApertura 
 		self.horaCierre = horaCierre 
 
@@ -31,12 +31,12 @@ class Horariosede(object):
 
 
 
-	#Getters y Setters de idOrganizacion
+	#Getters y Setters de idSede
 
-	def getIdOrganizacion(self):
-		return self.idOrganizacion
-	def setIdOrganizacion(self,idOrganizacion):
-		self.idOrganizacion = idOrganizacion
+	def getIdSede(self):
+		return self.idSede
+	def setIdSede(self,idSede):
+		self.idSede = idSede
 
 
 
@@ -59,4 +59,4 @@ class Horariosede(object):
 
 
 
-#Autogenerado: 04/11/17 21:18:43
+#Autogenerado: 04/11/17 21:51:37

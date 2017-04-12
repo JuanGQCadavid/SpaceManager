@@ -5,15 +5,19 @@ class Reserva(object):
 	de la relacion Reserva
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idReserva= None, idEspacio= None, idUsuario= None, idDiasReserva= None, fechaInicio= None, fechaFin= None, horaInicio= None, horaFin= None):
+	def __init__(self, idReserva= None, idUsuario= None, idDiasReserva= None, fechaInicio= None, fechaFin= None, horaInicio= None, horaFin= None, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrg= None):
 		self.idReserva = idReserva 
-		self.idEspacio = idEspacio 
 		self.idUsuario = idUsuario 
 		self.idDiasReserva = idDiasReserva 
 		self.fechaInicio = fechaInicio 
 		self.fechaFin = fechaFin 
 		self.horaInicio = horaInicio 
 		self.horaFin = horaFin 
+		self.idEspacio = idEspacio 
+		self.idNivel = idNivel 
+		self.idBloque = idBloque 
+		self.idSede = idSede 
+		self.idOrg = idOrg 
 
 
 	#Getters y Setters de idReserva
@@ -22,15 +26,6 @@ class Reserva(object):
 		return self.idReserva
 	def setIdReserva(self,idReserva):
 		self.idReserva = idReserva
-
-
-
-	#Getters y Setters de idEspacio
-
-	def getIdEspacio(self):
-		return self.idEspacio
-	def setIdEspacio(self,idEspacio):
-		self.idEspacio = idEspacio
 
 
 
@@ -88,5 +83,50 @@ class Reserva(object):
 
 
 
+	#Getters y Setters de idEspacio
 
-#Autogenerado: 04/11/17 21:18:43
+	def getIdEspacio(self):
+		return self.idEspacio
+	def setIdEspacio(self,idEspacio):
+		self.idEspacio = idEspacio
+
+
+
+	#Getters y Setters de idNivel
+
+	def getIdNivel(self):
+		return self.idNivel
+	def setIdNivel(self,idNivel):
+		self.idNivel = idNivel
+
+
+
+	#Getters y Setters de idBloque
+
+	def getIdBloque(self):
+		return self.idBloque
+	def setIdBloque(self,idBloque):
+		self.idBloque = idBloque
+
+
+
+	#Getters y Setters de idSede
+
+	def getIdSede(self):
+		return self.idSede
+	def setIdSede(self,idSede):
+		self.idSede = idSede
+
+
+
+	#Getters y Setters de idOrg
+
+	def getIdOrg(self):
+		return self.idOrg
+	def setIdOrg(self,idOrg):
+		self.idOrg = idOrg
+
+
+
+
+#Autogenerado: 04/11/17 21:51:37

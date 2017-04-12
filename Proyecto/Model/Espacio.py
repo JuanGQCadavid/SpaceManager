@@ -5,7 +5,7 @@ class Espacio(object):
 	de la relacion Espacio
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrg= None, idPermiso= None, capacidadEspacio= None, descripcionEspaco= None, idEspacioCompuesto= None):
+	def __init__(self, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrg= None, idPermiso= None, capacidadEspacio= None, descripcionEspaco= None):
 		self.idEspacio = idEspacio 
 		self.idNivel = idNivel 
 		self.idBloque = idBloque 
@@ -14,7 +14,6 @@ class Espacio(object):
 		self.idPermiso = idPermiso 
 		self.capacidadEspacio = capacidadEspacio 
 		self.descripcionEspaco = descripcionEspaco 
-		self.idEspacioCompuesto = idEspacioCompuesto 
 
 
 	#Getters y Setters de idEspacio
@@ -89,14 +88,5 @@ class Espacio(object):
 
 
 
-	#Getters y Setters de idEspacioCompuesto
 
-	def getIdEspacioCompuesto(self):
-		return self.idEspacioCompuesto
-	def setIdEspacioCompuesto(self,idEspacioCompuesto):
-		self.idEspacioCompuesto = idEspacioCompuesto
-
-
-
-
-#Autogenerado: 04/11/17 21:18:43
+#Autogenerado: 04/11/17 21:51:37

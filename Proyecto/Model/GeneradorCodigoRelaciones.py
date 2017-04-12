@@ -2,7 +2,7 @@
 import time
 
 
-from DBFunctions import DbFunctions
+from Model.DBFunctions import DbFunctions
 
 class GeneradorCodigo(DbFunctions):
     def __init__(self):

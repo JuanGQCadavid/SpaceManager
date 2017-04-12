@@ -1,6 +1,6 @@
 # -*- coding: cp1252 -*-
 
-from DBConection import DataBaseConection
+from Model.DBConection import DataBaseConection
 
 class DbFunctions(DataBaseConection):
     def __init__(self):
@@ -17,7 +17,8 @@ class DbFunctions(DataBaseConection):
         return self.run_query(query)
 
     def selectWhere(self,atributes, table, condition):
-        query = "SELECT {} FROM {} WHEREE {}".format(atributes,table,condition)
+        query = "SELECT {} FROM {} WHERE {};".format(atributes,table,condition)
+
         return self.run_query(query)
     
     def insert(self,country, values):
