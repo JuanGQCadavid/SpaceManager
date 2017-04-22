@@ -65,7 +65,7 @@ def userRegister(userList,permisosPrivacidadList,socialNetworkList):
     claseUsuario.insertUser(userObject)
 
 
-
+'''''''''
 
 listaRedes = ["amanda","Face","Twitter","Linkedin","Instagram","Google"]
 listaPrivacidad = ["amanda",1,1,1,0,1,1]
@@ -74,7 +74,7 @@ listaUsuario = ["Amanda17","choriseo","Amanda la del Atraro","Atracando ando","0
 
 userRegister(listaUsuario,listaPrivacidad,listaRedes)
 
-
+'''''
 '''''''''
 userLogin(["jquiro125","asd123"])
 '''''''''''
