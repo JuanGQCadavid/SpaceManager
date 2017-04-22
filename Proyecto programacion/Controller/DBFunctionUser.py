@@ -1,5 +1,7 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.UsuarioStructure import Usuario
+import MySQLdb
+
 class DbFunctionUser(DbFunctions):
 
     def FormarUserObject(self,userList):
@@ -66,15 +68,33 @@ class DbFunctionUser(DbFunctions):
 
 
 
-
-
-
-
-    def insertSocialNetworks(self,socialObject):
-        values = "'{}','{}','{}','{}','{}'".format(socialObject.getIdRedesSociales(),socialObject.getFaceBook(),
-                                                   socialObject.getTwitter(),socialObject.getLinkedin(),
-                                                   socialObject.getGoogle())
-        return self.insertInto("RedesSociales",values)
-
     def insertUser(self,userObject):
+        values = "'{}','{}','{}','{}','{}','{}','{}','{}',{}".format(userObject.getIdUsuario(),
+                                                                     userObject.getClaveUsuario(),
+                                                                     userObject.getNombreUsuario(),
+                                                                     userObject.getDescripcion(),
+                                                                     userObject.getTelefonoCelular(),
+                                                                     userObject.getCorreoElectronico(),
+                                                                     userObject.getIdRedesSociales(),
+                                                                     userObject.getIdPrivacidad(),
+                                                                     userObject.getEstadoUsuario()
+                                                        )
+        result = ""
+        try:
+            result = self.insertInto("usuario", values)
+            return userObject
+
+        except(MySQLdb.IntegrityError), e:
+
+            result = "ERROR: Tenemos problema de Integridad En Insertar usuario Registro"
+            return None
         pass
+
+
+'''''''''
+joder = DbFunctionUser()
+
+Objeto = joder.FormarUserObject(("maricarmen","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","jquiro12","GenericF",0))
+
+print joder.insertUser(Objeto)
+'''''''''

@@ -22,7 +22,7 @@ class DataBaseConection(object):
 
 
     def run_query(self,query=''):
-        
+        print query
         datos = [self.DB_HOST,self.DB_USER, self.DB_PASS, self.DB_NAME] 
  
         conn = MySQLdb.connect(*datos) # Conectar a la base de datos 

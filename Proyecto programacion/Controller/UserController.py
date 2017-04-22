@@ -1,11 +1,12 @@
 # -*- coding: cp1252 -*-
 from  DBFunctionUser import DbFunctionUser
-#from  Model.DBFunctionUser import DbFunctionUser
+from DBSocialNetwork import DBSocialNetwork
+from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
+
+
 
 from Model.Structures.UsuarioStructure import Usuario
-from Model.Structures.RedessocialesStructure import Redessociales
-from Controller.DBFunctionPermisosPrivacidad import Privacidadusuario
-from Model.Structures.PrivacidadusuarioStructure import Privacidadusuario
+
 
 
 def userLogin(userList):
@@ -34,37 +35,46 @@ def userLogin(userList):
 
 
 def userRegister(userList,permisosPrivacidadList,socialNetworkList):
+    #Creando Classes
 
-    # building the Object Social
+    claseSocialNetwor = DBSocialNetwork()
+    clasePrivacidadUsuario = DBFunctionPermisoPrivacidad()
+    claseUsuario = DbFunctionUser()
 
-    socialObject = socialNetworkRegister(userList[0],socialNetworkList)
+    # Creando objeto Social y guardando en MySQL.
 
-    # Building Permisos Object
-
-    permisosPrivacidadObject = permisosPrivacidad(userList,permisosPrivacidadList)
-
-    # building the Object
-
-    userObject = Usuario()
-    userObject.setIdUsuario(userList[0])
-    userObject.setClaveUsuario(userList[1])
-    userObject.setNombreUsuario(userList[2])
-    userObject.setDescripcion(userList[3])
-    userObject.setTelefonoCelular(userList[4])
-    userObject.setCorreoElectronico(userList[5])
-    userObject.setIdRedesSociales(socialObject.getIdRedesSociales())
-    userObject.setIdPrivacidad(permisosPrivacidadObject.getIdPrivacidadUsuario())
-    userObject.setEstadoUsuario(1)
-
-    #Coneccting with Db Functions for user
-
-    functionObject = DbFunctionUser()
-    userInfo = functionObject.insertUser(userObject)
+    socialObject = claseSocialNetwor.generarRedessocialesObject(socialNetworkList)
+    claseSocialNetwor.insertRedessociales(socialObject)
 
 
+    # Building Permisos Object y guardando en MySQL.
 
+    permisosPrivacidadObject = clasePrivacidadUsuario.generarPrivacidadObject(permisosPrivacidadList)
+    clasePrivacidadUsuario.insertPermisosPrivacidad(permisosPrivacidadObject)
 
+    # building user Object y guardando en MySQL.
+
+    #Estableciendo PK
+
+    userList[6] = socialObject.getIdRedesSociales()
+    userList[7] = permisosPrivacidadObject.getIdPrivacidadUsuario()
+
+    #Creando Objeto y guardando en MySQL.
+
+    userObject = claseUsuario.FormarUserObject(userList)
+    claseUsuario.insertUser(userObject)
 
 
 
+
+listaRedes = ["amanda","Face","Twitter","Linkedin","Instagram","Google"]
+listaPrivacidad = ["amanda",1,1,1,0,1,1]
+listaUsuario = ["Amanda17","choriseo","Amanda la del Atraro","Atracando ando","0598714","amanda@gmail.com",None,None,0]
+
+
+userRegister(listaUsuario,listaPrivacidad,listaRedes)
+
+
+'''''''''
 userLogin(["jquiro125","asd123"])
+'''''''''''

@@ -69,7 +69,7 @@ class DBFunctionPermisoPrivacidad(DbFunctions):
 
             except(MySQLdb.IntegrityError),e:
 
-                result = "ERROR: Tenemos problema de Integridad"
+                result = "ERROR: Tenemos problema de Integridad En INSERTAR Permisos Privacidad"
                 return None
 
 
