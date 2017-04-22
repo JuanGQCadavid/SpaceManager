@@ -1,88 +1,43 @@
 # -*- coding: cp1252 -*-
-from  Model.DBFunctionUser import DbFunctionUser
+from  DBFunctionUser import DbFunctionUser
 #from  Model.DBFunctionUser import DbFunctionUser
 
 from Model.Structures.UsuarioStructure import Usuario
 from Model.Structures.RedessocialesStructure import Redessociales
+from Controller.DBFunctionPermisosPrivacidad import Privacidadusuario
 from Model.Structures.PrivacidadusuarioStructure import Privacidadusuario
+
 
 def userLogin(userList):
 
     #building the Object
 
     userObject = Usuario()
-    userObject.setUsuarioUsuario(userList[0])
+    userObject.setIdUsuario(userList[0])
     userObject.setClaveUsuario(userList[1])
 
     #Coneccting with Db Functions for user
 
     functionObject = DbFunctionUser()
-    userInfo = functionObject.ValidarUser(userObject)
+    userObject = functionObject.ValidarUser(userObject)
+
+
 
     #checking information
 
 
-    if not(userInfo == {}):
-        print "Welcom to the Jungle!"
+    if not(userObject == None):
+
+        print "Welcom to the Jungle! {}".format(userObject.getNombreUsuario())
     else:
         print "No parse, no lo puedo dejar pasar"
-
-
-def permisosPrivacidad(userList,permisosPrivacidadList):
-    permisosPrivacidadObject = Privacidadusuario()
-
-    if permisosPrivacidadList[0] == "Generic":
-        permisosPrivacidadObject.setIdPrivacidadUsuario(permisosPrivacidadList[0])
-    else:
-        permisosPrivacidadObject.setIdPrivacidadUsuario(userList[0])
-
-    permisosPrivacidadObject.setMostrarCorreo(permisosPrivacidadList[1])
-    permisosPrivacidadObject.setMostrarOrgPropias(permisosPrivacidadList[2])
-    permisosPrivacidadObject.setMostrarOrgPertenece(permisosPrivacidadList[3])
-    permisosPrivacidadObject.setMostrarRedesSociales(permisosPrivacidadList[4])
-    permisosPrivacidadObject.setMostrarTelefono(permisosPrivacidadList[5])
-
-    # Coneccting with Db Functions for insertPermisosPrivacidad
-
-    functionObject = DbFunctionUser()
-    result = functionObject.insertPermisosPrivacidad(permisosPrivacidadObject)
-
-    return permisosPrivacidadObject
-
-
-def socialNetworkRegister(userList,socialNetworkList):
-
-    socialObject = Redessociales()
-
-    if socialNetworkList[0] == "Generic":
-        socialObject.setIdRedesSociales(socialNetworkList[0])
-    else:
-        socialObject.setIdRedesSociales(userList[0])
-        socialObject.setIdRedesSociales(socialNetworkList[1])
-        socialObject.setFaceBook(socialNetworkList[2])
-        socialObject.setTwitter(socialNetworkList[3])
-        socialObject.setLinkedin(socialNetworkList[4])
-        socialObject.setGoogle(socialNetworkList[4])
-
-
-
-
-    # Coneccting with Db Functions for socialNetworkRegister
-
-    functionObject = DbFunctionUser()
-    userInfo = functionObject.insertSocialNetworks(socialObject)
-
-
-    return socialObject
-
-
 
 
 def userRegister(userList,permisosPrivacidadList,socialNetworkList):
 
     # building the Object Social
 
-    socialObject = socialNetworkRegister(userList,socialNetworkList)
+    socialObject = socialNetworkRegister(userList[0],socialNetworkList)
 
     # Building Permisos Object
 
@@ -112,4 +67,4 @@ def userRegister(userList,permisosPrivacidadList,socialNetworkList):
 
 
 
-userLogin(["jquiro12","asd123a"])
+userLogin(["jquiro125","asd123"])

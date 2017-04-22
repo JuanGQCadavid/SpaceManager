@@ -5,17 +5,16 @@ class Usuario(object):
 	de la relacion Usuario
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idUsuario= None, nombreUsuario= None, descripcion= None, claveUsuario= None, estadoUsuario= None, telefonoCelular= None, correoElectronico= None, usuarioUsuario= None, idRedesSociales= None, idPrivacidad= None):
+	def __init__(self, idUsuario= None, claveUsuario= None, nombreUsuario= None, descripcion= None, telefonoCelular= None, correoElectronico= None, idRedesSociales= None, idPrivacidad= None, estadoUsuario= None):
 		self.idUsuario = idUsuario 
+		self.claveUsuario = claveUsuario 
 		self.nombreUsuario = nombreUsuario 
 		self.descripcion = descripcion 
-		self.claveUsuario = claveUsuario 
-		self.estadoUsuario = estadoUsuario 
 		self.telefonoCelular = telefonoCelular 
 		self.correoElectronico = correoElectronico 
-		self.usuarioUsuario = usuarioUsuario 
 		self.idRedesSociales = idRedesSociales 
 		self.idPrivacidad = idPrivacidad 
+		self.estadoUsuario = estadoUsuario 
 
 
 	#Getters y Setters de idUsuario
@@ -24,6 +23,15 @@ class Usuario(object):
 		return self.idUsuario
 	def setIdUsuario(self,idUsuario):
 		self.idUsuario = idUsuario
+
+
+
+	#Getters y Setters de claveUsuario
+
+	def getClaveUsuario(self):
+		return self.claveUsuario
+	def setClaveUsuario(self,claveUsuario):
+		self.claveUsuario = claveUsuario
 
 
 
@@ -45,24 +53,6 @@ class Usuario(object):
 
 
 
-	#Getters y Setters de claveUsuario
-
-	def getClaveUsuario(self):
-		return self.claveUsuario
-	def setClaveUsuario(self,claveUsuario):
-		self.claveUsuario = claveUsuario
-
-
-
-	#Getters y Setters de estadoUsuario
-
-	def getEstadoUsuario(self):
-		return self.estadoUsuario
-	def setEstadoUsuario(self,estadoUsuario):
-		self.estadoUsuario = estadoUsuario
-
-
-
 	#Getters y Setters de telefonoCelular
 
 	def getTelefonoCelular(self):
@@ -78,15 +68,6 @@ class Usuario(object):
 		return self.correoElectronico
 	def setCorreoElectronico(self,correoElectronico):
 		self.correoElectronico = correoElectronico
-
-
-
-	#Getters y Setters de usuarioUsuario
-
-	def getUsuarioUsuario(self):
-		return self.usuarioUsuario
-	def setUsuarioUsuario(self,usuarioUsuario):
-		self.usuarioUsuario = usuarioUsuario
 
 
 
@@ -108,5 +89,14 @@ class Usuario(object):
 
 
 
+	#Getters y Setters de estadoUsuario
 
-#Autogenerado: 04/11/17 22:36:54
+	def getEstadoUsuario(self):
+		return self.estadoUsuario
+	def setEstadoUsuario(self,estadoUsuario):
+		self.estadoUsuario = estadoUsuario
+
+
+
+
+#Autogenerado: 04/22/17 10:35:27
