@@ -23,35 +23,33 @@ class DbFunctions (DataBaseConection):
 
     def select(self, atributes ,table):
         query = "SELECT {} FROM {}".format(atributes,table)
+        print "select"
         return self.run_query(query)
 
     def selectWhere(self,atributes, table, condition):
-
         query = "SELECT {} FROM {} WHERE {};".format(atributes, table, condition)
-
-
-        query = "SELECT {} FROM {} WHERE {};".format(atributes,table,condition)
-        print query
-
+        print "selectWhere"
         return self.run_query(query)
     
     def insertInto(self, table, values) :
         query = "INSERT INTO {} VALUES ({});".format(table, values)
-        print query
+        print "insertInto"
         return self.run_query(query)
 
 
     def deleteFrom (self, table, condition) :
         query = "DELETE FROM {} WHERE {};".format(table, condition)
-        return self.run_query()
+        print "deleteFrom"
+        return self.run_query(query)
 
-    def up(self, table, attrb, value, condicion) :
-        query = "UPDATE {} SET {} = {} WHERE {}".format(table, attrb, value, condicion)
-        return self.run_query()
+    def up(self, table, attrb, value, condicionColumna, condicionAtributo) :
+        query = "UPDATE {} SET {} = '{}' WHERE {} = '{}'".format(table, attrb, value, condicionColumna,condicionAtributo)
+        print "up"
+        return self.run_query(query)
 
     def update(self,table,sets,condition):
         query = "UPDATE {} SET {} WHERE {}".format(table,sets,condition)
-        print query
+        print "update"
         return self.run_query(query)
 
     def actualizarStatement(self,tabla,nombreColumnaPk,pk,colmnua,value,tipo):
@@ -62,8 +60,9 @@ class DbFunctions (DataBaseConection):
             sets = colmnua + " = {}".format(value)
 
         where = nombreColumnaPk + " = '{}'" .format(pk)
-
+        print "actualizarStatement"
         return self.update(tabla,sets,where)
+
 
 
 

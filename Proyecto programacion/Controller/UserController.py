@@ -2,41 +2,41 @@
 from  DBFunctionUser import DbFunctionUser
 from DBSocialNetwork import DBSocialNetwork
 from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
-
+from PrivacidadUserController import actualizarPrivacidad
 from Model.Structures.UsuarioStructure import Usuario
 
 
 
-def actualizarStatement(userObject,tipo):
+def actualizarStatement(list,tipo,pk):
     claseFunctionUser = DbFunctionUser()
-    pk = userObject.getIdUsuario()
+
 
     if tipo == 0:
-        return claseFunctionUser.actualizarStatement("usuario","idUsuario",pk,"claveUsuario",userObject.getClaveUsuario(),0)
+        return claseFunctionUser.actualizarStatement("usuario","idUsuario",pk,"claveUsuario",list,0)
     else:
-        return claseFunctionUser.actualizarStatement("usuario", "idUsuario", pk, "estadoUsuario", userObject.getEstadoUsuario(), 4)
+        return claseFunctionUser.actualizarStatement("usuario", "idUsuario", pk, "estadoUsuario", list, 4)
 
-def actualizarInfo(userObject,tipo):
+def actualizarInfo(list,tipo,pk):
 
     '''''''''
-        0 -> Cambio de Clave
-        4 -> Cambio de Estado
-        1 -> Cambio basico info usuario
+        0 -> Cambio de Clave FUNCIONANDO
+        4 -> Cambio de Estado FUNCIONANDO
+        1 -> Cambio basico info usuario FUNCIONANDO
         2 -> Cambio basico Redes Sociales
-        3 -> Cambio basico Privacidad usuario
+        3 -> Cambio basico Privacidad usuario FUNCIONANDO
     '''''''''
 
     if tipo == 0 or tipo == 4:
-        return actualizarStatement(userObject,tipo)
+        return actualizarStatement(list,tipo,pk)
     elif tipo == 1:
         claseFunctionUser = DbFunctionUser()
-        return claseFunctionUser.actualizarUsuario(userObject)
+        return claseFunctionUser.actualizarUsuario(list,pk)
         pass
     elif tipo == 2:
         pass
     elif tipo == 3:
+        return actualizarPrivacidad(pk,list)
         pass
-
 
 def userLogin(userList):
 
@@ -62,7 +62,6 @@ def userLogin(userList):
         print "Welcome to the Jungle! {}".format(userObject.getNombreUsuario())
     else:
         print "No parse, no lo puedo dejar pasar"
-
 
 def userRegister (userList,permisosPrivacidadList,socialNetworkList) :
     #Creando Classes
@@ -94,12 +93,19 @@ def userRegister (userList,permisosPrivacidadList,socialNetworkList) :
     userObject = claseUsuario.FormarUserObject(userList)
     claseUsuario.insertUser(userObject)
 
+def modificarPrivacidad(pk,PrivacidadList):
+    return actualizarPrivacidad(pk,PrivacidadList)
+
+def modificarRedesSociales(pk,redesSocialesList):
+    pass
 
 
-
+actualizarInfo(['pk',1,1,1,1,1],3,"Amanda17")
 
 '''''''''
 Probando actualizarInfo
+
+actualizarInfo(1,4, "Amanda17")
 
 //Clave
 
@@ -122,8 +128,8 @@ actualizarInfo(userNewObject, 0, 4)
 
 '''''''''
 
-listaRedes = ["amanda","Face","Twitter","Linkedin","Instagram","Google"]
-listaPrivacidad = ["amanda",1,1,1,0,1,1]
+listaRedes = ["Amanda17","Face","Twitter","Linkedin","Instagram","Google"]
+listaPrivacidad = ["Amanda17",1,1,1,0,1,1]
 listaUsuario = ["Amanda17","choriseo","Amanda la del Atraro","Atracando ando","0598714","amanda@gmail.com",None,None,0]
 
 
