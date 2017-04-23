@@ -2,6 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/Controller/DBFunctionPermisosPrivacidad.py" line="69" />
+    <bookmark url="file://$PROJECT_DIR$/Controller/UserController.py" line="24" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e38d701-7cfc-4af7-beaf-1ece5d93f408" name="Default" comment="">
@@ -29,6 +30,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="Organizacion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller/Organizacion.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,14 +38,42 @@
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+=======
+      <file leaf-file-name="UserController.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Controller/UserController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+              <folding>
+                <element signature="e#25#67#0" expanded="true" />
+                <element signature="e#1221#1696#0" expanded="false" />
+                <element signature="e#1772#2688#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Controller/UserController.py">
+      <file leaf-file-name="DBFunctionUser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controller/DBFunctionUser.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#788#1062#0" expanded="false" />
+                <element signature="e#1112#2030#0" expanded="false" />
+                <element signature="e#2097#2879#0" expanded="false" />
+                <element signature="e#2926#4165#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBFunctions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/DBFunctions.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="340">
               <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
               <folding />
@@ -58,6 +88,42 @@
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#25#72#0" expanded="true" />
+=======
+            <state relative-caret-position="100">
+              <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+              <folding>
+                <element signature="e#245#318#0" expanded="false" />
+                <element signature="e#361#448#0" expanded="false" />
+                <element signature="e#522#610#0" expanded="false" />
+                <element signature="e#1236#1471#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBFunctionPermisosPrivacidad.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controller/DBFunctionPermisosPrivacidad.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="82" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBSocialNetwork.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controller/DBSocialNetwork.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="69" selection-end-column="9" />
+              <folding>
+                <element signature="e#221#558#0" expanded="false" />
+                <element signature="e#630#1210#0" expanded="false" />
+                <element signature="e#1277#2463#0" expanded="false" />
+                <element signature="e#2466#2658#1" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
               </folding>
             </state>
           </provider>
@@ -115,8 +181,12 @@
         <option value="$PROJECT_DIR$/Controller/DBSocialNetwork.py" />
         <option value="$PROJECT_DIR$/Model/Structures/BloqueStructure.py" />
         <option value="$PROJECT_DIR$/Model/DBConection.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Controller/DBFunctionPermisosPrivacidad.py" />
         <option value="$PROJECT_DIR$/Model/Structures/OrganizacionStructure.py" />
+=======
+        <option value="$PROJECT_DIR$/Model/DBFunctions.py" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
         <option value="$PROJECT_DIR$/Controller/DBFunctionUser.py" />
         <option value="$PROJECT_DIR$/Model/Structures/GeneradorCodigoRelaciones.py" />
         <option value="$PROJECT_DIR$/Controller/PermisosEstandar.py" />
@@ -241,7 +311,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.UserController (1)">
+  <component name="RunManager" selected="Python.DBFunctionUser">
     <configuration default="false" name="UserController (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -483,16 +553,19 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.UserController (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.DBFunctionUser" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DBSocialNetwork" />
-        <item index="3" class="java.lang.String" itemvalue="Python.DBFunctionPermisosPrivacidad" />
-        <item index="4" class="java.lang.String" itemvalue="Python.DBFunctions" />
+        <item index="0" class="java.lang.String" itemvalue="Python.DBFunctionUser" />
+        <item index="1" class="java.lang.String" itemvalue="Python.UserController (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DBFunctions" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DBSocialNetwork" />
+        <item index="4" class="java.lang.String" itemvalue="Python.DBFunctionPermisosPrivacidad" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -543,6 +616,26 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18314764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -586,7 +679,13 @@
         <state relative-caret-position="374">
           <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#25#67#0" expanded="false" />
+=======
+            <element signature="e#25#67#0" expanded="true" />
+            <element signature="e#1221#1696#0" expanded="false" />
+            <element signature="e#1772#2688#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>
@@ -613,9 +712,15 @@
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#198#795#0" expanded="false" />
             <element signature="e#846#1764#0" expanded="false" />
             <element signature="e#1834#2616#0" expanded="false" />
+=======
+            <element signature="e#788#1062#0" expanded="false" />
+            <element signature="e#1112#2030#0" expanded="false" />
+            <element signature="e#2097#2879#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>
@@ -625,7 +730,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#25#67#0" expanded="false" />
+=======
+            <element signature="e#25#67#0" expanded="true" />
+            <element signature="e#1221#1696#0" expanded="false" />
+            <element signature="e#1772#2688#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>
@@ -652,7 +763,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#25#67#0" expanded="false" />
+=======
+            <element signature="e#25#67#0" expanded="true" />
+            <element signature="e#1221#1696#0" expanded="false" />
+            <element signature="e#1772#2688#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>
@@ -696,6 +813,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+          <folding />
         </state>
       </provider>
     </entry>
@@ -703,14 +823,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
           <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="17" />
+          <folding />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Structures/UsuarioStructure.py">
+    <entry file="file://$PROJECT_DIR$/Model/DBConection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="24" />
+<<<<<<< HEAD
+        <state relative-caret-position="1035">
+          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="17" />
+=======
+        <state relative-caret-position="323">
+          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/DBSocialNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="69" selection-end-column="9" />
+          <folding>
+            <element signature="e#221#558#0" expanded="false" />
+            <element signature="e#630#1210#0" expanded="false" />
+            <element signature="e#1277#2463#0" expanded="false" />
+            <element signature="e#2466#2658#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -743,22 +883,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controller/DBFunctionPermisosPrivacidad.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1394">
           <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+=======
+        <state relative-caret-position="534">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="82" selection-end-column="9" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/DBConection.py">
+    <entry file="file://$PROJECT_DIR$/Model/Structures/UsuarioStructure.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="474">
+          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="24" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Model/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -802,10 +953,22 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="e#1834#2616#0" expanded="false" />
+=======
+    <entry file="file://$PROJECT_DIR$/Model/DBFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding>
+            <element signature="e#245#318#0" expanded="false" />
+            <element signature="e#361#448#0" expanded="false" />
+            <element signature="e#522#610#0" expanded="false" />
+            <element signature="e#1236#1471#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Model/Structures/OrgusuarioStructure.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -836,6 +999,18 @@
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/Controller/DBFunctionUser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#788#1062#0" expanded="false" />
+            <element signature="e#1112#2030#0" expanded="false" />
+            <element signature="e#2097#2879#0" expanded="false" />
+            <element signature="e#2926#4165#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>
@@ -852,10 +1027,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controller/OrgUsuario.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="493">
           <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+=======
+        <state relative-caret-position="357">
+          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+          <folding>
+            <element signature="e#25#67#0" expanded="true" />
+            <element signature="e#1221#1696#0" expanded="false" />
+            <element signature="e#1772#2688#0" expanded="false" />
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
           </folding>
         </state>
       </provider>

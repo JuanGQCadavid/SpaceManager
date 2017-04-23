@@ -26,14 +26,20 @@ class DbFunctions (DataBaseConection):
         return self.run_query(query)
 
     def selectWhere(self,atributes, table, condition):
+<<<<<<< HEAD
         query = "SELECT {} FROM {} WHERE {};".format(atributes, table, condition)
 
+=======
+        query = "SELECT {} FROM {} WHERE {};".format(atributes,table,condition)
+        print query
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
         return self.run_query(query)
     
     def insertInto(self, table, values) :
         query = "INSERT INTO {} VALUES ({});".format(table, values)
         print query
         return self.run_query(query)
+<<<<<<< HEAD
 
     def deleteFrom (self, table, condition) :
         query = "DELETE FROM {} WHERE {};".format(table, condition)
@@ -44,7 +50,31 @@ class DbFunctions (DataBaseConection):
         return self.run_query()
 
 
+=======
+>>>>>>> 1d4a3638c1a112bb3f71de94057f03e2f40ba777
+
+    def update(self,table,sets,condition):
+        query = "UPDATE {} SET {} WHERE {}".format(table,sets,condition)
+        print query
+        return self.run_query(query)
+
+    def actualizarStatement(self,tabla,nombreColumnaPk,pk,colmnua,value,tipo):
+
+        if(tipo == 0):
+            sets = colmnua + " = '{}'".format(value)
+        else:
+            sets = colmnua + " = {}".format(value)
+
+        where = nombreColumnaPk + " = '{}'" .format(pk)
+
+        return self.update(tabla,sets,where)
 
 
+
+'''''''''
+classe = DbFunctions()
+
+classe.update("usuario","claveUsuario='ChoriseoX2'","idusuario = 'Amanda17'")
 
     
+'''''''''
