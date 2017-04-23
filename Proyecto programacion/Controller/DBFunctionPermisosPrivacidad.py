@@ -73,7 +73,6 @@ class DBFunctionPermisoPrivacidad(DbFunctions):
                 return None
 
 
-
 '''''''''
 joder = DBFunctionPermisoPrivacidad()
 

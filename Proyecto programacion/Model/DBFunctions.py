@@ -30,7 +30,7 @@ class DbFunctions(DataBaseConection):
 
         return self.run_query(query)
     
-    def insertInto(self,table,values):
+    def insertInto(self,table,values) :
         query = "INSERT INTO {} VALUES ({});".format(table, values)
         print query
         return self.run_query(query)

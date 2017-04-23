@@ -17,8 +17,6 @@ class DataBaseConection(object):
         self.DB_USER = 'adminMySpace' 
         self.DB_PASS = 'asd123' 
         self.DB_NAME = 'spaceadmind'
-        
-        
 
 
     def run_query(self,query=''):

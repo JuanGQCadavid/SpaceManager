@@ -52,7 +52,7 @@ class DbFunctionUser(DbFunctions):
 
 
 
-    def metodoPorDefinir(self,permisosPrivacidadObject):
+    def metodoPorDefinir(self, permisosPrivacidadObject):
         structure = "MostrarCorreo = {} AND MostrarOrgPropias  = {} AND" \
                     "MostrarOrgPertenece = {} AND MostrarRedesSociales = {} AND" \
                     "MostrarTelefono = {}".format(permisosPrivacidadObject.getMostrarCorreo(),
@@ -68,7 +68,7 @@ class DbFunctionUser(DbFunctions):
 
 
 
-    def insertUser(self,userObject):
+    def insertUser(self, userObject):
         values = "'{}','{}','{}','{}','{}','{}','{}','{}',{}".format(userObject.getIdUsuario(),
                                                                      userObject.getClaveUsuario(),
                                                                      userObject.getNombreUsuario(),

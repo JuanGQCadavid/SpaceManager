@@ -3,11 +3,7 @@ from  DBFunctionUser import DbFunctionUser
 from DBSocialNetwork import DBSocialNetwork
 from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
 
-
-
 from Model.Structures.UsuarioStructure import Usuario
-
-
 
 def userLogin(userList):
 
@@ -29,7 +25,7 @@ def userLogin(userList):
 
     if not(userObject == None):
 
-        print "Welcom to the Jungle! {}".format(userObject.getNombreUsuario())
+        print "Welcome to the Jungle! {}".format(userObject.getNombreUsuario())
     else:
         print "No parse, no lo puedo dejar pasar"
 

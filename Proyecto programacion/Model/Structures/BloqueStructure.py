@@ -1,5 +1,5 @@
 # -*- coding: cp1252 -*- 
-class Bloque(object):
+class Bloque (object):
 	'''
 	Clase con Constructor, Getters y Setters
 	de la relacion Bloque
