@@ -27,15 +27,36 @@ class DbFunctions(DataBaseConection):
 
     def selectWhere(self,atributes, table, condition):
         query = "SELECT {} FROM {} WHERE {};".format(atributes,table,condition)
-
+        print query
         return self.run_query(query)
     
     def insertInto(self,table,values):
         query = "INSERT INTO {} VALUES ({});".format(table, values)
         print query
         return self.run_query(query)
-        
+
+    def update(self,table,sets,condition):
+        query = "UPDATE {} SET {} WHERE {}".format(table,sets,condition)
+        print query
+        return self.run_query(query)
+
+    def actualizarStatement(self,tabla,nombreColumnaPk,pk,colmnua,value,tipo):
+
+        if(tipo == 0):
+            sets = colmnua + " = '{}'".format(value)
+        else:
+            sets = colmnua + " = {}".format(value)
+
+        where = nombreColumnaPk + " = '{}'" .format(pk)
+
+        return self.update(tabla,sets,where)
 
 
+
+'''''''''
+classe = DbFunctions()
+
+classe.update("usuario","claveUsuario='ChoriseoX2'","idusuario = 'Amanda17'")
 
     
+'''''''''

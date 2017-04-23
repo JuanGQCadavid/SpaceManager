@@ -4,20 +4,24 @@ import MySQLdb
 
 class DbFunctionUser(DbFunctions):
 
+    def actualizarUsuario(self,userObject):
+
+        #Suponiendo que van en un arrayList, en ese orden.
+        sets = "nombreusuario = '{}', descripcion = '{}',telefonoCelular = '{}'".format(userObject.getNombreUsuario(),
+                                                                                        userObject.getDescripcion(),
+                                                                                        userObject.getTelefonoCelular())
+
+        condicion = "idUsuario = '{}'".format(userObject.getIdUsuario())
+
+        return self.update("usuario",sets,condicion)
+
+
     def FormarUserObject(self,userList):
         #Creando Objeto
-        userNewObject = Usuario()
+        userNewObject = Usuario(userList[0],userList[1],userList[2],
+                                userList[3],userList[4],userList[5],
+                                userList[6],userList[7],userList[8])
 
-        #Assignando valores
-        userNewObject.setIdUsuario(userList[0])
-        userNewObject.setClaveUsuario(userList[1])
-        userNewObject.setNombreUsuario(userList[2])
-        userNewObject.setDescripcion(userList[3])
-        userNewObject.setTelefonoCelular(userList[4])
-        userNewObject.setCorreoElectronico(userList[5])
-        userNewObject.setIdRedesSociales(userList[6])
-        userNewObject.setIdPrivacidad(userList[7])
-        userNewObject.setEstadoUsuario(userList[8])
 
         #Rertornamos
         return userNewObject
@@ -50,8 +54,6 @@ class DbFunctionUser(DbFunctions):
 
         #La respuesta final es el Objeto usuario.
 
-
-
     def metodoPorDefinir(self,permisosPrivacidadObject):
         structure = "MostrarCorreo = {} AND MostrarOrgPropias  = {} AND" \
                     "MostrarOrgPertenece = {} AND MostrarRedesSociales = {} AND" \
@@ -65,8 +67,6 @@ class DbFunctionUser(DbFunctions):
         result = self.insertInto("PrivacidadUsuario", structure)
 
         print result
-
-
 
     def insertUser(self,userObject):
         values = "'{}','{}','{}','{}','{}','{}','{}','{}',{}".format(userObject.getIdUsuario(),
@@ -91,10 +91,32 @@ class DbFunctionUser(DbFunctions):
         pass
 
 
+
+
+
+
+
 '''''''''
 joder = DbFunctionUser()
 
-Objeto = joder.FormarUserObject(("maricarmen","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","jquiro12","GenericF",0))
+Objeto = joder.FormarUserObject(("Amanda17","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","jquiro12","GenericF",0))
 
-print joder.insertUser(Objeto)
+print joder.actualizarUsuario(Objeto)
+
+joder.actualizarStatement("usuario","Amanda17","claveusuario","perreoIntenso",0)
+joder.actualizarStatement("usuario","Amanda17","estadousuario",1,1)
+
+
+
+        #Assignando valores
+        userNewObject.setIdUsuario(userList[0])
+        userNewObject.setClaveUsuario(userList[1])
+        userNewObject.setNombreUsuario(userList[2])
+        userNewObject.setDescripcion(userList[3])
+        userNewObject.setTelefonoCelular(userList[4])
+        userNewObject.setCorreoElectronico(userList[5])
+        userNewObject.setIdRedesSociales(userList[6])
+        userNewObject.setIdPrivacidad(userList[7])
+        userNewObject.setEstadoUsuario(userList[8])
+
 '''''''''

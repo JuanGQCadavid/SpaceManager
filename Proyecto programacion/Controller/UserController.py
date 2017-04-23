@@ -8,6 +8,36 @@ from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
 from Model.Structures.UsuarioStructure import Usuario
 
 
+def actualizarStatement(userObject,tipo):
+    claseFunctionUser = DbFunctionUser()
+    pk = userObject.getIdUsuario()
+
+    if tipo == 0:
+        return claseFunctionUser.actualizarStatement("usuario","idUsuario",pk,"claveUsuario",userObject.getClaveUsuario(),0)
+    else:
+        return claseFunctionUser.actualizarStatement("usuario", "idUsuario", pk, "estadoUsuario", userObject.getEstadoUsuario(), 4)
+
+def actualizarInfo(userObject,tipo):
+
+    '''''''''
+        0 -> Cambio de Clave
+        4 -> Cambio de Estado
+        1 -> Cambio basico info usuario
+        2 -> Cambio basico Redes Sociales
+        3 -> Cambio basico Privacidad usuario
+    '''''''''
+
+    if tipo == 0 or tipo == 4:
+        return actualizarStatement(userObject,tipo)
+    elif tipo == 1:
+        claseFunctionUser = DbFunctionUser()
+        return claseFunctionUser.actualizarUsuario(userObject)
+        pass
+    elif tipo == 2:
+        pass
+    elif tipo == 3:
+        pass
+
 
 def userLogin(userList):
 
@@ -63,6 +93,31 @@ def userRegister(userList,permisosPrivacidadList,socialNetworkList):
 
     userObject = claseUsuario.FormarUserObject(userList)
     claseUsuario.insertUser(userObject)
+
+
+
+
+
+'''''''''
+Probando actualizarInfo
+
+//Clave
+
+userNewObject = Usuario("Amanda17","choriseo","Amanda la del Atraro","Atracando ando","0598714","amanda@gmail.com","amanda","amanda",1)
+
+actualizarInfo(userNewObject, "La Amante perfecta", 0)
+
+//Estado
+
+userNewObject = Usuario("Amanda17","choriseo","Amanda la del Atraro","Atracando ando","0598714","amanda@gmail.com","amanda","amanda",1)
+
+actualizarInfo(userNewObject, 0, 4)
+
+
+'''''''''
+
+
+
 
 
 '''''''''
