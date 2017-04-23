@@ -7,9 +7,9 @@ class DBSocialNetwork(DbFunctions):
     def generarPrimarykey(self, socialNetworkList):
         primaryKey = socialNetworkList[0]
 
-        if (socialNetworkList[1] == None and socialNetworkList[2] == 0
-            and socialNetworkList[3] == 0 and socialNetworkList[4] == 0
-            and socialNetworkList[5] == 0):
+        if (socialNetworkList[1] == None and socialNetworkList[2] == None
+            and socialNetworkList[3] == None and socialNetworkList[4] == None
+            and socialNetworkList[5] == None):
 
             primaryKey = "GenericNull"
 

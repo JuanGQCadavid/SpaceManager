@@ -3,6 +3,7 @@ from  DBFunctionUser import DbFunctionUser
 from DBSocialNetwork import DBSocialNetwork
 from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
 from PrivacidadUserController import actualizarPrivacidad
+from RedesSocialesController import actualizarRedesSociales
 from Model.Structures.UsuarioStructure import Usuario
 
 
@@ -22,7 +23,7 @@ def actualizarInfo(list,tipo,pk):
         0 -> Cambio de Clave FUNCIONANDO
         4 -> Cambio de Estado FUNCIONANDO
         1 -> Cambio basico info usuario FUNCIONANDO
-        2 -> Cambio basico Redes Sociales
+        2 -> Cambio basico Redoes Sciales 
         3 -> Cambio basico Privacidad usuario FUNCIONANDO
     '''''''''
 
@@ -31,9 +32,8 @@ def actualizarInfo(list,tipo,pk):
     elif tipo == 1:
         claseFunctionUser = DbFunctionUser()
         return claseFunctionUser.actualizarUsuario(list,pk)
-        pass
     elif tipo == 2:
-        pass
+        return actualizarRedesSociales(pk,list,"usuario")
     elif tipo == 3:
         return actualizarPrivacidad(pk,list)
         pass
@@ -100,7 +100,7 @@ def modificarRedesSociales(pk,redesSocialesList):
     pass
 
 
-actualizarInfo(['pk',1,1,1,1,1],3,"Amanda17")
+actualizarInfo(["pk",None,None,None,None,None],2,"Amanda17")
 
 '''''''''
 Probando actualizarInfo

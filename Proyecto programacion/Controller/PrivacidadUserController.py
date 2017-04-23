@@ -43,7 +43,10 @@ def actualizarPrivacidad(pk, PrivacidadList):
         pass
     else:
         #Eliminamos el registro pasado.
-        clase.deleteFrom("privacidadUsuario","idPrivacidadUsuario = '{}'".format(pk))
+        if primaryKey != pk:
+            #Eliminamos el registro pasado.
+            clase.deleteFrom("privacidadUsuario", "idPrivacidadUsuario = '{}'".format(pk))
+
 
     pass
 
