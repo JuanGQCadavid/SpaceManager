@@ -5,7 +5,7 @@ from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
 
 from Model.Structures.UsuarioStructure import Usuario
 
-def userLogin(userList):
+def userLogin (userList) :
 
     #building the Object
 
@@ -30,7 +30,7 @@ def userLogin(userList):
         print "No parse, no lo puedo dejar pasar"
 
 
-def userRegister(userList,permisosPrivacidadList,socialNetworkList):
+def userRegister (userList,permisosPrivacidadList,socialNetworkList) :
     #Creando Classes
 
     claseSocialNetwor = DBSocialNetwork()

@@ -4,20 +4,20 @@ import time
 
 from Model.DBFunctions import DbFunctions
 
-class GeneradorCodigo(DbFunctions):
-    def __init__(self):
+class GeneradorCodigo(DbFunctions) :
+    def __init__(self) :
         self.createDBData()
         self.dictionaryFiles = {}
         self.generar()
         
-    def createFile(self,name,text):
+    def createFile (self, name, text) :
         newFile = open("{}Structure.py".format(self.mayusculaPrimerCaracter(name)),"w")
         newFile.write(text)
         newFile.close()
 
         self.dictionaryFiles[name] = "{}Model.py".format(name)
 
-    def generar(self):
+    def generar (self):
         Tables = self.getTables()
         result = ''
         
@@ -35,7 +35,7 @@ class GeneradorCodigo(DbFunctions):
             
       
 
-    def generarEncabezado(self, tableName):
+    def generarEncabezado (self, tableName):
         meta = "# -*- coding: cp1252 -*- \n"
         classDeclaration = "class {}({}):\n".format(tableName,"object")
         classDeclaration += "\t'''\n\tClase con Constructor, Getters y Setters\n\tde la relacion {}\n\t'''".format(tableName)
@@ -43,7 +43,7 @@ class GeneradorCodigo(DbFunctions):
         return meta + classDeclaration
     
 
-    def constructor(self,columns):
+    def constructor (self, columns):
         #Vacio
         #constructor = '\t#Constructor vacio \n'
         #constructor += '\tdef __init__(self):\n'
@@ -93,13 +93,13 @@ class GeneradorCodigo(DbFunctions):
         
         for columna in columns:
             
-            #Gets
+            #Getters
             line +='\t#Getters y Setters de {}\n'.format(self.minusculasPrimerCaracter(columna))
             line += '\n'
             line +='\tdef get{}(self):\n'.format(self.mayusculaPrimerCaracter(columna))
             line +='\t\treturn self.{}\n'.format(self.minusculasPrimerCaracter(columna))
 
-            #Sets
+            #Setters
             
             line +='\tdef set{}(self,{}):\n'.format(self.mayusculaPrimerCaracter(columna),self.minusculasPrimerCaracter(columna))
             line +='\t\tself.{A} = {A}\n'.format(A = self.minusculasPrimerCaracter(columna))

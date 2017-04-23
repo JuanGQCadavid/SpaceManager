@@ -4,7 +4,7 @@ import MySQLdb
 
 class DbFunctionUser(DbFunctions):
 
-    def FormarUserObject(self,userList):
+    def FormarUserObject(self, userList):
         #Creando Objeto
         userNewObject = Usuario()
 
@@ -22,7 +22,7 @@ class DbFunctionUser(DbFunctions):
         #Rertornamos
         return userNewObject
 
-    def ValidarUser(self, userObject):
+    def ValidarUser(self, userObject) :
 
         #Hacemos el Sq1
         Condicion = "idUsuario = '{}' AND claveUsuario ='{}'".format(userObject.getIdUsuario(),

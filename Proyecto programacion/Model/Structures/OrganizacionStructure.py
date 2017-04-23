@@ -1,5 +1,5 @@
 # -*- coding: cp1252 -*- 
-class Organizacion(object):
+class Organizacion (object):
 	'''
 	Clase con Constructor, Getters y Setters
 	de la relacion Organizacion
