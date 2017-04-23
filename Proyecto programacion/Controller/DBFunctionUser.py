@@ -5,17 +5,16 @@ import MySQLdb
 class DbFunctionUser(DbFunctions):
 
 
-    def actualizarUsuario(self,userObject):
+    def actualizarUsuario(self,list,pk):
 
         #Suponiendo que van en un arrayList, en ese orden.
-        sets = "nombreusuario = '{}', descripcion = '{}',telefonoCelular = '{}'".format(userObject.getNombreUsuario(),
-                                                                                        userObject.getDescripcion(),
-                                                                                        userObject.getTelefonoCelular())
+        sets = "nombreusuario = '{}', descripcion = '{}',telefonoCelular = '{}'".format(list[0],
+                                                                                        list[1],
+                                                                                        list[2])
 
-        condicion = "idUsuario = '{}'".format(userObject.getIdUsuario())
+        condicion = "idUsuario = '{}'".format(pk)
 
         return self.update("usuario",sets,condicion)
-
 
     def FormarUserObject(self,userList):
 
@@ -56,7 +55,6 @@ class DbFunctionUser(DbFunctions):
 
         #La respuesta final es el Objeto usuario.
 
-
     def metodoPorDefinir(self,permisosPrivacidadObject):
 
         structure = "MostrarCorreo = {} AND MostrarOrgPropias  = {} AND" \
@@ -71,9 +69,6 @@ class DbFunctionUser(DbFunctions):
         result = self.insertInto("PrivacidadUsuario", structure)
 
         print result
-
-
-
 
     def insertUser(self,userObject):
 
@@ -98,6 +93,22 @@ class DbFunctionUser(DbFunctions):
             return None
         pass
 
+    def ObtenerUsuario(self,primaryKey):
+        respuesta = self.selectWhere("*","usuario","idUsuario = '{}'".format(primaryKey))
+
+        if respuesta == {}:
+            return None
+        else:
+            return respuesta[0]
+
+    def generarUsuario(self,primaryKey):
+        list = self.ObtenerUsuario(primaryKey)
+
+        if list == None:
+            return None
+        else:
+            ObjetoUser = self.FormarUserObject(list)
+            return ObjetoUser
 
 
 
@@ -105,6 +116,16 @@ class DbFunctionUser(DbFunctions):
 
 
 '''''''''
+
+#generqr Objeto
+
+joder = DbFunctionUser()
+
+objeto = joder.generarUsuario("Amanda17")
+print objeto.getIdUsuario()
+
+#
+
 joder = DbFunctionUser()
 
 Objeto = joder.FormarUserObject(("Amanda17","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","jquiro12","GenericF",0))
