@@ -2,12 +2,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-#Para ver en donde metemos la pata
-app.debug = True
-
 @app.route('/')
 def index():
-    return "Hello! "
+	return "What's up man"
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+	app.run()

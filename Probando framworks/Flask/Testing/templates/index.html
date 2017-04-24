@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jojojojo</title>
+</head>
+<body>
+	<h1>Welcome {{nombre}}! </h1>
+	<h1>Edad: {{edad}}</h1>
+
+	{% if edad >= 18%}
+		<h1> Eres mayor de edad! Wepa!</h1>
+	{%endif%}
+
+	{% for i in lista %}
+		<h2>{{i}}</h2>
+	{%endfor%}
+
+</body>
+</html>
