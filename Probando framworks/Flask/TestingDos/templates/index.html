@@ -1,0 +1,17 @@
+{% extends 'base/base.html'%}
+
+{% block title%} {{title}} {% endblock %}
+
+{% block container %}
+	{% from '_macro.html' import showlistH, render_Field%}
+
+	{{showlistH(title)}}
+
+	<form name="setMessage" id="FormularioContacto" method="POST">
+		{{render_Field(form.usuario)}}
+		{{render_Field(form.email)}}
+		{{render_Field(form.comentario)}}
+		<button type = "submit"> Send</button>
+	</form>
+		
+{% endblock %}
