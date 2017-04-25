@@ -4,10 +4,10 @@ from Model.Structures.BloqueStructure import Bloque
 import MySQLdb
 
 
-class DBFunctionPermisoPrivacidad(DbFunctions):
+class DBFunctionPermisoPrivacidad (DbFunctions):
 
 
-    def generarPrimarykey(self,privacidadList):
+    def generarPrimarykey(self, privacidadList):
         primaryKey = privacidadList[0]
 
         if ( privacidadList[1] == 0 and privacidadList[2] == 0
@@ -44,7 +44,7 @@ class DBFunctionPermisoPrivacidad(DbFunctions):
         #Retornamos el objeto
         return privacidadNewObecjt
 
-    def insertPermisosPrivacidad(self,permisosPrivacidadObject):
+    def insertPermisosPrivacidad(self, permisosPrivacidadObject):
 
         #Si el objeto es un generic, simplemnete lo devolvemos como est, si no creamos el registro.
 

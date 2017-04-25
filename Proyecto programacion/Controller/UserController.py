@@ -8,7 +8,7 @@ from Model.Structures.UsuarioStructure import Usuario
 
 
 
-def actualizarStatement(list,tipo,pk):
+def actualizarStatement(list,tipo,pk) :
     claseFunctionUser = DbFunctionUser()
 
 

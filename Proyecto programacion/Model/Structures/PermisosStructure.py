@@ -5,7 +5,7 @@ class Permisos(object):
 	de la relacion Permisos
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idPermisos= None, p_Reserva= None, p_Nivel= None, p_Bloque= None, p_Sede= None, p_Org= None, pC_B= None, pC_S= None, pC_N= None, pC_E= None, p_Encargado= None):
+	def __init__(self, idPermisos = None, p_Reserva = None, p_Nivel = None, p_Bloque = None, p_Sede = None, p_Org = None, pC_B = None, pC_S = None, pC_N= None, pC_E= None, p_Encargado= None):
 		self.idPermisos = idPermisos 
 		self.p_Reserva = p_Reserva 
 		self.p_Nivel = p_Nivel 

@@ -32,11 +32,11 @@ class DBSocialNetwork(DbFunctions):
         # Retornamos el objeto
         return redessocialesNewObecjt
 
-    def insertRedessociales(self, redessocialesObject):
+    def insertRedessociales(self, redessocialesObject) :
 
         # Si el objeto es un generic, simplemnete lo devolvemos como est, si no creamos el registro.
 
-        if redessocialesObject.getIdRedesSociales == "GenericNull":
+        if redessocialesObject.getIdRedesSociales == "GenericNull" :
 
             return redessocialesObject
 
