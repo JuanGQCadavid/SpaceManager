@@ -14,7 +14,7 @@ def index():
 		print commetn_form.email.data
 		print commetn_form.comentario.data
 
-	title = "La perra valiente"
+	title = "Hola mami!"
 	return render_template('index.html',title = title, form = commetn_form)
 
 app.run()

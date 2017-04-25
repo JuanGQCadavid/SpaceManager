@@ -8,8 +8,8 @@
 	{{showlistH(title)}}
 
 	<form name="setMessage" id="FormularioContacto" method="POST">
-		{{render_Field(form.usuario)}}
-		{{render_Field(form.email)}}
+		{{render_Field(form.usuario, class='')}}
+		{{render_Field(form.email, class='')}}
 		{{render_Field(form.comentario)}}
 		<button type = "submit"> Send</button>
 	</form>
