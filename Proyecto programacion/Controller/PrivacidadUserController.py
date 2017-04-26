@@ -1,4 +1,4 @@
-from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
+from DBPrivacidad import DBFunctionPermisoPrivacidad
 
 #Objetos para compararlos
 

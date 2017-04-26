@@ -22,7 +22,7 @@ class DBPermisos (DbFunctions) :
         return nuevoPermiso
 
     def insertPermisos (self, nuevoPermiso) :
-        values = "{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}".format(nuevoPermiso.getIdPermisos(),
+        values = "'{}', {}, {}, {}, {}, {}, {}, {}, {}, {}, {}".format(nuevoPermiso.getIdPermisos(),
                                                       nuevoPermiso.getP_Reserva(),
                                                       nuevoPermiso.getP_Nivel(),
                                                       nuevoPermiso.getP_Bloque(),
@@ -41,6 +41,7 @@ class DBPermisos (DbFunctions) :
 
         except (MySQLdb.IntegrityError) :
             result = "ERROR: Tenemos problema de Integridad En INSERTAR permisos"
+            print result
             return None
 
     def ObejtoInsertar(self, PermisosList):
@@ -49,8 +50,8 @@ class DBPermisos (DbFunctions) :
     def obtenerPermisos(self,PermisosPk):
         query = "SELECT * FROM Permisos WHERE idPermisos = '{}'".format(PermisosPk)
         result = self.run_query(query)
-
-        if not(result == None):
+        print result
+        if not(result == []):
             return result[0]
 
     def actualizarPermisosDB(self,permisosList):

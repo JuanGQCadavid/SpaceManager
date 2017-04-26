@@ -28,12 +28,12 @@ class DataBaseConection(object):
         cursor.execute(query)          # Ejecutar una consulta 
  
         if query.upper().startswith('SELECT'):
-            count = 0
-            data = {}
-            
+
+            data = []
+
             for datos in cursor.fetchall():  
-                data[count] = datos
-                count += 1
+                data.append(datos)
+
         elif query.upper().startswith('DESCRIBE'):
             data = []
 

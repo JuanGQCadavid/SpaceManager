@@ -1,7 +1,7 @@
 # -*- coding: cp1252 -*-
-from  DBFunctionUser import DbFunctionUser
+from  DBUser import DbFunctionUser
 from DBSocialNetwork import DBSocialNetwork
-from DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
+from DBPrivacidad import DBFunctionPermisoPrivacidad
 from PrivacidadUserController import actualizarPrivacidad
 from RedesSocialesController import actualizarRedesSociales
 from Model.Structures.UsuarioStructure import Usuario
@@ -100,11 +100,16 @@ def modificarRedesSociales(pk,redesSocialesList):
     pass
 
 
-actualizarInfo(["pk",None,None,None,None,None],2,"Amanda17")
+
 
 '''''''''
-Probando actualizarInfo
 
+userRegister(["Amanda178","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+             ["Amanda178",0,0,0,0,0],['Amanda178',None,None,None,None,None])
+
+
+Probando actualizarInfo
+actualizarInfo(["pk",None,None,None,None,None],2,"Amanda17")
 actualizarInfo(1,4, "Amanda17")
 
 //Clave

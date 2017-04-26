@@ -1,12 +1,8 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.OrganizacionStructure import Organizacion
 from Model.Structures.PermisosStructure import Permisos
-from Controller.DBFunctionUser import DbFunctionUser
-from Controller.DBSocialNetwork import DBSocialNetwork
-from Controller.DBFunctionPermisosPrivacidad import DBFunctionPermisoPrivacidad
-from Controller.DBPermisos import DBPermisos
 import MySQLdb
-from Model.Structures.UsuarioStructure import Usuario
+
 class DbFunctionOrganizacion (DbFunctions) :
 
     def FormarOrgObject (self, orgList) :
@@ -42,6 +38,7 @@ class DbFunctionOrganizacion (DbFunctions) :
 
         except (MySQLdb.IntegrityError) :
             result = "ERROR: Tenemos problema de Integridad En INSERTAR Organizacion"
+            print result
             return None
 
 
@@ -51,33 +48,8 @@ class DbFunctionOrganizacion (DbFunctions) :
         return self.up("Organizacion", "IdUsuarioEncargado", Usuario.getIdUsuario, condicion)
 
     def configPermisosEstandar (self, list) :
-        a = Permisos(list[0], list[1], list[2], list[3], list[4], list[5], list[6], list[7], list[8], list[9], list[10], list[11])
+        pass
 
+    def objetInsert(self,orgList):
+        return self.insertOrg(self.FormarOrgObject(orgList))
 
-
-
-
-listredes = [1, "twitter", "facebook", "instagram", "linkedin", "google"]
-r = DBSocialNetwork()
-redes = r.generarRedessocialesObject(listredes)
-r.insertRedessociales(redes)
-
-listp = [23, 1, 1, 1, 1, 1]
-p = DBFunctionPermisoPrivacidad()
-permiso = p.generarPrivacidadObject(listp)
-p.insertPermisosPrivacidad(permiso)
-
-listu = [1, "asd", "RONALD", "HolA sOY RonalAld", "3106260064", "correo", 1, 'GenericT', 1]
-u = DbFunctionUser()
-user = u.FormarUserObject(listu)
-u.insertUser(user)
-
-listpermisos = [321, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-lu = DBPermisos()
-permisos =lu.formarObjeto(listpermisos)
-lu.insertPermisos(permisos)
-
-list = [1, 1, "Ronald", 12, "COMOTEVAOK", 321, 1, "5561457"]
-n = DbFunctionOrganizacion()
-a = n.FormarOrgObject(list)
-n.insertOrg(a)

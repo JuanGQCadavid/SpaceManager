@@ -36,3 +36,9 @@ def actualizarRedesSociales(pk,list,tablaReferente):
             clase.deleteFrom("redesSociales","idRedesSociales = '{}'".format(pk))
 
     pass
+
+def insertarRedesSociales(redesSocialesList):
+    clase = DBSocialNetwork()
+    objetoSocial =clase.generarRedessocialesObject(redesSocialesList)
+    clase.insertRedessociales(objetoSocial)
+    return objetoSocial.getIdRedesSociales()
