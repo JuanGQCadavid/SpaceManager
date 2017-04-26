@@ -1,4 +1,4 @@
-from DBPermisos import DBPermisos
+from Controller.DBFunctions.DBPermisos import DBPermisos
 
 
 '''

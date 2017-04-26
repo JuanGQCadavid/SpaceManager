@@ -1,11 +1,10 @@
 # -*- coding: cp1252 -*-
-from  DBUser import DbFunctionUser
-from DBSocialNetwork import DBSocialNetwork
-from DBPrivacidad import DBFunctionPermisoPrivacidad
-from PrivacidadUserController import actualizarPrivacidad
-from RedesSocialesController import actualizarRedesSociales
+from Controller.Controladores.PrivacidadUserController import actualizarPrivacidad
+from Controller.Controladores.RedesSocialesController import actualizarRedesSociales
+from Controller.DBFunctions.DBPrivacidad import DBFunctionPermisoPrivacidad
+from Controller.DBFunctions.DBSocialNetwork import DBSocialNetwork
+from  Controller.DBFunctions.DBUser import DbFunctionUser
 from Model.Structures.UsuarioStructure import Usuario
-
 
 
 def actualizarStatement(list,tipo,pk) :

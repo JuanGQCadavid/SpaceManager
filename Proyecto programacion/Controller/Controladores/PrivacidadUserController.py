@@ -1,9 +1,6 @@
-from DBPrivacidad import DBFunctionPermisoPrivacidad
+from Controller.DBFunctions.DBPrivacidad import DBFunctionPermisoPrivacidad
 
 #Objetos para compararlos
-
-from Model.Structures.OrganizacionStructure import Organizacion
-from Model.Structures.UsuarioStructure import Usuario
 
 
 def actualizarPrivacidad(pk, PrivacidadList):

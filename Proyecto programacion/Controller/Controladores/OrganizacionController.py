@@ -1,9 +1,7 @@
 # -*- coding: cp1252 -*-
-from DBOrganizacion import DbFunctionOrganizacion
-from RedesSocialesController import insertarRedesSociales
-from PermisosController import insertarPermiso
-
-from Model.Structures.OrganizacionStructure import Organizacion
+from Controller.Controladores.PermisosController import insertarPermiso
+from Controller.Controladores.RedesSocialesController import insertarRedesSociales
+from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
 
 '''
 En el Formulario, la lista se entregara de la Sigt manera
