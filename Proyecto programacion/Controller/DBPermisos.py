@@ -36,11 +36,41 @@ class DBPermisos (DbFunctions) :
                                                       )
         result = "ERROR"
         try:
-            result = self.insertInto("permisos", values)
+            result = self.insertInto("Permisos", values)
             return nuevoPermiso
 
         except (MySQLdb.IntegrityError) :
             result = "ERROR: Tenemos problema de Integridad En INSERTAR permisos"
             return None
 
+    def ObejtoInsertar(self, PermisosList):
+        return self.insertPermisos(self.formarObjeto(PermisosList))
 
+    def obtenerPermisos(self,PermisosPk):
+        query = "SELECT * FROM Permisos WHERE idPermisos = '{}'".format(PermisosPk)
+        result = self.run_query(query)
+
+        if not(result == None):
+            return result[0]
+
+    def actualizarPermisosDB(self,permisosList):
+        # Suponiendo que van en un arrayList, en ese orden.
+        sets = "P_Reserva = {}, P_Nivel = {}, P_Bloque = {}, P_Sede = {}, P_Org = {}," \
+               "PC_B = {}, PC_S = {}, PC_N = {}, PC_E = {}, P_Encargado = {}".format(permisosList[1],
+                                                                                      permisosList[2],
+                                                                                      permisosList[3],
+                                                                                      permisosList[4],
+                                                                                      permisosList[5],
+                                                                                      permisosList[6],
+                                                                                      permisosList[7],
+                                                                                      permisosList[8],
+                                                                                      permisosList[9],
+                                                                                      permisosList[10])
+
+
+        condicion = "idPermisos = '{}'".format(permisosList[0])
+
+        return self.update("Permisos", sets, condicion)
+
+    def eliminarDB(self, pk):
+        return self.deleteFrom ('Permisos', "idPermisos = '{}'".format(pk))

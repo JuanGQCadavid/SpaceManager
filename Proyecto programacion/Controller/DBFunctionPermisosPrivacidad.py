@@ -72,6 +72,9 @@ class DBFunctionPermisoPrivacidad (DbFunctions):
                 result = "ERROR: Tenemos problema de Integridad En INSERTAR Permisos Privacidad"
                 return None
 
+    def objetoInsertar(self,privacidadList):
+        return self.insertPermisosPrivacidad(self.generarPrivacidadObject(privacidadList))
+
     def actualizarRegistro(self,permisosPrivacidadObject):
         sets = "MostrarCorreo = {}, MostrarOrgPropias = {}, MostrarOrgPertenece = {}, MostrarRedesSociales = {}, MostrarTelefono = {}".format(permisosPrivacidadObject.getMostrarCorreo(),
                                                                                                                                               permisosPrivacidadObject.getMostrarOrgPropias(),
@@ -81,6 +84,8 @@ class DBFunctionPermisoPrivacidad (DbFunctions):
         where = " idPrivacidadUsuario = '{}'" .format(permisosPrivacidadObject.getIdPrivacidadUsuario())
 
         return self.update("PrivacidadUsuario", sets, where)
+
+
 
 
 

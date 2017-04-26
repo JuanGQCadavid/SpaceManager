@@ -1,5 +1,5 @@
 # -*- coding: cp1252 -*-
-from Organizacion import DbFunctionOrganizacion
+from DBOrganizacion import DbFunctionOrganizacion
 # from PermisosEstandar import (falta ... )
 from DBSocialNetwork import DBSocialNetwork
 
