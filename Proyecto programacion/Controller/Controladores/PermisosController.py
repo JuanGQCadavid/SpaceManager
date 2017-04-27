@@ -5,34 +5,21 @@ from Controller.DBFunctions.DBPermisos import DBPermisos
     El ID de permisos se basa en la combinacion de sus elementos.
 '''
 
-def validarPk(pk):
+def validarPk (pk):
     # Formamos la clase.
     clasePermisoDB = DBPermisos()
 
-    #Crearemos una consulta, sin os devuelve un registro, entonces ya esta, si no la creamos
+    #Crearemos una consulta, si nos devuelve un registro, entonces ya esta, si no la creamos
 
     result = clasePermisoDB.obtenerPermisos(pk)
 
-    if result == None:
-
-        return False
-    else:
-
-        return True
-
-
-
-
-
+    return result != None
 
 def generarPk(permisosList):
     pk = ""
     for campo in permisosList:
         pk += str(campo)
     return pk
-
-
-
 
 def insertarPermiso(permisosList):
     #Formamos la clase.
@@ -43,8 +30,7 @@ def insertarPermiso(permisosList):
 
     if not(validarPk(pk)):
 
-        permisosList.insert(0,pk)
-
+        permisosList.insert(0, pk)
         clasePermisoDB.ObejtoInsertar(permisosList)
         return  pk
 
@@ -58,20 +44,14 @@ def buscarPermiso(permisosPK):
     clasePermisoDB = DBPermisos()
     return clasePermisoDB.obtenerPermisos(permisosPK)
 
-
 def actualizarPermiso(permisosList):
     clase = DBPermisos()
     return clase.actualizarPermisosDB(permisosList)
 
-#Funcionando Test 25 de Abri
+#Funcionando Test 25 de Abril
 def eliminarPermiso(permisosPK):
     clase = DBPermisos()
     return clase.eliminarDB(permisosPK)
-
-
-
-
-
 
 '''''''''
 

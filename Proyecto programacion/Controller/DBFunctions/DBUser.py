@@ -14,7 +14,7 @@ class DbFunctionUser(DbFunctions):
 
         condicion = "idUsuario = '{}'".format(pk)
 
-        return self.update("usuario",sets,condicion)
+        return self.update("usuario", sets, condicion)
 
     def FormarUserObject(self,userList):
 
@@ -55,7 +55,7 @@ class DbFunctionUser(DbFunctions):
 
         #La respuesta final es el Objeto usuario.
 
-    def metodoPorDefinir(self,permisosPrivacidadObject):
+    def metodoPorDefinir(self, permisosPrivacidadObject):
 
         structure = "MostrarCorreo = {} AND MostrarOrgPropias  = {} AND" \
                     "MostrarOrgPertenece = {} AND MostrarRedesSociales = {} AND" \
@@ -93,8 +93,8 @@ class DbFunctionUser(DbFunctions):
             return None
         pass
 
-    def ObtenerUsuario(self,primaryKey):
-        respuesta = self.selectWhere("*","usuario","idUsuario = '{}'".format(primaryKey))
+    def ObtenerUsuario(self, primaryKey):
+        respuesta = self.selectWhere("*", "usuario","idUsuario = '{}'".format(primaryKey))
 
         if respuesta == None:
             return None

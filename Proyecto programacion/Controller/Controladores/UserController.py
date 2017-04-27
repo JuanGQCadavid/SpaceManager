@@ -62,7 +62,7 @@ def userLogin(userList):
     else:
         print "No parse, no lo puedo dejar pasar"
 
-def userRegister (userList,permisosPrivacidadList,socialNetworkList) :
+def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     #Creando Classes
 
     claseSocialNetwor = DBSocialNetwork()
@@ -92,10 +92,10 @@ def userRegister (userList,permisosPrivacidadList,socialNetworkList) :
     userObject = claseUsuario.FormarUserObject(userList)
     claseUsuario.insertUser(userObject)
 
-def modificarPrivacidad(pk,PrivacidadList):
-    return actualizarPrivacidad(pk,PrivacidadList)
+def modificarPrivacidad(pk, PrivacidadList):
+    return actualizarPrivacidad (pk, PrivacidadList)
 
-def modificarRedesSociales(pk,redesSocialesList):
+def modificarRedesSociales(pk, redesSocialesList):
     pass
 
 

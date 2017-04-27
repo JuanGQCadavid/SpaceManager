@@ -48,14 +48,14 @@ class DBPermisos (DbFunctions) :
     def ObejtoInsertar(self, PermisosList):
         return self.insertPermisos(self.formarObjeto(PermisosList))
 
-    def obtenerPermisos(self,PermisosPk):
+    def obtenerPermisos(self, PermisosPk):
         query = "SELECT * FROM Permisos WHERE idPermisos = '{}'".format(PermisosPk)
         result = self.run_query(query)
         print result
         if not(result == []):
             return result[0]
 
-    def actualizarPermisosDB(self,permisosList):
+    def actualizarPermisosDB(self, permisosList):
         # Suponiendo que van en un arrayList, en ese orden.
         sets = "P_Reserva = {}, P_Nivel = {}, P_Bloque = {}, P_Sede = {}, P_Org = {}," \
                "PC_B = {}, PC_S = {}, PC_N = {}, PC_E = {}, P_Encargado = {}".format(permisosList[1],
