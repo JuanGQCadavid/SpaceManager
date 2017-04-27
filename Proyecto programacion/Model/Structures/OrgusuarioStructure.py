@@ -5,13 +5,14 @@ class Orgusuario(object):
 	de la relacion Orgusuario
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idOrgUsuario= None, idUsuario= None, idOrg= None, idPermisos= None, nombrePilaUser= None, estadoUsuario= None):
+	def __init__(self, idOrgUsuario= None, idUsuario= None, idOrg= None, idPermisos= None, nombrePilaUser= None, estadoUsuario= None, fechaEstado= None):
 		self.idOrgUsuario = idOrgUsuario 
 		self.idUsuario = idUsuario 
 		self.idOrg = idOrg 
 		self.idPermisos = idPermisos 
 		self.nombrePilaUser = nombrePilaUser 
 		self.estadoUsuario = estadoUsuario 
+		self.fechaEstado = fechaEstado 
 
 
 	#Getters y Setters de idOrgUsuario
@@ -68,5 +69,14 @@ class Orgusuario(object):
 
 
 
+	#Getters y Setters de fechaEstado
 
-#Autogenerado: 04/22/17 10:35:27
+	def getFechaEstado(self):
+		return self.fechaEstado
+	def setFechaEstado(self,fechaEstado):
+		self.fechaEstado = fechaEstado
+
+
+
+
+#Autogenerado: 04/26/17 19:26:09

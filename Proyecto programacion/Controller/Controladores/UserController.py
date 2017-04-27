@@ -100,7 +100,6 @@ def modificarRedesSociales(pk,redesSocialesList):
 
 
 
-
 '''''''''
 
 userRegister(["Amanda178","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],

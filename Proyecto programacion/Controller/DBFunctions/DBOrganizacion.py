@@ -11,19 +11,17 @@ class DbFunctionOrganizacion (DbFunctions) :
 
         #Inicializando atributos
         nuevaOrg.setIdOrganizacion(orgList[0])
-        nuevaOrg.setIdUsuarioEncargado(orgList[1])
-        nuevaOrg.setNombre_Org(orgList[2])
-        nuevaOrg.setNumero_Sedes(orgList[3])
-        nuevaOrg.setDescripcion_Org(orgList[4])
-        nuevaOrg.setIdPermisosEstandar(orgList[5])
-        nuevaOrg.setIdRedesSociales(orgList[6])
-        nuevaOrg.setTelefonoOrg(orgList[7])
+        nuevaOrg.setNombre_Org(orgList[1])
+        nuevaOrg.setNumero_Sedes(orgList[2])
+        nuevaOrg.setDescripcion_Org(orgList[3])
+        nuevaOrg.setIdPermisosEstandar(orgList[4])
+        nuevaOrg.setIdRedesSociales(orgList[5])
+        nuevaOrg.setTelefonoOrg(orgList[6])
 
         return nuevaOrg
 
     def insertOrg (self, nuevaOrg) :
-        values = "'{}','{}','{}',{},'{}','{}','{}','{}'".format(nuevaOrg.getIdOrganizacion(),
-                                                      nuevaOrg.getIdUsuarioEncargado(),
+        values = "'{}','{}',{},'{}','{}','{}','{}'".format(nuevaOrg.getIdOrganizacion(),
                                                       nuevaOrg.getNombre_Org(),
                                                       nuevaOrg.getNumero_Sedes(),
                                                       nuevaOrg.getDescripcion_Org(),
@@ -39,6 +37,7 @@ class DbFunctionOrganizacion (DbFunctions) :
         except (MySQLdb.IntegrityError) :
             result = "ERROR: Tenemos problema de Integridad En INSERTAR Organizacion"
             print result
+            raise
             return None
 
 

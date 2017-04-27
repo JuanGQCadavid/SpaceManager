@@ -8,8 +8,7 @@ En el Formulario, la lista se entregara de la Sigt manera
 
 [pk,fkUser,'nombre','nr sedes', 'dec', fkPermiso, fkredesSo,telefonos]
 
-
-crearOrg('Amanda17',[0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','fkUser','nombre',0, 'dec',
+crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',
                                                                                  'fkPermiso', 'fkredesSo','telefonos'])
 
 '''
@@ -31,16 +30,16 @@ def crearOrg(userPk,permisoEstandarList,redesSocialesList,orgList):
 
     permisosPk = insertarPermiso(permisoEstandarList)
     redesSocialesPk = insertarRedesSociales(redesSocialesList)
-    pkOrg = generarPkOrg(userPk,orgList[2])
+    pkOrg = generarPkOrg(userPk,orgList[1])
 
     orgList[0] = pkOrg
-    orgList[1] = userPk
-    orgList[5] = permisosPk
-    orgList[6] = redesSocialesPk
+    orgList[4] = permisosPk
+    orgList[5] = redesSocialesPk
 
     clase =DbFunctionOrganizacion()
     return clase.objetInsert(orgList)
-
+crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',
+                                                                                 'fkPermiso', 'fkredesSo','telefonos'])
 
 '''
 print(generarPkOrg('jquiro12','evers Companys'))

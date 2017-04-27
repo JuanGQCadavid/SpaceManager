@@ -1,13 +1,12 @@
 # -*- coding: cp1252 -*- 
-class Organizacion (object):
+class Organizacion(object):
 	'''
 	Clase con Constructor, Getters y Setters
 	de la relacion Organizacion
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idOrganizacion= None, idUsuarioEncargado= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None):
+	def __init__(self, idOrganizacion= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None):
 		self.idOrganizacion = idOrganizacion 
-		self.idUsuarioEncargado = idUsuarioEncargado 
 		self.nombre_Org = nombre_Org 
 		self.numero_Sedes = numero_Sedes 
 		self.descripcion_Org = descripcion_Org 
@@ -22,15 +21,6 @@ class Organizacion (object):
 		return self.idOrganizacion
 	def setIdOrganizacion(self,idOrganizacion):
 		self.idOrganizacion = idOrganizacion
-
-
-
-	#Getters y Setters de idUsuarioEncargado
-
-	def getIdUsuarioEncargado(self):
-		return self.idUsuarioEncargado
-	def setIdUsuarioEncargado(self,idUsuarioEncargado):
-		self.idUsuarioEncargado = idUsuarioEncargado
 
 
 
@@ -89,4 +79,4 @@ class Organizacion (object):
 
 
 
-#Autogenerado: 04/22/17 10:35:27
+#Autogenerado: 04/26/17 19:26:09
