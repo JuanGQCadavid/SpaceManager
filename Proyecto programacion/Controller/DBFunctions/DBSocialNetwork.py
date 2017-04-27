@@ -52,7 +52,7 @@ class DBSocialNetwork(DbFunctions):
                                                   )
             result = "ERROR"
             try:
-                result = self.insertInto("redessociales", values)
+                result = self.insertInto("RedesSociales", values)
                 return redessocialesObject
 
             except(MySQLdb.IntegrityError), e:

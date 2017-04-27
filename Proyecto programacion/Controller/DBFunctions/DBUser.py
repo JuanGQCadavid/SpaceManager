@@ -55,20 +55,6 @@ class DbFunctionUser(DbFunctions):
 
         #La respuesta final es el Objeto usuario.
 
-    def metodoPorDefinir(self,permisosPrivacidadObject):
-
-        structure = "MostrarCorreo = {} AND MostrarOrgPropias  = {} AND" \
-                    "MostrarOrgPertenece = {} AND MostrarRedesSociales = {} AND" \
-                    "MostrarTelefono = {}".format(permisosPrivacidadObject.getMostrarCorreo(),
-                                                  permisosPrivacidadObject.getMostrarOrgPropias(),
-                                                  permisosPrivacidadObject.getMostrarOrgPertenece(),
-                                                  permisosPrivacidadObject.getMostrarRedesSociales(),
-                                                  permisosPrivacidadObject.getMostrarTelefono()
-                                                  )
-
-        result = self.insertInto("PrivacidadUsuario", structure)
-
-        print result
 
     def insertUser(self,userObject):
 
@@ -84,7 +70,7 @@ class DbFunctionUser(DbFunctions):
                                                         )
         result = ""
         try:
-            result = self.insertInto("usuario", values)
+            result = self.insertInto("Usuario", values)
             return userObject
 
         except(MySQLdb.IntegrityError), e:
@@ -94,7 +80,7 @@ class DbFunctionUser(DbFunctions):
         pass
 
     def ObtenerUsuario(self,primaryKey):
-        respuesta = self.selectWhere("*","usuario","idUsuario = '{}'".format(primaryKey))
+        respuesta = self.selectWhere("*","Usuario","idUsuario = '{}'".format(primaryKey))
 
         if respuesta == None:
             return None

@@ -98,8 +98,6 @@ def modificarPrivacidad(pk,PrivacidadList):
 def modificarRedesSociales(pk,redesSocialesList):
     pass
 
-
-
 '''''''''
 
 userRegister(["Amanda1781","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],

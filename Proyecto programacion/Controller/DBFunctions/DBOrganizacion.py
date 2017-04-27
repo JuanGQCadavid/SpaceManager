@@ -31,7 +31,7 @@ class DbFunctionOrganizacion (DbFunctions) :
                                                       )
         result = "ERROR"
         try:
-            result = self.insertInto("organizacion", values)
+            result = self.insertInto("Organizacion", values)
             return nuevaOrg
 
         except (MySQLdb.IntegrityError) :
