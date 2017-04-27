@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e38d701-7cfc-4af7-beaf-1ece5d93f408" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CRUD - DICCIONARIO- DIEÑO MER/CRUD.xlsx" afterPath="$PROJECT_DIR$/../CRUD - DICCIONARIO- DIEÑO MER/CRUD.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controller/Controladores/PermisosController.py" afterPath="$PROJECT_DIR$/Controller/Controladores/PermisosController.py" />
