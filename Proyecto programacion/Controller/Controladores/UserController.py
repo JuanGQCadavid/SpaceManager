@@ -102,6 +102,15 @@ def modificarRedesSociales(pk,redesSocialesList):
 
 '''''''''
 
+userRegister(["Amanda1781","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+             ["Amanda1781",0,0,0,0,0],['Amanda1781',None,None,None,None,None])
+
+userRegister(["Amanda17811","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+             ["Amanda17811",0,0,0,0,0],['Amanda17811',None,None,None,None,None])
+
+userRegister(["Amanda178111","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+             ["Amanda178111",0,0,0,0,0],['Amanda178111',None,None,None,None,None])
+
 userRegister(["Amanda178","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
              ["Amanda178",0,0,0,0,0],['Amanda178',None,None,None,None,None])
 

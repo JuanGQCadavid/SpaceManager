@@ -52,3 +52,13 @@ class DbFunctionOrganizacion (DbFunctions) :
     def objetInsert(self,orgList):
         return self.insertOrg(self.FormarOrgObject(orgList))
 
+    def obtenerOrg(self,primaryKey):
+        respuesta = self.selectWhere("*","Organizacion","idOrganizacion = '{}'".format(primaryKey))
+
+        if respuesta == None:
+            return None
+        else:
+            return respuesta[0]
+
+    def obtenerUsuarioComoObject(self,primaryKey):
+        return self.generarObjeto(self.obtenerOrgUser(primaryKey))

@@ -96,7 +96,7 @@ class DbFunctionUser(DbFunctions):
     def ObtenerUsuario(self,primaryKey):
         respuesta = self.selectWhere("*","usuario","idUsuario = '{}'".format(primaryKey))
 
-        if respuesta == {}:
+        if respuesta == None:
             return None
         else:
             return respuesta[0]

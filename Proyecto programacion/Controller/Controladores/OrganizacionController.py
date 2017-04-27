@@ -38,10 +38,15 @@ def crearOrg(userPk,permisoEstandarList,redesSocialesList,orgList):
 
     clase =DbFunctionOrganizacion()
     return clase.objetInsert(orgList)
-crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',
-                                                                                 'fkPermiso', 'fkredesSo','telefonos'])
+
+
+def obtenerOrg(orgPk):
+    clase = DbFunctionOrganizacion()
+    return clase.obtenerUsuarioComoObject(orgPk)
 
 '''
+crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',
+                                                                                 'fkPermiso', 'fkredesSo','telefonos'])
 print(generarPkOrg('jquiro12','evers Companys'))
 
 '''

@@ -27,3 +27,14 @@ class DBOrgUser(DbFunctions):
         sets = "estadoUsuario = {}, fechaEstado = '{}'".format(estadoNuevo,fechaActual)
         condicion = "idOrgUsuario = '{}'".format(idOrguser)
         return self.update("OrgUsuario", sets, condicion)
+
+    def obtenerOrgUser(self,primaryKey):
+        respuesta = self.selectWhere("*","OrgUsuario","idOrgUsuario = '{}'".format(primaryKey))
+
+        if respuesta == None:
+            return None
+        else:
+            return respuesta[0]
+
+    def obtenerUsuarioOrgComoObject(self,primaryKey):
+        return self.generarObjeto(self.obtenerOrgUser(primaryKey))
