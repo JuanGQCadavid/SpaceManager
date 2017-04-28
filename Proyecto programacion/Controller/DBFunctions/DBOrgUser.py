@@ -38,3 +38,8 @@ class DBOrgUser(DbFunctions):
 
     def obtenerUsuarioOrgComoObject(self,primaryKey):
         return self.generarObjeto(self.obtenerOrgUser(primaryKey))
+
+    def acceptarInivitacion(self, pkOrgUser, pkPermisos):
+        self.actualizarStatement('OrgUsuario','idOrgUsuario',pkOrgUser,'idPermisos',pkPermisos,0)
+        self.cambiarEstado(pkOrgUser,1)
+        pass

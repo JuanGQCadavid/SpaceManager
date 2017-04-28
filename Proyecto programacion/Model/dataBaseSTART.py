@@ -14,7 +14,7 @@ def registrarPrivacidadUsaruaio():
     classe.run_query(queryGenerricF)
 
 def registrarRedesSociales():
-    queryGenerricNull = "INSERT INTO redesSociales VALUES ('GenericNull',null,null,null,null,null)"
+    queryGenerricNull = "INSERT INTO RedesSociales VALUES ('GenericNull',null,null,null,null,null)"
     classe.run_query(queryGenerricNull)
 
 def registrarPermismos():
@@ -23,8 +23,10 @@ def registrarPermismos():
     classe.run_query(queryDueno)
     classe.run_query(queryInvitado)
 
-registrarPermismos()
+
 '''''''''
+registrarPermismos()
+
 registrarRedesSociales()
 registrarPrivacidadUsaruaio()
 '''''''''

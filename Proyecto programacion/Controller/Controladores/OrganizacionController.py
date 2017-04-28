@@ -2,6 +2,7 @@
 from Controller.Controladores.PermisosController import insertarPermiso
 from Controller.Controladores.RedesSocialesController import insertarRedesSociales
 from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
+from Controller.Controladores.OrgUsuarioController import bossAsignation
 
 '''
 En el Formulario, la lista se entregara de la Sigt manera
@@ -13,9 +14,9 @@ crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None
 
 '''
 
-def generarPkOrg(userPk,orgName):
+def generarPkOrg(user_pk,orgName):
     orgName = orgName.lower()
-    pkOrg = userPk+"_"
+    pkOrg = user_pk+"_"
 
     for words in orgName:
         if words == ' ':
@@ -37,12 +38,19 @@ def crearOrg(userPk,permisoEstandarList,redesSocialesList,orgList):
     orgList[5] = redesSocialesPk
 
     clase =DbFunctionOrganizacion()
-    return clase.objetInsert(orgList)
+    clase.objetInsert(orgList)
+
+    #Registrar en OrgUsuario
+    bossAsignation(userPk,pkOrg,'NombrePila')
+
 
 
 def obtenerOrg(orgPk):
     clase = DbFunctionOrganizacion()
     return clase.obtenerUsuarioComoObject(orgPk)
+
+crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','Las lovas Enamoradas',0, 'dec',
+                                                                                 'fkPermiso', 'fkredesSo','telefonos'])
 
 '''
 crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',

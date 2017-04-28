@@ -55,20 +55,6 @@ class DbFunctionUser(DbFunctions):
 
         #La respuesta final es el Objeto usuario.
 
-    def metodoPorDefinir(self, permisosPrivacidadObject):
-
-        structure = "MostrarCorreo = {} AND MostrarOrgPropias  = {} AND" \
-                    "MostrarOrgPertenece = {} AND MostrarRedesSociales = {} AND" \
-                    "MostrarTelefono = {}".format(permisosPrivacidadObject.getMostrarCorreo(),
-                                                  permisosPrivacidadObject.getMostrarOrgPropias(),
-                                                  permisosPrivacidadObject.getMostrarOrgPertenece(),
-                                                  permisosPrivacidadObject.getMostrarRedesSociales(),
-                                                  permisosPrivacidadObject.getMostrarTelefono()
-                                                  )
-
-        result = self.insertInto("PrivacidadUsuario", structure)
-
-        print result
 
     def insertUser(self,userObject):
 
@@ -84,7 +70,7 @@ class DbFunctionUser(DbFunctions):
                                                         )
         result = ""
         try:
-            result = self.insertInto("usuario", values)
+            result = self.insertInto("Usuario", values)
             return userObject
 
         except(MySQLdb.IntegrityError), e:
@@ -93,8 +79,10 @@ class DbFunctionUser(DbFunctions):
             return None
         pass
 
-    def ObtenerUsuario(self, primaryKey):
-        respuesta = self.selectWhere("*", "usuario","idUsuario = '{}'".format(primaryKey))
+
+    def ObtenerUsuario(self,primaryKey):
+        respuesta = self.selectWhere("*","Usuario","idUsuario = '{}'".format(primaryKey))
+
 
         if respuesta == None:
             return None
@@ -144,7 +132,7 @@ joder.actualizarStatement("usuario","Amanda17","estadousuario",1,1)
         userNewObject.setIdPrivacidad(userList[7])
         userNewObject.setEstadoUsuario(userList[8])
 
-<<<<<<< HEAD
+
 print joder.insertUser(Objeto)
 '''''''''
 
