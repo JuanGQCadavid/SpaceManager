@@ -46,13 +46,17 @@ class DbFunctionOrganizacion (DbFunctions) :
         condicion = "idOrganizacion = {}".format(OrgObject.getIdOrganizacion)
         return self.up("Organizacion", "IdUsuarioEncargado", Usuario.getIdUsuario, condicion)
 
-    def configPermisosEstandar (self, list) :
-        pass
+    def configPermisosEstandar (self, listPermisos, Organizacion) :
+        nuevosPermisos = Permisos(listPermisos)
+        self.up("organizacion", "IdPermisosEstandar", nuevosPermisos.getIdPermisos(),
+                "IdPermisosEstandar", Organizacion.getIdPermisosEstandar)
 
-    def objetInsert(self,orgList):
+        Organizacion.setIdPermisosEstandar(nuevosPermisos.getIdPermisos())
+
+    def objetInsert(self, orgList) :
         return self.insertOrg(self.FormarOrgObject(orgList))
 
-    def obtenerOrg(self,primaryKey):
+    def obtenerOrg(self,primaryKey) :
         respuesta = self.selectWhere("*","Organizacion","idOrganizacion = '{}'".format(primaryKey))
 
         if respuesta == None:
@@ -60,5 +64,10 @@ class DbFunctionOrganizacion (DbFunctions) :
         else:
             return respuesta[0]
 
-    def obtenerUsuarioComoObject(self,primaryKey):
+    def obtenerUsuarioComoObject(self, primaryKey):
         return self.generarObjeto(self.obtenerOrgUser(primaryKey))
+
+    def editarDescripcion (self, Organizacion, descripcion) :
+        self.up("organizacion", "descripcionOrg", descripcion,
+                "idOrganizacion", Organizacion.getIdOrganizacion())
+        Organizacion.setDescripcion_Org(descripcion)

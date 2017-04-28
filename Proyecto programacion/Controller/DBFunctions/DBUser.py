@@ -14,7 +14,7 @@ class DbFunctionUser(DbFunctions):
 
         condicion = "idUsuario = '{}'".format(pk)
 
-        return self.update("usuario",sets,condicion)
+        return self.update("usuario", sets, condicion)
 
     def FormarUserObject(self,userList):
 
@@ -79,8 +79,10 @@ class DbFunctionUser(DbFunctions):
             return None
         pass
 
+
     def ObtenerUsuario(self,primaryKey):
         respuesta = self.selectWhere("*","Usuario","idUsuario = '{}'".format(primaryKey))
+
 
         if respuesta == None:
             return None
@@ -95,10 +97,6 @@ class DbFunctionUser(DbFunctions):
         else:
             ObjetoUser = self.FormarUserObject(list)
             return ObjetoUser
-
-
-
-
 
 
 '''''''''
@@ -134,7 +132,7 @@ joder.actualizarStatement("usuario","Amanda17","estadousuario",1,1)
         userNewObject.setIdPrivacidad(userList[7])
         userNewObject.setEstadoUsuario(userList[8])
 
-<<<<<<< HEAD
+
 print joder.insertUser(Objeto)
 '''''''''
 
