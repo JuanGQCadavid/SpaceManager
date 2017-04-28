@@ -14,9 +14,9 @@ crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None
 
 '''
 
-def generarPkOrg(userPk,orgName):
+def generarPkOrg(user_pk,orgName):
     orgName = orgName.lower()
-    pkOrg = userPk+"_"
+    pkOrg = user_pk+"_"
 
     for words in orgName:
         if words == ' ':
