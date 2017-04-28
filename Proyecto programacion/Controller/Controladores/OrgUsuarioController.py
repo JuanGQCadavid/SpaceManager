@@ -6,11 +6,12 @@ import time
 '''
 
     0 Inactivo
-    1 Aceptado
+    1 Aceptado /Aceptar
     2 Pendiente
     3 Desterrado
     4 baneado
-    5 Invitado Aceptar - Declinar
+    5 Invitado Aceptar
+    6 Declinar
 
 '''
 def asociarOrgUser(idUser,idOrg,idPermisos,nombrePila):
@@ -43,12 +44,21 @@ def bossAsignation(idUser,idOrg,nombrePila):
 def invitarUsuario(idUser,idOrg,nombrePila):
     return asociarOrgUser(idUser,idOrg,'invitado',nombrePila)
 
+
 def acpetarInvitacion(idOrguser):
     clase = DBOrgUser()
 
     orgUserObject = clase.obtenerUsuarioOrgComoObject(idOrguser)
     permisosEstandar = obtenerOrg(orgUserObject.getIdOrg())
 
+    return clase.acceptarInivitacion(idOrguser,permisosEstandar)
+
+
+def cancerlarInvitacion(idOrgUser):
+    clase = DBOrgUser
+    return clase.cambiarEstado(idOrgUser,'6')
+
+invitarUsuario('Amanda178','Amanda17_nombre','La Perris ')
 
 
 '''

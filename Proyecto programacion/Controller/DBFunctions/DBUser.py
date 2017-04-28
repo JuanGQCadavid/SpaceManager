@@ -111,10 +111,6 @@ class DbFunctionUser(DbFunctions):
             return ObjetoUser
 
 
-
-
-
-
 '''''''''
 
 #generqr Objeto
