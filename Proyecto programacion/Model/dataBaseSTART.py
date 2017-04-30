@@ -24,9 +24,12 @@ def registrarPermismos():
     classe.run_query(queryInvitado)
 
 
-'''''''''
-registrarPermismos()
 
-registrarRedesSociales()
+registrarPermismos()
 registrarPrivacidadUsaruaio()
+registrarRedesSociales()
+
+
+'''''''''
+
 '''''''''

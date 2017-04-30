@@ -35,7 +35,7 @@ def actualizarRedesSociales(pk,list,tablaReferente):
             #Eliminamos el registro pasado.
             clase.deleteFrom("redesSociales","idRedesSociales = '{}'".format(pk))
 
-    pass
+    return primaryKey
 
 def insertarRedesSociales(redesSocialesList):
     clase = DBSocialNetwork()

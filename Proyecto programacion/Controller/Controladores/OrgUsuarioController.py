@@ -1,6 +1,6 @@
 
 from Controller.DBFunctions.DBOrgUser import DBOrgUser
-from Controller.Controladores.OrganizacionController import obtenerOrg
+from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
 import time
 
 '''
@@ -46,22 +46,26 @@ def invitarUsuario(idUser,idOrg,nombrePila):
 
 
 def acpetarInvitacion(idOrguser):
-    clase = DBOrgUser()
+    claseOrg = DbFunctionOrganizacion()
 
-    orgUserObject = clase.obtenerUsuarioOrgComoObject(idOrguser)
-    permisosEstandar = obtenerOrg(orgUserObject.getIdOrg())
 
-    return clase.acceptarInivitacion(idOrguser,permisosEstandar)
+    claseOrgUser = DBOrgUser()
+
+    orgUserObject = claseOrgUser.obtenerUsuarioOrgComoObject(idOrguser)
+    permisosEstandar = claseOrg.obtenerUsuarioComoObject(orgUserObject.getIdOrg())
+
+    return claseOrgUser.acceptarInivitacion(idOrguser,permisosEstandar)
 
 
 def cancerlarInvitacion(idOrgUser):
     clase = DBOrgUser
     return clase.cambiarEstado(idOrgUser,'6')
 
-invitarUsuario('Amanda178','Amanda17_nombre','La Perris ')
+
 
 
 '''
+invitarUsuario('Amanda178','Amanda17_nombre','La Perris ')
     bossAsignation('Amanda17811','Amanda17_nombre','LaAmanda')
    asociarOrgUser('Amanda178','Amanda17_nombre','10101010101','jquiro12')
    desterrar('Amanda17_nombre@Amanda178')
