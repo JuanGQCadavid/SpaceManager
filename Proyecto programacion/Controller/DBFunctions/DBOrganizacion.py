@@ -17,21 +17,23 @@ class DbFunctionOrganizacion (DbFunctions) :
         nuevaOrg.setIdPermisosEstandar(orgList[4])
         nuevaOrg.setIdRedesSociales(orgList[5])
         nuevaOrg.setTelefonoOrg(orgList[6])
+        nuevaOrg.setEstadoOrg(orgList[7])
 
         return nuevaOrg
 
     def insertOrg (self, nuevaOrg) :
-        values = "'{}','{}',{},'{}','{}','{}','{}'".format(nuevaOrg.getIdOrganizacion(),
+        values = "'{}','{}',{},'{}','{}','{}','{}',{}".format(nuevaOrg.getIdOrganizacion(),
                                                       nuevaOrg.getNombre_Org(),
                                                       nuevaOrg.getNumero_Sedes(),
                                                       nuevaOrg.getDescripcion_Org(),
                                                       nuevaOrg.getIdPermisosEstandar(),
                                                       nuevaOrg.getIdRedesSociales(),
-                                                      nuevaOrg.getTelefonoOrg()
+                                                      nuevaOrg.getTelefonoOrg(),
+                                                              nuevaOrg.getEstadoOrg()
                                                       )
         result = "ERROR"
         try:
-            result = self.insertInto("organizacion", values)
+            result = self.insertInto("Organizacion", values)
             return nuevaOrg
 
         except (MySQLdb.IntegrityError) :
@@ -39,7 +41,6 @@ class DbFunctionOrganizacion (DbFunctions) :
             print result
             raise
             return None
-
 
     def cambiarUsuarioEncargado (self, OrgObject, Usuario) :
         OrgObject.setIdUsuarioEncargado(Usuario.getIdUsuario());

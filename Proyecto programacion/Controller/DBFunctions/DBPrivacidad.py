@@ -64,7 +64,7 @@ class DBFunctionPermisoPrivacidad (DbFunctions):
                                                       )
             result = "ERROR"
             try:
-                result = self.insertInto("privacidadusuario",values)
+                result = self.insertInto("PrivacidadUsuario",values)
                 return permisosPrivacidadObject
 
             except(MySQLdb.IntegrityError),e:

@@ -5,7 +5,7 @@ class Organizacion(object):
 	de la relacion Organizacion
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idOrganizacion= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None):
+	def __init__(self, idOrganizacion= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None, estadoOrg= None):
 		self.idOrganizacion = idOrganizacion 
 		self.nombre_Org = nombre_Org 
 		self.numero_Sedes = numero_Sedes 
@@ -13,6 +13,7 @@ class Organizacion(object):
 		self.idPermisosEstandar = idPermisosEstandar 
 		self.idRedesSociales = idRedesSociales 
 		self.telefonoOrg = telefonoOrg 
+		self.estadoOrg = estadoOrg 
 
 
 	#Getters y Setters de idOrganizacion
@@ -78,5 +79,14 @@ class Organizacion(object):
 
 
 
+	#Getters y Setters de estadoOrg
 
-#Autogenerado: 04/26/17 19:26:09
+	def getEstadoOrg(self):
+		return self.estadoOrg
+	def setEstadoOrg(self,estadoOrg):
+		self.estadoOrg = estadoOrg
+
+
+
+
+#Autogenerado: 04/30/17 16:16:30
