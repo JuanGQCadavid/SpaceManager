@@ -44,7 +44,7 @@ class DBFunctionPermisoPrivacidad (DbFunctions):
         #Retornamos el objeto
         return privacidadNewObecjt
 
-    def insertPermisosPrivacidad(self, permisosPrivacidadObject):
+    def insertPermisosPrivacidad(self, permisosPrivacidadObject) :
 
         #Si el objeto es un generic, simplemnete lo devolvemos como est, si no creamos el registro.
 
