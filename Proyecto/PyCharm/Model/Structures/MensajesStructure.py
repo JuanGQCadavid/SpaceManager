@@ -5,14 +5,14 @@ class Mensajes(object):
 	de la relacion Mensajes
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idMensajes= None, fechaMensaje= None, tipoMensaje= None, asuntoMensaje= None, descripcionMensaje= None, usuarioAutor= None, orgId= None):
+	def __init__(self, idMensajes= None, fechaMensaje= None, asuntoMensaje= None, descripcionMensaje= None, usuarioAutor= None, idOrgCreador= None, idOrgContador= None):
 		self.idMensajes = idMensajes 
 		self.fechaMensaje = fechaMensaje 
-		self.tipoMensaje = tipoMensaje 
 		self.asuntoMensaje = asuntoMensaje 
 		self.descripcionMensaje = descripcionMensaje 
 		self.usuarioAutor = usuarioAutor 
-		self.orgId = orgId 
+		self.idOrgCreador = idOrgCreador 
+		self.idOrgContador = idOrgContador 
 
 
 	#Getters y Setters de idMensajes
@@ -30,15 +30,6 @@ class Mensajes(object):
 		return self.fechaMensaje
 	def setFechaMensaje(self,fechaMensaje):
 		self.fechaMensaje = fechaMensaje
-
-
-
-	#Getters y Setters de tipoMensaje
-
-	def getTipoMensaje(self):
-		return self.tipoMensaje
-	def setTipoMensaje(self,tipoMensaje):
-		self.tipoMensaje = tipoMensaje
 
 
 
@@ -69,14 +60,23 @@ class Mensajes(object):
 
 
 
-	#Getters y Setters de orgId
+	#Getters y Setters de idOrgCreador
 
-	def getOrgId(self):
-		return self.orgId
-	def setOrgId(self,orgId):
-		self.orgId = orgId
-
-
+	def getIdOrgCreador(self):
+		return self.idOrgCreador
+	def setIdOrgCreador(self,idOrgCreador):
+		self.idOrgCreador = idOrgCreador
 
 
-#Autogenerado: 04/30/17 16:16:30
+
+	#Getters y Setters de idOrgContador
+
+	def getIdOrgContador(self):
+		return self.idOrgContador
+	def setIdOrgContador(self,idOrgContador):
+		self.idOrgContador = idOrgContador
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017

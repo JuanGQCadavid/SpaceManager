@@ -5,13 +5,15 @@ class Bloque(object):
 	de la relacion Bloque
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idBloque= None, idSede= None, idOrg= None, idUsuarioEncargado= None, descripcionBloqe= None, numeroNiveles= None):
+	def __init__(self, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, idUsuarioEncargado= None, descripcionBloqe= None, numeroNiveles= None, fechaCreacion= None):
 		self.idBloque = idBloque 
 		self.idSede = idSede 
-		self.idOrg = idOrg 
+		self.idOrgCreador = idOrgCreador 
+		self.idOrgConsecutivo = idOrgConsecutivo 
 		self.idUsuarioEncargado = idUsuarioEncargado 
 		self.descripcionBloqe = descripcionBloqe 
 		self.numeroNiveles = numeroNiveles 
+		self.fechaCreacion = fechaCreacion 
 
 
 	#Getters y Setters de idBloque
@@ -32,12 +34,21 @@ class Bloque(object):
 
 
 
-	#Getters y Setters de idOrg
+	#Getters y Setters de idOrgCreador
 
-	def getIdOrg(self):
-		return self.idOrg
-	def setIdOrg(self,idOrg):
-		self.idOrg = idOrg
+	def getIdOrgCreador(self):
+		return self.idOrgCreador
+	def setIdOrgCreador(self,idOrgCreador):
+		self.idOrgCreador = idOrgCreador
+
+
+
+	#Getters y Setters de idOrgConsecutivo
+
+	def getIdOrgConsecutivo(self):
+		return self.idOrgConsecutivo
+	def setIdOrgConsecutivo(self,idOrgConsecutivo):
+		self.idOrgConsecutivo = idOrgConsecutivo
 
 
 
@@ -68,5 +79,14 @@ class Bloque(object):
 
 
 
+	#Getters y Setters de fechaCreacion
 
-#Autogenerado: 04/30/17 16:16:30
+	def getFechaCreacion(self):
+		return self.fechaCreacion
+	def setFechaCreacion(self,fechaCreacion):
+		self.fechaCreacion = fechaCreacion
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017

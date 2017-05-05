@@ -55,7 +55,6 @@ class DbFunctionUser(DbFunctions):
 
         #La respuesta final es el Objeto usuario.
 
-
     def insertUser(self,userObject):
 
         values = "'{}','{}','{}','{}','{}','{}','{}','{}',{}".format(userObject.getIdUsuario(),
@@ -78,7 +77,6 @@ class DbFunctionUser(DbFunctions):
             result = "ERROR: Tenemos problema de Integridad En Insertar usuario Registro"
             return None
         pass
-
 
     def ObtenerUsuario(self,primaryKey):
         respuesta = self.selectWhere("*","Usuario","idUsuario = '{}'".format(primaryKey))

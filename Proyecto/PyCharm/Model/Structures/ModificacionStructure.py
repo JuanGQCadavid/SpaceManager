@@ -5,7 +5,7 @@ class Modificacion(object):
 	de la relacion Modificacion
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idModificacion= None, tipoModificacion= None, modOrg= None, modSede= None, modBloque= None, modNivel= None, modEspacio= None, modUsuarioEnc= None):
+	def __init__(self, idModificacion= None, tipoModificacion= None, modOrg= None, modSede= None, modBloque= None, modNivel= None, modEspacio= None, modUsuarioEnc= None, modOrgCon= None):
 		self.idModificacion = idModificacion 
 		self.tipoModificacion = tipoModificacion 
 		self.modOrg = modOrg 
@@ -14,6 +14,7 @@ class Modificacion(object):
 		self.modNivel = modNivel 
 		self.modEspacio = modEspacio 
 		self.modUsuarioEnc = modUsuarioEnc 
+		self.modOrgCon = modOrgCon 
 
 
 	#Getters y Setters de idModificacion
@@ -88,5 +89,14 @@ class Modificacion(object):
 
 
 
+	#Getters y Setters de modOrgCon
 
-#Autogenerado: 04/30/17 16:16:30
+	def getModOrgCon(self):
+		return self.modOrgCon
+	def setModOrgCon(self,modOrgCon):
+		self.modOrgCon = modOrgCon
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017

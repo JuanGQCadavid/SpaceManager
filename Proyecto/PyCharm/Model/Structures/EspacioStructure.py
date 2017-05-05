@@ -5,15 +5,18 @@ class Espacio(object):
 	de la relacion Espacio
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrg= None, idPermiso= None, capacidadEspacio= None, descripcionEspaco= None):
+	def __init__(self, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrgCreador= None, idOrgContador= None, idPermiso= None, capacidadEspacio= None, descripcionEspaco= None, nomenclaturaEspecal= None, fechaCreacion= None):
 		self.idEspacio = idEspacio 
 		self.idNivel = idNivel 
 		self.idBloque = idBloque 
 		self.idSede = idSede 
-		self.idOrg = idOrg 
+		self.idOrgCreador = idOrgCreador 
+		self.idOrgContador = idOrgContador 
 		self.idPermiso = idPermiso 
 		self.capacidadEspacio = capacidadEspacio 
 		self.descripcionEspaco = descripcionEspaco 
+		self.nomenclaturaEspecal = nomenclaturaEspecal 
+		self.fechaCreacion = fechaCreacion 
 
 
 	#Getters y Setters de idEspacio
@@ -52,12 +55,21 @@ class Espacio(object):
 
 
 
-	#Getters y Setters de idOrg
+	#Getters y Setters de idOrgCreador
 
-	def getIdOrg(self):
-		return self.idOrg
-	def setIdOrg(self,idOrg):
-		self.idOrg = idOrg
+	def getIdOrgCreador(self):
+		return self.idOrgCreador
+	def setIdOrgCreador(self,idOrgCreador):
+		self.idOrgCreador = idOrgCreador
+
+
+
+	#Getters y Setters de idOrgContador
+
+	def getIdOrgContador(self):
+		return self.idOrgContador
+	def setIdOrgContador(self,idOrgContador):
+		self.idOrgContador = idOrgContador
 
 
 
@@ -88,5 +100,23 @@ class Espacio(object):
 
 
 
+	#Getters y Setters de nomenclaturaEspecal
 
-#Autogenerado: 04/30/17 16:16:30
+	def getNomenclaturaEspecal(self):
+		return self.nomenclaturaEspecal
+	def setNomenclaturaEspecal(self,nomenclaturaEspecal):
+		self.nomenclaturaEspecal = nomenclaturaEspecal
+
+
+
+	#Getters y Setters de fechaCreacion
+
+	def getFechaCreacion(self):
+		return self.fechaCreacion
+	def setFechaCreacion(self,fechaCreacion):
+		self.fechaCreacion = fechaCreacion
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017

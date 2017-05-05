@@ -5,19 +5,21 @@ class Reserva(object):
 	de la relacion Reserva
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idReserva= None, idUsuario= None, idDiasReserva= None, fechaInicio= None, fechaFin= None, horaInicio= None, horaFin= None, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrg= None):
+	def __init__(self, idReserva= None, idEspacio= None, idNivel= None, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, idUsuario= None, idDiasReserva= None, fechaInicio= None, fechaFin= None, horaInicio= None, horaFin= None, fechaReserva= None):
 		self.idReserva = idReserva 
+		self.idEspacio = idEspacio 
+		self.idNivel = idNivel 
+		self.idBloque = idBloque 
+		self.idSede = idSede 
+		self.idOrgCreador = idOrgCreador 
+		self.idOrgConsecutivo = idOrgConsecutivo 
 		self.idUsuario = idUsuario 
 		self.idDiasReserva = idDiasReserva 
 		self.fechaInicio = fechaInicio 
 		self.fechaFin = fechaFin 
 		self.horaInicio = horaInicio 
 		self.horaFin = horaFin 
-		self.idEspacio = idEspacio 
-		self.idNivel = idNivel 
-		self.idBloque = idBloque 
-		self.idSede = idSede 
-		self.idOrg = idOrg 
+		self.fechaReserva = fechaReserva 
 
 
 	#Getters y Setters de idReserva
@@ -26,6 +28,60 @@ class Reserva(object):
 		return self.idReserva
 	def setIdReserva(self,idReserva):
 		self.idReserva = idReserva
+
+
+
+	#Getters y Setters de idEspacio
+
+	def getIdEspacio(self):
+		return self.idEspacio
+	def setIdEspacio(self,idEspacio):
+		self.idEspacio = idEspacio
+
+
+
+	#Getters y Setters de idNivel
+
+	def getIdNivel(self):
+		return self.idNivel
+	def setIdNivel(self,idNivel):
+		self.idNivel = idNivel
+
+
+
+	#Getters y Setters de idBloque
+
+	def getIdBloque(self):
+		return self.idBloque
+	def setIdBloque(self,idBloque):
+		self.idBloque = idBloque
+
+
+
+	#Getters y Setters de idSede
+
+	def getIdSede(self):
+		return self.idSede
+	def setIdSede(self,idSede):
+		self.idSede = idSede
+
+
+
+	#Getters y Setters de idOrgCreador
+
+	def getIdOrgCreador(self):
+		return self.idOrgCreador
+	def setIdOrgCreador(self,idOrgCreador):
+		self.idOrgCreador = idOrgCreador
+
+
+
+	#Getters y Setters de idOrgConsecutivo
+
+	def getIdOrgConsecutivo(self):
+		return self.idOrgConsecutivo
+	def setIdOrgConsecutivo(self,idOrgConsecutivo):
+		self.idOrgConsecutivo = idOrgConsecutivo
 
 
 
@@ -83,50 +139,14 @@ class Reserva(object):
 
 
 
-	#Getters y Setters de idEspacio
+	#Getters y Setters de fechaReserva
 
-	def getIdEspacio(self):
-		return self.idEspacio
-	def setIdEspacio(self,idEspacio):
-		self.idEspacio = idEspacio
-
-
-
-	#Getters y Setters de idNivel
-
-	def getIdNivel(self):
-		return self.idNivel
-	def setIdNivel(self,idNivel):
-		self.idNivel = idNivel
-
-
-
-	#Getters y Setters de idBloque
-
-	def getIdBloque(self):
-		return self.idBloque
-	def setIdBloque(self,idBloque):
-		self.idBloque = idBloque
-
-
-
-	#Getters y Setters de idSede
-
-	def getIdSede(self):
-		return self.idSede
-	def setIdSede(self,idSede):
-		self.idSede = idSede
-
-
-
-	#Getters y Setters de idOrg
-
-	def getIdOrg(self):
-		return self.idOrg
-	def setIdOrg(self,idOrg):
-		self.idOrg = idOrg
+	def getFechaReserva(self):
+		return self.fechaReserva
+	def setFechaReserva(self,fechaReserva):
+		self.fechaReserva = fechaReserva
 
 
 
 
-#Autogenerado: 04/30/17 16:16:30
+#Autogenerado: Fri May  5 10:01:52 2017

@@ -5,16 +5,18 @@ class Nivel(object):
 	de la relacion Nivel
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idNivel= None, idBloque= None, idSede= None, idOrg= None, idUsuarioEncargado= None, idEspacioPublico= None, descripcionNivel= None, numeroEspacios= None, numeroNivel= None):
+	def __init__(self, idNivel= None, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, idUsuarioEncargado= None, idEspacioPublico= None, descripcionNivel= None, numeroEspacios= None, numeroNivel= None, fechaCreacion= None):
 		self.idNivel = idNivel 
 		self.idBloque = idBloque 
 		self.idSede = idSede 
-		self.idOrg = idOrg 
+		self.idOrgCreador = idOrgCreador 
+		self.idOrgConsecutivo = idOrgConsecutivo 
 		self.idUsuarioEncargado = idUsuarioEncargado 
 		self.idEspacioPublico = idEspacioPublico 
 		self.descripcionNivel = descripcionNivel 
 		self.numeroEspacios = numeroEspacios 
 		self.numeroNivel = numeroNivel 
+		self.fechaCreacion = fechaCreacion 
 
 
 	#Getters y Setters de idNivel
@@ -44,12 +46,21 @@ class Nivel(object):
 
 
 
-	#Getters y Setters de idOrg
+	#Getters y Setters de idOrgCreador
 
-	def getIdOrg(self):
-		return self.idOrg
-	def setIdOrg(self,idOrg):
-		self.idOrg = idOrg
+	def getIdOrgCreador(self):
+		return self.idOrgCreador
+	def setIdOrgCreador(self,idOrgCreador):
+		self.idOrgCreador = idOrgCreador
+
+
+
+	#Getters y Setters de idOrgConsecutivo
+
+	def getIdOrgConsecutivo(self):
+		return self.idOrgConsecutivo
+	def setIdOrgConsecutivo(self,idOrgConsecutivo):
+		self.idOrgConsecutivo = idOrgConsecutivo
 
 
 
@@ -98,5 +109,14 @@ class Nivel(object):
 
 
 
+	#Getters y Setters de fechaCreacion
 
-#Autogenerado: 04/30/17 16:16:30
+	def getFechaCreacion(self):
+		return self.fechaCreacion
+	def setFechaCreacion(self,fechaCreacion):
+		self.fechaCreacion = fechaCreacion
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017

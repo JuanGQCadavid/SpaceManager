@@ -5,7 +5,7 @@ class Usuario(object):
 	de la relacion Usuario
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idUsuario= None, claveUsuario= None, nombreUsuario= None, descripcion= None, telefonoCelular= None, correoElectronico= None, idRedesSociales= None, idPrivacidad= None, estadoUsuario= None):
+	def __init__(self, idUsuario= None, claveUsuario= None, nombreUsuario= None, descripcion= None, telefonoCelular= None, correoElectronico= None, idRedesSociales= None, idPrivacidad= None, estadoUsuario= None, fechaCreacion= None):
 		self.idUsuario = idUsuario 
 		self.claveUsuario = claveUsuario 
 		self.nombreUsuario = nombreUsuario 
@@ -15,6 +15,7 @@ class Usuario(object):
 		self.idRedesSociales = idRedesSociales 
 		self.idPrivacidad = idPrivacidad 
 		self.estadoUsuario = estadoUsuario 
+		self.fechaCreacion = fechaCreacion 
 
 
 	#Getters y Setters de idUsuario
@@ -98,5 +99,14 @@ class Usuario(object):
 
 
 
+	#Getters y Setters de fechaCreacion
 
-#Autogenerado: 04/30/17 16:16:30
+	def getFechaCreacion(self):
+		return self.fechaCreacion
+	def setFechaCreacion(self,fechaCreacion):
+		self.fechaCreacion = fechaCreacion
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017

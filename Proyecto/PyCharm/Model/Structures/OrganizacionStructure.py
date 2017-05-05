@@ -5,8 +5,9 @@ class Organizacion(object):
 	de la relacion Organizacion
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idOrganizacion= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None, estadoOrg= None):
-		self.idOrganizacion = idOrganizacion 
+	def __init__(self, idUsuarioCreador= None, consecutivoOrg= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None, estadoOrg= None, fechaCreacion= None):
+		self.idUsuarioCreador = idUsuarioCreador 
+		self.consecutivoOrg = consecutivoOrg 
 		self.nombre_Org = nombre_Org 
 		self.numero_Sedes = numero_Sedes 
 		self.descripcion_Org = descripcion_Org 
@@ -14,14 +15,24 @@ class Organizacion(object):
 		self.idRedesSociales = idRedesSociales 
 		self.telefonoOrg = telefonoOrg 
 		self.estadoOrg = estadoOrg 
+		self.fechaCreacion = fechaCreacion 
 
 
-	#Getters y Setters de idOrganizacion
+	#Getters y Setters de idUsuarioCreador
 
-	def getIdOrganizacion(self):
-		return self.idOrganizacion
-	def setIdOrganizacion(self,idOrganizacion):
-		self.idOrganizacion = idOrganizacion
+	def getIdUsuarioCreador(self):
+		return self.idUsuarioCreador
+	def setIdUsuarioCreador(self,idUsuarioCreador):
+		self.idUsuarioCreador = idUsuarioCreador
+
+
+
+	#Getters y Setters de consecutivoOrg
+
+	def getConsecutivoOrg(self):
+		return self.consecutivoOrg
+	def setConsecutivoOrg(self,consecutivoOrg):
+		self.consecutivoOrg = consecutivoOrg
 
 
 
@@ -88,5 +99,14 @@ class Organizacion(object):
 
 
 
+	#Getters y Setters de fechaCreacion
 
-#Autogenerado: 04/30/17 16:16:30
+	def getFechaCreacion(self):
+		return self.fechaCreacion
+	def setFechaCreacion(self,fechaCreacion):
+		self.fechaCreacion = fechaCreacion
+
+
+
+
+#Autogenerado: Fri May  5 10:01:52 2017
