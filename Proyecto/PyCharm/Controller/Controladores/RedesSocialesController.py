@@ -18,14 +18,6 @@ def actualizarRedesSociales(pk,list,tablaReferente):
 
     # Guardamos el id viejo para ir a borrarlo
 
-    if primaryKey == "GenericNull" :
-        clase.up(tablaReferente,"idRedesSociales","GenericNull","idUsuario",pk)
-    else:
-        #Insertamos el Registro de Redes Sociales Nuevo
-        clase.insertRedessociales(objetoRedesSociales)
-        #Actualizamos el reguistro de donde Sea Llamad
-        clase.up(tablaReferente, "idRedesSociales", primaryKey, "idUsuario", pk)
-
     #Eliminamos el Registro de Privacidad Anterior
 
     if pk == "GenericNull":

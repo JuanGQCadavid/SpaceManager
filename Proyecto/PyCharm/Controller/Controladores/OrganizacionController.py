@@ -1,7 +1,7 @@
 # -*- coding: cp1252 -*-
 #pragma once
-from Controller.Controladores.PermisosController import insertarPermiso
-from Controller.Controladores.RedesSocialesController import insertarRedesSociales
+from Controller.Controladores.PermisosController import insertarPermiso,actualizarPermiso
+from Controller.Controladores.RedesSocialesController import insertarRedesSociales,actualizarRedesSociales
 from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
 from Controller.Controladores.OrgUsuarioController import bossAsignation
 import time
@@ -105,27 +105,58 @@ def obtenerOrg(orgPk):
     return clase.obtenerUsuarioComoObject(orgPk)
 
 
+def actualizarRedes(pkOrgCreador,pkOrgConsecutivo, listActualizacion):
+    claseDb = DbFunctionOrganizacion()
+    objetoOrg = claseDb.obtenerOrg(pkOrgCreador,pkOrgConsecutivo)
+
+    pk = pkOrgCreador + "_$_" + str(pkOrgConsecutivo)
+    listActualizacion.insert(0,pk)
+
+
+    primaryKey = actualizarRedesSociales(objetoOrg.getIdRedesSociales(),listActualizacion,'Organizacion')
+
+    return claseDb.actualizarFks(pkOrgCreador,pkOrgConsecutivo,'idRedesSociales',primaryKey)
+
+def actualizarPermisos(pkOrgCreador,pkOrgConsecutivo, listActualizacion):
+    claseDb = DbFunctionOrganizacion()
+    objetoOrg = claseDb.obtenerOrg(pkOrgCreador,pkOrgConsecutivo)
+
+    primaryKey = actualizarPermiso(listActualizacion)
+
+    return claseDb.actualizarFks(pkOrgCreador,pkOrgConsecutivo,'idPermisosEstandar',primaryKey)
+'''
+    1 -> Basicos Descripcion y Telefono [NOMBRE,DESC,TELEFONO]
+    3 -> Permisos Estandar
+    2 -> Redes Sociales 
+    0 -> cerrar
+    4 -> Abrir Org
 
 '''
-    0 -> Basicos Descripcion y Telefono
-    1 -> Permisos Estandar
-    2 -> Redes Sociales
-    3 -> cerrar
 
-'''
 
-def actualizar(tipoActualizacion,pkOrg, listActualizacion):
+def actualizar(tipoActualizacion,pkOrgCreador,pkOrgConsecutivo, listActualizacion):
     print 'Organizacion Controlador - actualizar'
+
+    clase = DbFunctionOrganizacion()
+
     if tipoActualizacion == 0:
-        pass
+        return clase.cerrarOrg(pkOrgCreador,pkOrgConsecutivo)
     elif tipoActualizacion == 1:
-        pass
+        return clase.editarDatosbasicos(listActualizacion,pkOrgCreador,pkOrgConsecutivo)
     elif tipoActualizacion == 2:
-        pass
+        return actualizarRedes(pkOrgCreador,pkOrgConsecutivo, listActualizacion)
     elif tipoActualizacion == 3:
         pass
+    elif tipoActualizacion == 4:
+        return clase.abrirOrg(pkOrgCreador, pkOrgConsecutivo)
 
 
+
+actualizar(2,'jquiro12',3,['Fb','twir','Lik','Ins','go'])
+
+'''
+actualizar(1,'jquiro12',3,['Los ANDES','Dandole Cana','2930926'])
+actualizar(4,'jquiro12',2,None)
 
 crearOrg('jquiro12',
          ['pk','pk','NombreOrg','descrip_Org','pkPer','pkRedes','telefonoOrg',1,'fechaCreacion'],
@@ -133,21 +164,8 @@ crearOrg('jquiro12',
          [1,1,1,1,1,1,1,1,1,1,1],
          'El Gonzo'
          )
+         
 
-'''
-
-
-crearOrg('Amanda178*/7',[1,0,1,0,1,0,1,0,1,0,1],['Las Enamoradas Peputa',None,None,None,None,None],['pk','Las Enamoradas Peputa',0, 'dec',
-                                                                                 'fkPermiso', 'fkredesSo','telefonos',1])
-
-crearOrg('Amanda178*/7',[1,0,1,0,1,0,1,0,1,0,1],['Las Enamoradas Peputa',None,None,None,None,None],['pk','Las Enamoradas Peputa',0, 'dec',
-                                                                                 'fkPermiso', 'fkredesSo','telefonos',1])
-
-crearOrg('Amanda178*/7',[1,0,1,0,1,0,1,0,1,0,1],['Amanda178*/7',None,None,None,None,None],['pk','Las Enamoradas Peputa',0, 'dec',
-                                                                                 'fkPermiso', 'fkredesSo','telefonos'])    
-
-crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',
-                                                                                 'fkPermiso', 'fkredesSo','telefonos'])
 print(generarPkOrg('jquiro12','evers Companys'))
 
 '''

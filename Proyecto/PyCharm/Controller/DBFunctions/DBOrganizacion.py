@@ -43,6 +43,16 @@ class DbFunctionOrganizacion (DbFunctions) :
 
         return self.update('Organizacion', sets, condition)
 
+    def cerrarOrg(self,pkOrgCreador, pkOrgconsecutivo):
+        sets = 'estadoOrg = 0'
+        condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pkOrgCreador,pkOrgconsecutivo)
+        return self.update('Organizacion',sets,condition)
+
+    def abrirOrg(self,pkOrgCreador, pkOrgconsecutivo):
+        sets = 'estadoOrg = 1'
+        condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pkOrgCreador,pkOrgconsecutivo)
+        return self.update('Organizacion',sets,condition)
+
     def configPermisosEstandar (self, pkPermisosEstandar, pkOrgCreador, pkOrgconsecutivo) :
         print 'organizacion DB - configPermisosEstandar'
 
@@ -61,10 +71,29 @@ class DbFunctionOrganizacion (DbFunctions) :
         respuesta = self.selectWhere("*","Organizacion","idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(idCreador,consecutivo))
 
         if not(respuesta == None):
-            return respuesta[0]
+            return self.FormarOrgObject(respuesta[0])
 
     def obtenerConsecutivo(self,pkUser):
         print 'organizacion DB - obtenerConsecutivo'
 
         query = "select obtenerConsecutivo('{}')".format(pkUser)
         return (self.run_query(query))[0]
+
+    def actualizarRow(self, pkOrgCreador, pkOrgconsecutivo, rowName, rowValue):
+        print 'organizacion DB - actualizarFks'
+
+        sets = "{} = '{}'".format(rowName,rowValue)
+
+        condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pkOrgCreador, pkOrgconsecutivo)
+
+        return self.update('Organizacion', sets, condition)
+
+    def editarDatosbasicos(self,listaDatosBasicos, pkOrgCreador, pkOrgconsecutivo):
+        print 'organizacion DB - editarDatosbasicos'
+
+        sets = "nombre_Org = '{}', descripcion_Org = '{}', telefonoOrg = '{}'".format(listaDatosBasicos[0],
+                                                                                      listaDatosBasicos[1],
+                                                                                      listaDatosBasicos[2])
+        condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pkOrgCreador, pkOrgconsecutivo)
+
+        return self.update('Organizacion', sets, condition)

@@ -5,6 +5,8 @@ print 'Permisos Controlador'
 
 '''
     El ID de permisos se basa en la combinacion de sus elementos.
+    
+    En las Listas no se incluye el espacio pk, ejemplo: [1,1,1,0,1,1,1,1,1,1,1]
 '''
 
 def validarPk (pk):
@@ -14,7 +16,6 @@ def validarPk (pk):
     #Crearemos una consulta, si nos devuelve un registro, entonces ya esta, si no la creamos
 
     result = clasePermisoDB.obtenerPermisos(pk)
-
     return result != None
 
 def generarPk(permisosList):
@@ -42,26 +43,34 @@ def insertarPermiso(permisosList):
 
     return pk
 
-
-
-
 def buscarPermiso(permisosPK):
     # Formamos la clase.
     clasePermisoDB = DBPermisos()
     return clasePermisoDB.obtenerPermisos(permisosPK)
 
+
 def actualizarPermiso(permisosList):
     clase = DBPermisos()
-    return clase.actualizarPermisosDB(permisosList)
+    pk = generarPk(permisosList)
+    if validarPk(pk):
+        return pk
+    else:
+        permisosList.insert(0,pk)
+        return clase.ObejtoInsertar(permisosList)
 
-#Funcionando Test 25 de Abril
+
+
 def eliminarPermiso(permisosPK):
     clase = DBPermisos()
     return clase.eliminarDB(permisosPK)
 
+
+
 '''''''''
 
-print insertarPermiso([1,1,1,0,1,1,1,1,1,1])
+print insertarPermiso([0,1,1,0,1,1,0,1,1,1,1])
+print actualizarPermiso([0,1,1,0,1,0,0,1,1,1,1])
+
 
 
 #Test Eliminar

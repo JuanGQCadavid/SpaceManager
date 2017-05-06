@@ -9,19 +9,10 @@ class DBPermisos (DbFunctions) :
     def formarObjeto (self, list) :
         print 'Permisos DB - formarObjeto'
 
-        nuevoPermiso = Permisos()
-        nuevoPermiso.setIdPermisos(list[0])
-        nuevoPermiso.setBoss(list[1])
-        nuevoPermiso.setP_Reserva(list[2])
-        nuevoPermiso.setP_Nivel(list[3])
-        nuevoPermiso.setP_Bloque(list[4])
-        nuevoPermiso.setP_Sede(list[5])
-        nuevoPermiso.setP_Org(list[6])
-        nuevoPermiso.setPC_B(list[7])
-        nuevoPermiso.setPC_S(list[8])
-        nuevoPermiso.setPC_N(list[9])
-        nuevoPermiso.setPC_E(list[10])
-        nuevoPermiso.setP_Encargado(list[11])
+        nuevoPermiso = Permisos(idPermisos= list[0], boss= list[1], p_Reserva= list[2],
+                                p_Nivel= list[3], p_Bloque= list[4], p_Sede= list[5],
+                                p_Org= list[6], pC_B= list[7], pC_S= list[8],
+                                pC_N= list[9], pC_E= list[10], p_Encargado= list[11])
 
         return nuevoPermiso
 
@@ -30,17 +21,16 @@ class DBPermisos (DbFunctions) :
 
         values = "'{}', {} ,{}, {}, {}, {}, {}, {}, {}, {}, {}, {}".format(nuevoPermiso.getIdPermisos(),
                                                                            nuevoPermiso.getBoss(),
-                                                      nuevoPermiso.getP_Reserva(),
-                                                      nuevoPermiso.getP_Nivel(),
-                                                      nuevoPermiso.getP_Bloque(),
-                                                      nuevoPermiso.getP_Sede(),
-                                                      nuevoPermiso.getP_Org(),
-                                                      nuevoPermiso.getPC_B(),
-                                                      nuevoPermiso.getPC_S(),
-                                                     nuevoPermiso.getPC_N(),
-                                                     nuevoPermiso.getPC_E(),
-                                                     nuevoPermiso.getP_Encargado()
-                                                      )
+                                                                           nuevoPermiso.getP_Reserva(),
+                                                                           nuevoPermiso.getP_Nivel(),
+                                                                           nuevoPermiso.getP_Bloque(),
+                                                                           nuevoPermiso.getP_Sede(),
+                                                                           nuevoPermiso.getP_Org(),
+                                                                           nuevoPermiso.getPC_B(),
+                                                                           nuevoPermiso.getPC_S(),
+                                                                           nuevoPermiso.getPC_N(),
+                                                                           nuevoPermiso.getPC_E(),
+                                                                           nuevoPermiso.getP_Encargado())
         result = "ERROR"
         try:
             result = self.insertInto("Permisos", values)
@@ -53,7 +43,7 @@ class DBPermisos (DbFunctions) :
 
     def ObejtoInsertar(self, PermisosList):
         print 'Permisos DB - ObejtoInsertar'
-        return self.insertPermisos(self.formarObjeto(PermisosList))
+        return (self.insertPermisos(self.formarObjeto(PermisosList))).getIdPermisos()
 
     def obtenerPermisos(self, PermisosPk):
         print 'Permisos DB - obtenerPermisos'
@@ -64,25 +54,6 @@ class DBPermisos (DbFunctions) :
 
         if not(result == []):
             return result[0]
-
-    def actualizarPermisosDB(self, permisosList):
-        # Suponiendo que van en un arrayList, en ese orden.
-        sets = "P_Reserva = {}, P_Nivel = {}, P_Bloque = {}, P_Sede = {}, P_Org = {}," \
-               "PC_B = {}, PC_S = {}, PC_N = {}, PC_E = {}, P_Encargado = {}".format(permisosList[1],
-                                                                                      permisosList[2],
-                                                                                      permisosList[3],
-                                                                                      permisosList[4],
-                                                                                      permisosList[5],
-                                                                                      permisosList[6],
-                                                                                      permisosList[7],
-                                                                                      permisosList[8],
-                                                                                      permisosList[9],
-                                                                                      permisosList[10])
-
-
-        condicion = "idPermisos = '{}'".format(permisosList[0])
-
-        return self.update("Permisos", sets, condicion)
 
     def eliminarDB(self, pk):
         return self.deleteFrom ('Permisos', "idPermisos = '{}'".format(pk))
