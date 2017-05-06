@@ -5,21 +5,13 @@ class Horariosede(object):
 	de la relacion Horariosede
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idHorarioSede= None, idDiasHabiles= None, idSede= None, horaApertura= None, horaCierre= None):
-		self.idHorarioSede = idHorarioSede 
+	def __init__(self, idDiasHabiles= None, idSede= None, idOrgUsuarioCreador= None, idOrgContador= None, horaApertura= None, horaCierre= None):
 		self.idDiasHabiles = idDiasHabiles 
 		self.idSede = idSede 
+		self.idOrgUsuarioCreador = idOrgUsuarioCreador 
+		self.idOrgContador = idOrgContador 
 		self.horaApertura = horaApertura 
 		self.horaCierre = horaCierre 
-
-
-	#Getters y Setters de idHorarioSede
-
-	def getIdHorarioSede(self):
-		return self.idHorarioSede
-	def setIdHorarioSede(self,idHorarioSede):
-		self.idHorarioSede = idHorarioSede
-
 
 
 	#Getters y Setters de idDiasHabiles
@@ -37,6 +29,24 @@ class Horariosede(object):
 		return self.idSede
 	def setIdSede(self,idSede):
 		self.idSede = idSede
+
+
+
+	#Getters y Setters de idOrgUsuarioCreador
+
+	def getIdOrgUsuarioCreador(self):
+		return self.idOrgUsuarioCreador
+	def setIdOrgUsuarioCreador(self,idOrgUsuarioCreador):
+		self.idOrgUsuarioCreador = idOrgUsuarioCreador
+
+
+
+	#Getters y Setters de idOrgContador
+
+	def getIdOrgContador(self):
+		return self.idOrgContador
+	def setIdOrgContador(self,idOrgContador):
+		self.idOrgContador = idOrgContador
 
 
 
@@ -59,4 +69,4 @@ class Horariosede(object):
 
 
 
-#Autogenerado: 04/30/17 16:16:30
+#Autogenerado: 05/05/17 23:15:34

@@ -5,10 +5,11 @@ class Orgusuario(object):
 	de la relacion Orgusuario
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idOrgUsuario= None, idUsuario= None, idOrg= None, idPermisos= None, nombrePilaUser= None, estadoUsuario= None, fechaEstado= None):
+	def __init__(self, idOrgUsuario= None, idOrgUsuarioCreador= None, idOrgContador= None, idUsuario= None, idPermisos= None, nombrePilaUser= None, estadoUsuario= None, fechaEstado= None):
 		self.idOrgUsuario = idOrgUsuario 
+		self.idOrgUsuarioCreador = idOrgUsuarioCreador 
+		self.idOrgContador = idOrgContador 
 		self.idUsuario = idUsuario 
-		self.idOrg = idOrg 
 		self.idPermisos = idPermisos 
 		self.nombrePilaUser = nombrePilaUser 
 		self.estadoUsuario = estadoUsuario 
@@ -24,21 +25,30 @@ class Orgusuario(object):
 
 
 
+	#Getters y Setters de idOrgUsuarioCreador
+
+	def getIdOrgUsuarioCreador(self):
+		return self.idOrgUsuarioCreador
+	def setIdOrgUsuarioCreador(self,idOrgUsuarioCreador):
+		self.idOrgUsuarioCreador = idOrgUsuarioCreador
+
+
+
+	#Getters y Setters de idOrgContador
+
+	def getIdOrgContador(self):
+		return self.idOrgContador
+	def setIdOrgContador(self,idOrgContador):
+		self.idOrgContador = idOrgContador
+
+
+
 	#Getters y Setters de idUsuario
 
 	def getIdUsuario(self):
 		return self.idUsuario
 	def setIdUsuario(self,idUsuario):
 		self.idUsuario = idUsuario
-
-
-
-	#Getters y Setters de idOrg
-
-	def getIdOrg(self):
-		return self.idOrg
-	def setIdOrg(self,idOrg):
-		self.idOrg = idOrg
 
 
 
@@ -79,4 +89,4 @@ class Orgusuario(object):
 
 
 
-#Autogenerado: 04/30/17 16:16:30
+#Autogenerado: 05/05/17 23:15:34
