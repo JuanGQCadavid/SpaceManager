@@ -2,6 +2,7 @@ from Controller.DBFunctions.DBPrivacidad import DBFunctionPermisoPrivacidad
 
 #Objetos para compararlos
 
+print 'Privacidad Usuario Controlador'
 
 def actualizarPrivacidad(pk, PrivacidadList):
 

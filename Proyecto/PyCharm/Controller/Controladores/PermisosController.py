@@ -1,6 +1,8 @@
 from Controller.DBFunctions.DBPermisos import DBPermisos
 
 
+print 'Permisos Controlador'
+
 '''
     El ID de permisos se basa en la combinacion de sus elementos.
 '''

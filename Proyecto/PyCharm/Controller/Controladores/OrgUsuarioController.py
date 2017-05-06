@@ -1,8 +1,9 @@
 
 from Controller.DBFunctions.DBOrgUser import DBOrgUser
-from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
+
 import time
 
+print 'Org Usuario Controlador'
 '''
 
     0 Inactivo
@@ -14,12 +15,12 @@ import time
     6 Declinar
 
 '''
-def asociarOrgUser(idUser,idOrg,idPermisos,nombrePila):
+def asociarOrgUser(idUser,idOrgContador,idOrgCreador ,idPermisos,nombrePila):
 
-    idOrguser = idOrg + "@" + idUser
+    idOrguser = idOrgCreador + "_$_" + str(idOrgContador) + '@' + idUser
     fechaActual = time.strftime("%Y-%m-%d") + " " + time.strftime("%X")
 
-    orgList= [idOrguser,idUser,idOrg,idPermisos,nombrePila,1,fechaActual]
+    orgList= [idOrguser,idOrgCreador,idOrgContador,idUser,idPermisos,nombrePila,1,fechaActual]
 
     claseOrgUser = DBOrgUser()
 
@@ -37,31 +38,27 @@ def acceptar(idOrguser):
     clase = DBOrgUser()
     return clase.cambiarEstado(idOrguser,'1')
 
+def bossAsignation(idUser,idConsecutivo,nombrePila):
+    return asociarOrgUser(idUser,idConsecutivo,idUser,'theBoss',nombrePila)
 
-def bossAsignation(idUser,idOrg,nombrePila):
-    return asociarOrgUser(idUser,idOrg,'theBoss',nombrePila)
+def invitarUsuario(idUser,idConsecutivo,idOrgcreador, nombrePila):
+    return asociarOrgUser(idUser,idConsecutivo,idOrgcreador,'invitado',nombrePila)
 
-def invitarUsuario(idUser,idOrg,nombrePila):
-    return asociarOrgUser(idUser,idOrg,'invitado',nombrePila)
-
-
+'''
 def acpetarInvitacion(idOrguser):
+    #Crear Clases
     claseOrg = DbFunctionOrganizacion()
-
-
     claseOrgUser = DBOrgUser()
+
 
     orgUserObject = claseOrgUser.obtenerUsuarioOrgComoObject(idOrguser)
     permisosEstandar = claseOrg.obtenerUsuarioComoObject(orgUserObject.getIdOrg())
 
     return claseOrgUser.acceptarInivitacion(idOrguser,permisosEstandar)
-
-
+'''
 def cancerlarInvitacion(idOrgUser):
     clase = DBOrgUser
     return clase.cambiarEstado(idOrgUser,'6')
-
-
 
 
 '''

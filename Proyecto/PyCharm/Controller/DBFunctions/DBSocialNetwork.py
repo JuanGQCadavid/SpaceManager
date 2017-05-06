@@ -1,6 +1,8 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.RedessocialesStructure import Redessociales
-import MySQLdb
+import mysql
+
+print 'Redes Sociales DB'
 
 class DBSocialNetwork(DbFunctions):
 
@@ -36,7 +38,7 @@ class DBSocialNetwork(DbFunctions):
 
         # Si el objeto es un generic, simplemnete lo devolvemos como est, si no creamos el registro.
 
-        if redessocialesObject.getIdRedesSociales == "GenericNull" :
+        if redessocialesObject.getIdRedesSociales() == "GenericNull" :
 
             return redessocialesObject
 
@@ -55,8 +57,7 @@ class DBSocialNetwork(DbFunctions):
                 result = self.insertInto("RedesSociales", values)
                 return redessocialesObject
 
-            except(MySQLdb.IntegrityError), e:
-
+            except(mysql.connector.errors.IntegrityError), e:
                 result = "ERROR: Tenemos problema de Integridad En INSERTAR Social NETWORk"
                 return None
 

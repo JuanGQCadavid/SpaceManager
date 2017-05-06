@@ -1,10 +1,14 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.PermisosStructure import Permisos
-import MySQLdb
+import mysql
+
+
 
 class DBPermisos (DbFunctions) :
 
     def formarObjeto (self, list) :
+        print 'Permisos DB - formarObjeto'
+
         nuevoPermiso = Permisos()
         nuevoPermiso.setIdPermisos(list[0])
         nuevoPermiso.setBoss(list[1])
@@ -22,6 +26,8 @@ class DBPermisos (DbFunctions) :
         return nuevoPermiso
 
     def insertPermisos (self, nuevoPermiso) :
+        print 'Permisos DB - insertPermisos'
+
         values = "'{}', {} ,{}, {}, {}, {}, {}, {}, {}, {}, {}, {}".format(nuevoPermiso.getIdPermisos(),
                                                                            nuevoPermiso.getBoss(),
                                                       nuevoPermiso.getP_Reserva(),
@@ -40,18 +46,22 @@ class DBPermisos (DbFunctions) :
             result = self.insertInto("Permisos", values)
             return nuevoPermiso
 
-        except (MySQLdb.IntegrityError) :
+        except (mysql.connector.errors.IntegrityError) :
             result = "ERROR: Tenemos problema de Integridad En INSERTAR permisos"
             print result
             return None
 
     def ObejtoInsertar(self, PermisosList):
+        print 'Permisos DB - ObejtoInsertar'
         return self.insertPermisos(self.formarObjeto(PermisosList))
 
     def obtenerPermisos(self, PermisosPk):
+        print 'Permisos DB - obtenerPermisos'
+
         query = "SELECT * FROM Permisos WHERE idPermisos = '{}'".format(PermisosPk)
         result = self.run_query(query)
-        print result
+
+
         if not(result == []):
             return result[0]
 

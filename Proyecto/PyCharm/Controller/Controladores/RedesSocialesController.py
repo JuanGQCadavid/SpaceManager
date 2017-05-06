@@ -1,4 +1,5 @@
 from Controller.DBFunctions.DBSocialNetwork import DBSocialNetwork
+print 'Redes Sociales Controlador'
 
 def actualizarRedesSociales(pk,list,tablaReferente):
     # Creamos la clase

@@ -1,6 +1,8 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.UsuarioStructure import Usuario
-import MySQLdb
+import mysql
+
+print 'Usuario Db'
 
 class DbFunctionUser(DbFunctions):
 
@@ -22,7 +24,7 @@ class DbFunctionUser(DbFunctions):
         userNewObject = Usuario(userList[0],userList[1],userList[2],
                                 userList[3],userList[4],userList[5],
                                 userList[6],userList[7],userList[8],
-                                userList[8])
+                                userList[9])
 
 
         #Rertornamos
@@ -74,7 +76,7 @@ class DbFunctionUser(DbFunctions):
             result = self.insertInto("Usuario", values)
             return userObject
 
-        except(MySQLdb.IntegrityError), e:
+        except(mysql.connector.errors.IntegrityError), e:
 
             result = "ERROR: Tenemos problema de Integridad En Insertar usuario Registro"
             return None

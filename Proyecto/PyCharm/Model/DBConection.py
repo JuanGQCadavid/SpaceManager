@@ -1,5 +1,5 @@
 # -*- coding: cp1252 -*-
-import MySQLdb
+import mysql.connector
 
 
 class DataBaseConection(object):
@@ -20,26 +20,34 @@ class DataBaseConection(object):
 
 
     def run_query(self,query=''):
+
+
         print query
-        datos = [self.DB_HOST,self.DB_USER, self.DB_PASS, self.DB_NAME] 
- 
-        conn = MySQLdb.connect(*datos) # Conectar a la base de datos 
-        cursor = conn.cursor()         # Crear un cursor 
-        cursor.execute(query)          # Ejecutar una consulta 
+
+        conn = mysql.connector.connect(user=self.DB_USER, password=self.DB_PASS,
+                                        host=self.DB_HOST,
+                                        database=self.DB_NAME)
+        cursor = conn.cursor()
+        cursor.execute(query)
+
+
  
         if query.upper().startswith('SELECT'):
+            if query.find('obtenerConsecutivo')>= 0:
+                return cursor.fetchone()
+            else:
+                return cursor.fetchall()
 
-            data = []
 
-            for datos in cursor.fetchall():  
-                data.append(datos)
 
         elif query.upper().startswith('DESCRIBE'):
             data = []
 
             for datos in cursor.fetchall():
                 data.append(datos[0])
-            
+
+
+
         elif query.upper().startswith('SHOW'):
             data = []
 
@@ -58,5 +66,9 @@ class DataBaseConection(object):
         return data
     
 
+'''
+clase = DataBaseConection()
 
-
+print clase.run_query("Select obtenerConsecutivo('Amanda178') as result")
+print clase.run_query("Select * from usuario")
+'''

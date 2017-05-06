@@ -1,23 +1,32 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.OrgusuarioStructure import Orgusuario
 import time
+import mysql
+print 'Org user Db'
+
 class DBOrgUser(DbFunctions):
     def generarObjeto(self,orgList):
 
-        objectOrgUsuario = Orgusuario(orgList[0],orgList[1],
-                                      orgList[2],orgList[3],
-                                      orgList[4],orgList[5],orgList[6])
+        objectOrgUsuario = Orgusuario(idOrgUsuario = orgList[0],idOrgUsuarioCreador = orgList[1],
+                                      idOrgContador = orgList[2],idUsuario = orgList[3],
+                                      idPermisos = orgList[4], nombrePilaUser = orgList[5],
+                                      estadoUsuario = orgList[6], fechaEstado = orgList[7])
         return objectOrgUsuario
 
     def insertOrgUser(self,objetoOrgUser):
-        query = "INSERT INTO OrgUsuario VALUES ('{}','{}','{}','{}','{}','{}','{}')".format(objetoOrgUser.getIdOrgUsuario(),
+        query = "INSERT INTO OrgUsuario VALUES ('{}','{}',{},'{}','{}','{}',{},'{}')".format(objetoOrgUser.getIdOrgUsuario(),
+                                                                                          objetoOrgUser.getIdOrgUsuarioCreador(),
+                                                                                          objetoOrgUser.getIdOrgContador(),
                                                                                           objetoOrgUser.getIdUsuario(),
-                                                                                          objetoOrgUser.getIdOrg(),
                                                                                           objetoOrgUser.getIdPermisos(),
                                                                                           objetoOrgUser.getNombrePilaUser(),
                                                                                           objetoOrgUser.getEstadoUsuario(),
                                                                                           objetoOrgUser.getFechaEstado())
-        self.run_query(query)
+
+        try:
+            return self.run_query(query)
+        except(mysql.connector.errors.IntegrityError),e:
+            print 'Error de Integridad en Insertar DB Org user'
 
     def objectInsert(self,orgList):
         return self.insertOrgUser(self.generarObjeto(orgList))

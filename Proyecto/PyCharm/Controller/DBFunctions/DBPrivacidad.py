@@ -1,8 +1,9 @@
 from Model.DBFunctions import DbFunctions
 from Model.Structures.PrivacidadusuarioStructure import Privacidadusuario
 from Model.Structures.BloqueStructure import Bloque
-import MySQLdb
+import mysql
 
+print 'Privacidad Db'
 
 class DBFunctionPermisoPrivacidad (DbFunctions):
 
@@ -48,7 +49,7 @@ class DBFunctionPermisoPrivacidad (DbFunctions):
 
         #Si el objeto es un generic, simplemnete lo devolvemos como est, si no creamos el registro.
 
-        if permisosPrivacidadObject.getIdPrivacidadUsuario == "GenericT" or permisosPrivacidadObject.getIdPrivacidadUsuario == "GenericF" :
+        if permisosPrivacidadObject.getIdPrivacidadUsuario() == "GenericT" or permisosPrivacidadObject.getIdPrivacidadUsuario() == "GenericF" :
 
             return permisosPrivacidadObject
 
@@ -67,7 +68,7 @@ class DBFunctionPermisoPrivacidad (DbFunctions):
                 result = self.insertInto("PrivacidadUsuario",values)
                 return permisosPrivacidadObject
 
-            except(MySQLdb.IntegrityError),e:
+            except(mysql.connector.errors.IntegrityError),e:
 
                 result = "ERROR: Tenemos problema de Integridad En INSERTAR Permisos Privacidad"
                 return None
