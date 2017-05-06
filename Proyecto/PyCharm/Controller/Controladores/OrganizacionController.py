@@ -10,8 +10,7 @@ En el Formulario, la lista se entregara de la Sigt manera
 
 [pk,fkUser,'nombre','nr sedes', 'dec', fkPermiso, fkredesSo,telefonos]
 
-crearOrg('Amanda17',[1,0,1,0,1,0,1,0,1,0,1],['Amanda17',None,None,None,None,None],['pk','nombre',0, 'dec',
-                                                                                 'fkPermiso', 'fkredesSo','telefonos','estado'])
+crearOrg('Amanda17',['pk',None,None,None,None,None],['pk','nombre',0, 'dec','fkPermiso', 'fkredesSo','telefonos','estado'])
 
 '''
 
@@ -27,10 +26,11 @@ def generarPkOrg(user_pk,orgName):
 
     return pkOrg
 
+'''
 
-def crearOrg(userPk,permisoEstandarList,redesSocialesList,orgList):
+def crearOrg(userPk,redesSocialesList,orgList):
 
-    permisosPk = insertarPermiso(permisoEstandarList)
+    permisosPk = 'theBoss'
     redesSocialesPk = insertarRedesSociales(redesSocialesList)
     pkOrg = generarPkOrg(userPk,orgList[1])
 
@@ -43,6 +43,18 @@ def crearOrg(userPk,permisoEstandarList,redesSocialesList,orgList):
 
     #Registrar en OrgUsuario
     bossAsignation(userPk,pkOrg,'NombrePila')
+
+'''
+
+def crearOrg(userPk,  orgList ,redesSocialesList):
+    '''
+        Generar Pk Org
+        
+        1- 
+    '''
+
+
+
 
 
 

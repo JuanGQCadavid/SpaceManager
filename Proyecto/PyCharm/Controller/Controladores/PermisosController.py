@@ -17,6 +17,10 @@ def validarPk (pk):
 
 def generarPk(permisosList):
     pk = ""
+
+    if permisosList[0] == 1:
+        return 'theBoss'
+
     for campo in permisosList:
         pk += str(campo)
     return pk

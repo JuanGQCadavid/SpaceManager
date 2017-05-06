@@ -21,7 +21,8 @@ class DbFunctionUser(DbFunctions):
         #Creando Objeto
         userNewObject = Usuario(userList[0],userList[1],userList[2],
                                 userList[3],userList[4],userList[5],
-                                userList[6],userList[7],userList[8])
+                                userList[6],userList[7],userList[8],
+                                userList[8])
 
 
         #Rertornamos
@@ -57,7 +58,7 @@ class DbFunctionUser(DbFunctions):
 
     def insertUser(self,userObject):
 
-        values = "'{}','{}','{}','{}','{}','{}','{}','{}',{}".format(userObject.getIdUsuario(),
+        values = "'{}','{}','{}','{}','{}','{}','{}','{}',{},'{}'".format(userObject.getIdUsuario(),
                                                                      userObject.getClaveUsuario(),
                                                                      userObject.getNombreUsuario(),
                                                                      userObject.getDescripcion(),
@@ -65,7 +66,8 @@ class DbFunctionUser(DbFunctions):
                                                                      userObject.getCorreoElectronico(),
                                                                      userObject.getIdRedesSociales(),
                                                                      userObject.getIdPrivacidad(),
-                                                                     userObject.getEstadoUsuario()
+                                                                     userObject.getEstadoUsuario(),
+                                                                          userObject.getFechaCreacion()
                                                         )
         result = ""
         try:

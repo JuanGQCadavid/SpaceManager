@@ -5,6 +5,7 @@ from Controller.DBFunctions.DBPrivacidad import DBFunctionPermisoPrivacidad
 from Controller.DBFunctions.DBSocialNetwork import DBSocialNetwork
 from  Controller.DBFunctions.DBUser import DbFunctionUser
 from Model.Structures.UsuarioStructure import Usuario
+import time
 
 
 def actualizarStatement(list,tipo,pk) :
@@ -87,33 +88,46 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     userList[6] = socialObject.getIdRedesSociales()
     userList[7] = permisosPrivacidadObject.getIdPrivacidadUsuario()
 
+    #Añadir fecha
+
+    userList[9] = time.strftime("%Y-%m-%d") + " " + time.strftime("%X")
+
+
     #Creando Objeto y guardando en MySQL.
 
     userObject = claseUsuario.FormarUserObject(userList)
     claseUsuario.insertUser(userObject)
 
-def modificarPrivacidad(pk, PrivacidadList):
-    return actualizarPrivacidad (pk, PrivacidadList)
 
-def modificarRedesSociales(pk, redesSocialesList):
-    pass
-
-
-
-
-'''''''''
-userRegister(["Amanda178*/7","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
-             ["Amanda178*/7",0,0,0,0,0],['Amanda178*/7',None,None,None,None,None])
-userRegister(["Amanda178*/7","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+userRegister(["Amanda178*/7","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,"fecha"],
              ["Amanda178*/7",0,0,0,0,0],['Amanda178*/7',None,None,None,None,None])
 
-userRegister(["Amanda17811","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+userRegister(["Amanda17811","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,"fecha"],
              ["Amanda17811",0,0,0,0,0],['Amanda17811',None,None,None,None,None])
 
-userRegister(["Amanda178111","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+userRegister(["Amanda178111","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,"fecha"],
              ["Amanda178111",0,0,0,0,0],['Amanda178111',None,None,None,None,None])
 
-userRegister(["Amanda178","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0],
+userRegister(["Amanda178","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,"fecha"],
+             ["Amanda178",0,0,0,0,0],['Amanda178',None,None,None,None,None])
+
+'''''''''
+userRegister(["pkUser","claveusuario","NombreUsuario","Descripcion","Telefono","CorreoElectronico","pkRS","pkIP",EstadoU,fechaCreacion],
+             ["pkUser",MC,MOPRO,MOPERT,MRS,MT],['pkUser',"Face","Twitter","Linkelin","Instagram","Google"])
+             
+             
+             
+             
+userRegister(["Amanda178*/7","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,fecha],
+             ["Amanda178*/7",0,0,0,0,0],['Amanda178*/7',None,None,None,None,None])
+
+userRegister(["Amanda17811","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,fecha],
+             ["Amanda17811",0,0,0,0,0],['Amanda17811',None,None,None,None,None])
+
+userRegister(["Amanda178111","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0.fecha],
+             ["Amanda178111",0,0,0,0,0],['Amanda178111',None,None,None,None,None])
+
+userRegister(["Amanda178","bandoleo","Maria Carmen","El perreo Intenso","585897841","mari@gmail.com","pk","pk",0,fecha],
              ["Amanda178",0,0,0,0,0],['Amanda178',None,None,None,None,None])
 
 
