@@ -66,7 +66,8 @@ class DbFunctions (DataBaseConection):
     def star(self):
         return self.run_query('CALL DataStart ')
 
-
+classe = DbFunctions()
+classe.star()
 '''''''''
 classe = DbFunctions()
 classe.star()
