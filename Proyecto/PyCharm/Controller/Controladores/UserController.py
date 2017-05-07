@@ -110,7 +110,8 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     userObject = claseUsuario.FormarUserObject(userList)
     claseUsuario.insertUser(userObject)
 
-
+userRegister(["jquiro12","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com","pk","pk",1,"fecha"],
+             ["jquiro12",0,0,0,0,0],['jquiro12',None,None,None,None,None])
 
 '''''''''
 actualizarInfo([None,None,None,None,None],2,'jquiro12')

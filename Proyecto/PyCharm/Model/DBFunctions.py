@@ -69,6 +69,8 @@ class DbFunctions (DataBaseConection):
 
 '''''''''
 classe = DbFunctions()
+classe.star()
+classe = DbFunctions()
 
 classe.update("usuario","claveUsuario='ChoriseoX2'","idusuario = 'Amanda17'")
 
