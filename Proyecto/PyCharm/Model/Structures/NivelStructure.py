@@ -5,7 +5,7 @@ class Nivel(object):
 	de la relacion Nivel
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idNivel= None, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, idUsuarioEncargado= None, idEspacioPublico= None, descripcionNivel= None, numeroEspacios= None, numeroNivel= None, fechaCreacion= None):
+	def __init__(self, idNivel= None, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, idUsuarioEncargado= None, idEspacioPublico= None, descripcionNivel= None, numeroNivel= None, fechaCreacion= None):
 		self.idNivel = idNivel 
 		self.idBloque = idBloque 
 		self.idSede = idSede 
@@ -14,7 +14,6 @@ class Nivel(object):
 		self.idUsuarioEncargado = idUsuarioEncargado 
 		self.idEspacioPublico = idEspacioPublico 
 		self.descripcionNivel = descripcionNivel 
-		self.numeroEspacios = numeroEspacios 
 		self.numeroNivel = numeroNivel 
 		self.fechaCreacion = fechaCreacion 
 
@@ -91,15 +90,6 @@ class Nivel(object):
 
 
 
-	#Getters y Setters de numeroEspacios
-
-	def getNumeroEspacios(self):
-		return self.numeroEspacios
-	def setNumeroEspacios(self,numeroEspacios):
-		self.numeroEspacios = numeroEspacios
-
-
-
 	#Getters y Setters de numeroNivel
 
 	def getNumeroNivel(self):
@@ -119,4 +109,4 @@ class Nivel(object):
 
 
 
-#Autogenerado: 05/06/17 12:11:06
+#Autogenerado: 05/06/17 23:33:58

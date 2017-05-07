@@ -10,9 +10,9 @@ import time
 '''
 En el Formulario, la lista se entregara de la Sigt manera
 
-[pk,fkUser,'nombre','nr sedes', 'dec', fkPermiso, fkredesSo,telefonos]
-
-crearOrg('Amanda17',['pk',None,None,None,None,None],['pk','nombre',0, 'dec','fkPermiso', 'fkredesSo','telefonos','estado'])
+redesSociales[pk,[ATRIBUTOS]]
+    permisosEstandarlist[ATRIBUTOS] -> osea sin campo de pk
+    orgList[pk,pk,NombreOrg,descrip_Org,pkPer,pkRedes,telefonoOrg,estadoOrg(1),fechaCreacion]
 
 '''
 
@@ -30,31 +30,18 @@ def generarPkOrg(user_pk,orgName):
 
     return pkOrg
 
-'''
-
-def crearOrg(userPk,redesSocialesList,orgList):
-
-    permisosPk = 'theBoss'
-    redesSocialesPk = insertarRedesSociales(redesSocialesList)
-    pkOrg = generarPkOrg(userPk,orgList[1])
-
-    orgList[0] = pkOrg
-    orgList[4] = permisosPk
-    orgList[5] = redesSocialesPk
-
-    clase =DbFunctionOrganizacion()
-    clase.objetInsert(orgList)
-
-    #Registrar en OrgUsuario
-    bossAsignation(userPk,pkOrg,'NombrePila')
-
-'''
 
 
 '''
     redesSociales[pk,[ATRIBUTOS]]
     permisosEstandarlist[ATRIBUTOS] -> osea sin campo de pk
-    orgList[pk,pk,NombreOrg,descrip_Org,pkPer,pkRedes,telefonoOrg,estadoOrg(1),fechaCreacion]
+    orgList[pk,pk,NombreOrg,descrip_Org,pkPer,pkRedes,telefonoOrg,estadoOrg(1),fechaCreacion, tipoEnrrol]
+    
+    ENROLL:
+    
+        1 -> Solo invitacion
+        2 -> tambien Solicitud
+        3 -> Libre
 
 '''
 def crearOrg(userPk,  orgList ,redesSocialesList, permisosEstandarList,nombrePila):
@@ -97,7 +84,6 @@ def crearOrg(userPk,  orgList ,redesSocialesList, permisosEstandarList,nombrePil
     bossAsignation(userPk,consecutivo, nombrePila)
 
 
-
 def obtenerOrg(orgPk):
     print 'Organizacion Controlador - obtenerOrg'
 
@@ -106,30 +92,38 @@ def obtenerOrg(orgPk):
 
 
 def actualizarRedes(pkOrgCreador,pkOrgConsecutivo, listActualizacion):
+    print 'Organizacion Controlador - actualizarRedes'
     claseDb = DbFunctionOrganizacion()
     objetoOrg = claseDb.obtenerOrg(pkOrgCreador,pkOrgConsecutivo)
 
-    pk = pkOrgCreador + "_$_" + str(pkOrgConsecutivo)
-    listActualizacion.insert(0,pk)
+    pk_Redes_Sociales = pkOrgCreador + "_$_" + str(pkOrgConsecutivo)
 
+    claseDb.configRedesSociales('GenericNull',pkOrgCreador,pkOrgConsecutivo )
 
-    primaryKey = actualizarRedesSociales(objetoOrg.getIdRedesSociales(),listActualizacion,'Organizacion')
+    primaryKey = actualizarRedesSociales(pk_Redes_Sociales, listActualizacion)
 
-    return claseDb.actualizarFks(pkOrgCreador,pkOrgConsecutivo,'idRedesSociales',primaryKey)
+    claseDb.configRedesSociales(primaryKey,pkOrgCreador,pkOrgConsecutivo)
+
 
 def actualizarPermisos(pkOrgCreador,pkOrgConsecutivo, listActualizacion):
+    print 'Organizacion Controlador - actualizarPermisos'
+
     claseDb = DbFunctionOrganizacion()
-    objetoOrg = claseDb.obtenerOrg(pkOrgCreador,pkOrgConsecutivo)
 
     primaryKey = actualizarPermiso(listActualizacion)
 
-    return claseDb.actualizarFks(pkOrgCreador,pkOrgConsecutivo,'idPermisosEstandar',primaryKey)
+    return claseDb.configPermisosEstandar(primaryKey,pkOrgCreador,pkOrgConsecutivo)
+
+
+
+
 '''
     1 -> Basicos Descripcion y Telefono [NOMBRE,DESC,TELEFONO]
     3 -> Permisos Estandar
     2 -> Redes Sociales 
     0 -> cerrar
     4 -> Abrir Org
+    5 -> cambiar Tipo Enrrol
 
 '''
 
@@ -149,17 +143,36 @@ def actualizar(tipoActualizacion,pkOrgCreador,pkOrgConsecutivo, listActualizacio
         pass
     elif tipoActualizacion == 4:
         return clase.abrirOrg(pkOrgCreador, pkOrgConsecutivo)
+    elif tipoActualizacion == 5:
+        return clase.camiarEnroll(pkOrgCreador,pkOrgConsecutivo, listActualizacion)
+
+def consultar(id_User_Creador,id_Consecutivo = None):
+    print 'Organizacion Controlador - consultar'
+    clase_BD = DbFunctionOrganizacion()
+
+    if id_Consecutivo == None:
+        condition = "idUsuarioCreador = '{}'".format(id_User_Creador)
+    else:
+
+        condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(id_User_Creador,id_Consecutivo)
+
+    return clase_BD.consultarOrg(condition)
 
 
 
-actualizar(2,'jquiro12',3,['Fb','twir','Lik','Ins','go'])
+
 
 '''
+actualizar(5,'jquiro12',1,2)
+actualizarPermisos('jquiro12',1,[0,1,1,1,0,1,0,1,0,1,0])
+
+print consultar('jquiro12',4)
+actualizar(2,'jquiro12',3,[None,None,None,None,None])
 actualizar(1,'jquiro12',3,['Los ANDES','Dandole Cana','2930926'])
 actualizar(4,'jquiro12',2,None)
 
 crearOrg('jquiro12',
-         ['pk','pk','NombreOrg','descrip_Org','pkPer','pkRedes','telefonoOrg',1,'fechaCreacion'],
+         ['pk','pk','NombreOrg','descrip_Org','pkPer','pkRedes','telefonoOrg',1,'fechaCreacion',1],
          ['pk','Face','Twitter','Linkedin','instagram','Google'],
          [1,1,1,1,1,1,1,1,1,1,1],
          'El Gonzo'

@@ -5,14 +5,14 @@ class Bloque(object):
 	de la relacion Bloque
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, idUsuarioEncargado= None, descripcionBloqe= None, numeroNiveles= None, fechaCreacion= None):
+	def __init__(self, idBloque= None, idSede= None, idOrgCreador= None, idOrgConsecutivo= None, nombreBloque= None, idUsuarioEncargado= None, descripcionBloqe= None, fechaCreacion= None):
 		self.idBloque = idBloque 
 		self.idSede = idSede 
 		self.idOrgCreador = idOrgCreador 
 		self.idOrgConsecutivo = idOrgConsecutivo 
+		self.nombreBloque = nombreBloque 
 		self.idUsuarioEncargado = idUsuarioEncargado 
 		self.descripcionBloqe = descripcionBloqe 
-		self.numeroNiveles = numeroNiveles 
 		self.fechaCreacion = fechaCreacion 
 
 
@@ -52,6 +52,15 @@ class Bloque(object):
 
 
 
+	#Getters y Setters de nombreBloque
+
+	def getNombreBloque(self):
+		return self.nombreBloque
+	def setNombreBloque(self,nombreBloque):
+		self.nombreBloque = nombreBloque
+
+
+
 	#Getters y Setters de idUsuarioEncargado
 
 	def getIdUsuarioEncargado(self):
@@ -70,15 +79,6 @@ class Bloque(object):
 
 
 
-	#Getters y Setters de numeroNiveles
-
-	def getNumeroNiveles(self):
-		return self.numeroNiveles
-	def setNumeroNiveles(self,numeroNiveles):
-		self.numeroNiveles = numeroNiveles
-
-
-
 	#Getters y Setters de fechaCreacion
 
 	def getFechaCreacion(self):
@@ -89,4 +89,4 @@ class Bloque(object):
 
 
 
-#Autogenerado: 05/06/17 12:11:06
+#Autogenerado: 05/06/17 23:33:57

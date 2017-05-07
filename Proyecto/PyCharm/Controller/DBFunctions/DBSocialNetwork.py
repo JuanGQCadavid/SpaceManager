@@ -23,20 +23,18 @@ class DBSocialNetwork(DbFunctions):
             return primaryKey
 
     def generarRedessocialesObject(self, socialNetworkList):
-
+        print 'Redes Sociales DB - generarRedessocialesObject'
         primaryKey = self.generarPrimarykey(socialNetworkList)
 
         # Creamos el Objeto por el constructor
-        redessocialesNewObecjt = Redessociales(primaryKey,
-                                                socialNetworkList[1],
-                                                socialNetworkList[2],
-                                                socialNetworkList[3],
-                                                socialNetworkList[4],
-                                                socialNetworkList[5])
+        redessocialesNewObecjt = Redessociales(idRedesSociales= primaryKey, faceBook= socialNetworkList[1],
+                                               twitter= socialNetworkList[2], linkedin= socialNetworkList[3],
+                                               instagram= socialNetworkList[4], google= socialNetworkList[5])
         # Retornamos el objeto
         return redessocialesNewObecjt
 
     def insertRedessociales(self, redessocialesObject) :
+        print 'Redes Sociales DB - insertRedessociales'
 
         # Si el objeto es un generic, simplemnete lo devolvemos como est, si no creamos el registro.
 
@@ -64,7 +62,7 @@ class DBSocialNetwork(DbFunctions):
                 return None
 
     def actualizarRedes(self,listaPropiedades):
-
+        print 'Redes Sociales DB - actualizarRedes'
         sets = "FaceBook = '{}',Twitter = '{}', Linkedin = '{}',Instagram = '{}', Google = '{}'".format(listaPropiedades[1],
                                                                                                         listaPropiedades[2],
                                                                                                         listaPropiedades[3],

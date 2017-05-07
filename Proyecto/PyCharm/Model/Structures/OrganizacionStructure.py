@@ -5,17 +5,17 @@ class Organizacion(object):
 	de la relacion Organizacion
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idUsuarioCreador= None, consecutivoOrg= None, nombre_Org= None, numero_Sedes= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None, estadoOrg= None, fechaCreacion= None):
+	def __init__(self, idUsuarioCreador= None, consecutivoOrg= None, nombre_Org= None, descripcion_Org= None, idPermisosEstandar= None, idRedesSociales= None, telefonoOrg= None, estadoOrg= None, fechaCreacion= None, tipoEnroll= None):
 		self.idUsuarioCreador = idUsuarioCreador 
 		self.consecutivoOrg = consecutivoOrg 
 		self.nombre_Org = nombre_Org 
-		self.numero_Sedes = numero_Sedes 
 		self.descripcion_Org = descripcion_Org 
 		self.idPermisosEstandar = idPermisosEstandar 
 		self.idRedesSociales = idRedesSociales 
 		self.telefonoOrg = telefonoOrg 
 		self.estadoOrg = estadoOrg 
 		self.fechaCreacion = fechaCreacion 
+		self.tipoEnroll = tipoEnroll 
 
 
 	#Getters y Setters de idUsuarioCreador
@@ -42,15 +42,6 @@ class Organizacion(object):
 		return self.nombre_Org
 	def setNombre_Org(self,nombre_Org):
 		self.nombre_Org = nombre_Org
-
-
-
-	#Getters y Setters de numero_Sedes
-
-	def getNumero_Sedes(self):
-		return self.numero_Sedes
-	def setNumero_Sedes(self,numero_Sedes):
-		self.numero_Sedes = numero_Sedes
 
 
 
@@ -108,5 +99,14 @@ class Organizacion(object):
 
 
 
+	#Getters y Setters de tipoEnroll
 
-#Autogenerado: 05/06/17 12:11:06
+	def getTipoEnroll(self):
+		return self.tipoEnroll
+	def setTipoEnroll(self,tipoEnroll):
+		self.tipoEnroll = tipoEnroll
+
+
+
+
+#Autogenerado: 05/06/17 23:33:58

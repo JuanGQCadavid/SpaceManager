@@ -12,22 +12,23 @@ class DbFunctionOrganizacion (DbFunctions) :
                                 nombre_Org = orgList[2], descripcion_Org = orgList[3],
                                 idPermisosEstandar = orgList[4], idRedesSociales = orgList[5],
                                 telefonoOrg = orgList[6],estadoOrg  = orgList[7],
-                                fechaCreacion = orgList[8]
+                                fechaCreacion = orgList[8],tipoEnroll= orgList[9]
                                 )
 
         return nuevaOrg
 
     def insertOrg (self, nuevaOrg) :
         print 'organizacion DB - insertOrg'
-        values = "'{}',{},'{}','{}','{}','{}','{}',{},'{}'".format(nuevaOrg.getIdUsuarioCreador(),
-                                                              nuevaOrg.getConsecutivoOrg(),
-                                                              nuevaOrg.getNombre_Org(),
-                                                              nuevaOrg.getDescripcion_Org(),
-                                                              nuevaOrg.getIdPermisosEstandar(),
-                                                              nuevaOrg.getIdRedesSociales(),
-                                                              nuevaOrg.getTelefonoOrg(),
-                                                              nuevaOrg.getEstadoOrg(),
-                                                              nuevaOrg.getFechaCreacion())
+        values = "'{}',{},'{}','{}','{}','{}','{}',{},'{}',{}".format(nuevaOrg.getIdUsuarioCreador(),
+                                                                      nuevaOrg.getConsecutivoOrg(),
+                                                                      nuevaOrg.getNombre_Org(),
+                                                                      nuevaOrg.getDescripcion_Org(),
+                                                                      nuevaOrg.getIdPermisosEstandar(),
+                                                                      nuevaOrg.getIdRedesSociales(),
+                                                                      nuevaOrg.getTelefonoOrg(),
+                                                                      nuevaOrg.getEstadoOrg(),
+                                                                      nuevaOrg.getFechaCreacion(),
+                                                                      nuevaOrg.getTipoEnroll())
 
         try:
             result = self.insertInto("Organizacion", values)
@@ -95,5 +96,17 @@ class DbFunctionOrganizacion (DbFunctions) :
                                                                                       listaDatosBasicos[1],
                                                                                       listaDatosBasicos[2])
         condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pkOrgCreador, pkOrgconsecutivo)
+
+        return self.update('Organizacion', sets, condition)
+
+    def consultarOrg(self,condition):
+        print 'organizacion DB - consultarOrg'
+        return self.selectWhere('*','Organizacion',condition)
+
+    def camiarEnroll(self,pk_Org_Creador, pk_Org_Consecutivo, tipo):
+        print 'organizacion DB - camiarEnroll'
+
+        sets = "tipoEnroll = {}".format(tipo)
+        condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pk_Org_Creador, pk_Org_Consecutivo)
 
         return self.update('Organizacion', sets, condition)

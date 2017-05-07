@@ -5,14 +5,13 @@ class Sede(object):
 	de la relacion Sede
 	'''
 	#Constructor con paso de parametros 
-	def __init__(self, idSede= None, idOrgUsuarioCreador= None, idOrgContador= None, idDireccionSede= None, idUsuarioEncargado= None, nombreSede= None, numero_Bloques= None, fechaCreacion= None):
+	def __init__(self, idSede= None, idOrgUsuarioCreador= None, idOrgContador= None, idDireccionSede= None, idUsuarioEncargado= None, nombreSede= None, fechaCreacion= None):
 		self.idSede = idSede 
 		self.idOrgUsuarioCreador = idOrgUsuarioCreador 
 		self.idOrgContador = idOrgContador 
 		self.idDireccionSede = idDireccionSede 
 		self.idUsuarioEncargado = idUsuarioEncargado 
 		self.nombreSede = nombreSede 
-		self.numero_Bloques = numero_Bloques 
 		self.fechaCreacion = fechaCreacion 
 
 
@@ -70,15 +69,6 @@ class Sede(object):
 
 
 
-	#Getters y Setters de numero_Bloques
-
-	def getNumero_Bloques(self):
-		return self.numero_Bloques
-	def setNumero_Bloques(self,numero_Bloques):
-		self.numero_Bloques = numero_Bloques
-
-
-
 	#Getters y Setters de fechaCreacion
 
 	def getFechaCreacion(self):
@@ -89,4 +79,4 @@ class Sede(object):
 
 
 
-#Autogenerado: 05/06/17 12:11:06
+#Autogenerado: 05/06/17 23:33:58

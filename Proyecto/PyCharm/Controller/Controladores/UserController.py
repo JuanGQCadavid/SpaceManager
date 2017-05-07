@@ -7,17 +7,19 @@ from  Controller.DBFunctions.DBUser import DbFunctionUser
 from Model.Structures.UsuarioStructure import Usuario
 import time
 
-print 'usuario Controlador'
+
 def actualizarStatement(list,tipo,pk) :
+
+    print 'usuario_Controller actualizarStatement'
     claseFunctionUser = DbFunctionUser()
 
-
     if tipo == 0:
-        return claseFunctionUser.actualizarStatement("usuario","idUsuario",pk,"claveUsuario",list,0)
+        return claseFunctionUser.actualizarStatement("Usuario","idUsuario",pk,"claveUsuario",list,0)
     else:
-        return claseFunctionUser.actualizarStatement("usuario", "idUsuario", pk, "estadoUsuario", list, 4)
+        return claseFunctionUser.actualizarStatement("Usuario", "idUsuario", pk, "estadoUsuario", list, 4)
 
 def actualizarInfo(list,tipo,user_PK):
+    print 'usuario_Controller actualizarInfo'
     claseFunctionUser = DbFunctionUser()
     '''''''''
         0 -> Cambio de Clave FUNCIONANDO
@@ -46,7 +48,7 @@ def actualizarInfo(list,tipo,user_PK):
         pass
 
 def userLogin(userList):
-
+    print 'usuario_Controller userLogin'
 
     #building the Object
 
@@ -71,6 +73,8 @@ def userLogin(userList):
         print "No parse, no lo puedo dejar pasar"
 
 def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
+    print 'usuario_Controller userRegister'
+
     #Creando Classes
 
     claseSocialNetwor = DBSocialNetwork()
@@ -107,9 +111,10 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     claseUsuario.insertUser(userObject)
 
 
-actualizarInfo([None,None,None,None,None],2,'jquiro12')
 
 '''''''''
+actualizarInfo([None,None,None,None,None],2,'jquiro12')
+
 userRegister(["pkUser","claveusuario","NombreUsuario","Descripcion","Telefono","CorreoElectronico","pkRS","pkIP",EstadoU,fechaCreacion],
              ["pkUser",MC,MOPRO,MOPERT,MRS,MT],['pkUser',"Face","Twitter","Linkelin","Instagram","Google"])
 
