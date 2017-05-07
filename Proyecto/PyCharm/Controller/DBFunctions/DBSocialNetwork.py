@@ -2,11 +2,13 @@ from Model.DBFunctions import DbFunctions
 from Model.Structures.RedessocialesStructure import Redessociales
 import mysql
 
-print 'Redes Sociales DB'
+
 
 class DBSocialNetwork(DbFunctions):
 
     def generarPrimarykey(self, socialNetworkList):
+        print 'Redes Sociales DB - generarPrimarykey'
+
         primaryKey = socialNetworkList[0]
 
         if (socialNetworkList[1] == None and socialNetworkList[2] == None
@@ -60,6 +62,18 @@ class DBSocialNetwork(DbFunctions):
             except(mysql.connector.errors.IntegrityError), e:
                 result = "ERROR: Tenemos problema de Integridad En INSERTAR Social NETWORk"
                 return None
+
+    def actualizarRedes(self,listaPropiedades):
+
+        sets = "FaceBook = '{}',Twitter = '{}', Linkedin = '{}',Instagram = '{}', Google = '{}'".format(listaPropiedades[1],
+                                                                                                        listaPropiedades[2],
+                                                                                                        listaPropiedades[3],
+                                                                                                        listaPropiedades[4],
+                                                                                                        listaPropiedades[5])
+
+        conditions = "idRedesSociales = '{}'".format(listaPropiedades[0])
+
+        return self.update('RedesSociales',sets,conditions)
 
 
 

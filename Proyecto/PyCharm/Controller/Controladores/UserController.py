@@ -17,8 +17,8 @@ def actualizarStatement(list,tipo,pk) :
     else:
         return claseFunctionUser.actualizarStatement("usuario", "idUsuario", pk, "estadoUsuario", list, 4)
 
-def actualizarInfo(list,tipo,pk):
-
+def actualizarInfo(list,tipo,user_PK):
+    claseFunctionUser = DbFunctionUser()
     '''''''''
         0 -> Cambio de Clave FUNCIONANDO
         4 -> Cambio de Estado FUNCIONANDO
@@ -28,14 +28,21 @@ def actualizarInfo(list,tipo,pk):
     '''''''''
 
     if tipo == 0 or tipo == 4:
-        return actualizarStatement(list,tipo,pk)
+        return actualizarStatement(list,tipo,user_PK)
     elif tipo == 1:
-        claseFunctionUser = DbFunctionUser()
-        return claseFunctionUser.actualizarUsuario(list,pk)
+
+        return claseFunctionUser.actualizarUsuario(list,user_PK)
     elif tipo == 2:
-        return actualizarRedesSociales(pk,list,"usuario")
+
+        claseFunctionUser.actualizarRedesS(user_PK,'GenericNull')
+
+        pkredes =  actualizarRedesSociales(user_PK,list)
+
+        claseFunctionUser.actualizarRedesS(user_PK, pkredes)
+
     elif tipo == 3:
-        return actualizarPrivacidad(pk,list)
+        return actualizarPrivacidad(user_PK,list)
+
         pass
 
 def userLogin(userList):
@@ -100,7 +107,7 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     claseUsuario.insertUser(userObject)
 
 
-
+actualizarInfo([None,None,None,None,None],2,'jquiro12')
 
 '''''''''
 userRegister(["pkUser","claveusuario","NombreUsuario","Descripcion","Telefono","CorreoElectronico","pkRS","pkIP",EstadoU,fechaCreacion],

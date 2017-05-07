@@ -6,6 +6,8 @@ print 'Usuario Db'
 
 class DbFunctionUser(DbFunctions):
 
+    def actualizarRedesS(self,userPk,redesSocialesPk):
+        return self.update('Usuario', "idRedesSociales = '{}'".format(redesSocialesPk), "idUsuario = '{}'".format(userPk))
 
     def actualizarUsuario(self,list,pk):
 
