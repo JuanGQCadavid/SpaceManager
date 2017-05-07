@@ -58,8 +58,21 @@ class DBOrgUser(DbFunctions):
         print 'Org user Db - obtenerUsuarioOrgComoObject'
         return self.generarObjeto(self.obtenerOrgUser(primaryKey))
 
-    print 'Org user Db - obtenerUsuarioOrgComoObject'
-    def acceptarInivitacion(self, pkOrgUser, pkPermisos):
-        self.actualizarStatement('OrgUsuario','idOrgUsuario',pkOrgUser,'idPermisos',pkPermisos,0)
-        self.cambiarEstado(pkOrgUser,1)
-        pass
+    def actualizarOrgUserDB(self,idOrguser,idPermisos,nombrePila,fechaActual):
+        print 'Org user Db - actualizarOrgUserDB'
+        sets = "idPermisos = '{}', nombrePilaUser = '{}', estadoUsuario = 1, fechaEstado = '{}'".format(idPermisos,
+                                                                                                        nombrePila,
+                                                                                                        fechaActual)
+
+        condition = "idOrgUsuario = '{}'".format(idOrguser)
+
+        return self.update('OrgUsuario', sets, condition)
+
+    def mostrarOrgPertenece(self,idUser):
+        return self.selectWhere('*', 'OrgUsuario', "idUsuario = '{}'".format(idUser))
+
+    def mostrarOrgMiembros(self,idOrgCreador,idOrgContador, estadoMostrar):
+
+        condition= "idOrgUsuarioCreador = '{}'AND idOrgContador = {} AND estadoUsuario = {}".format(idOrgCreador,idOrgContador,estadoMostrar)
+
+        return self.selectWhere('*', 'OrgUsuario', condition)

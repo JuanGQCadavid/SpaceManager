@@ -110,3 +110,8 @@ class DbFunctionOrganizacion (DbFunctions) :
         condition = "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pk_Org_Creador, pk_Org_Consecutivo)
 
         return self.update('Organizacion', sets, condition)
+
+    def obtenerPermisosEstandar(self,pk_Org_Creador, pk_Org_Consecutivo):
+
+        return  (self.selectWhere( 'idPermisosEstandar', 'Organizacion',
+                                  "idUsuarioCreador = '{}' AND consecutivoOrg = {}".format(pk_Org_Creador, pk_Org_Consecutivo)))[0][0]

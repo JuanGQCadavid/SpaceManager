@@ -140,7 +140,7 @@ def actualizar(tipoActualizacion,pkOrgCreador,pkOrgConsecutivo, listActualizacio
     elif tipoActualizacion == 2:
         return actualizarRedes(pkOrgCreador,pkOrgConsecutivo, listActualizacion)
     elif tipoActualizacion == 3:
-        pass
+        return actualizarPermisos(pkOrgCreador,pkOrgConsecutivo, listActualizacion)
     elif tipoActualizacion == 4:
         return clase.abrirOrg(pkOrgCreador, pkOrgConsecutivo)
     elif tipoActualizacion == 5:
@@ -162,7 +162,9 @@ def consultar(id_User_Creador,id_Consecutivo = None):
 
 
 
+
 '''
+actualizar(3,'jquiro12',1,[0,1,0,1,0,1,0,1,0,1,0])
 actualizar(5,'jquiro12',1,2)
 actualizarPermisos('jquiro12',1,[0,1,1,1,0,1,0,1,0,1,0])
 

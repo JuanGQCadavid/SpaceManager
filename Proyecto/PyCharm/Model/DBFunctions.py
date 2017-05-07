@@ -63,7 +63,8 @@ class DbFunctions (DataBaseConection):
         print "actualizarStatement"
         return self.update(tabla,sets,where)
 
-
+    def star(self):
+        return self.run_query('CALL DataStart ')
 
 
 '''''''''
