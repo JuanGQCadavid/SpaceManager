@@ -1,0 +1,1 @@
+INSERT INTO OrgUsuario VALUES ('Amanda17_nombre@Amanda17','Amanda17','Amanda17_nombre','10101010101','jquiro12','1',STR_TO_DATE( '01-09-1986', '%d-%m-%Y' ))
