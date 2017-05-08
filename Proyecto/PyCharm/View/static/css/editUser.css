@@ -1,0 +1,56 @@
+h1 {
+	text-align: center;	
+}
+
+* {
+	border: 2px solid #eee;
+}
+
+body {
+	width: 100%;
+	display: block;
+}
+
+form {
+	width: 100%;
+	display: block;
+	overflow: scroll;
+}
+
+ input {
+    width: 25%;
+    margin: 0 auto;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+input[type=checkbox] {
+	width: 25%;
+    display: inline-block;
+    box-sizing: border-box;	
+}
+
+.cont {
+	width: 100%;
+	margin: 0 auto;
+	display: inline-flex;
+}
+
+.obligatorio {
+	float: left;
+	width: 50%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.opcional {
+	float: left;
+	width: 50%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.pie {
+	margin: 0 auto;
+	margin-left: 40%;
+}
