@@ -51,6 +51,7 @@ nav {
 nav ul {
   list-style: none;
   overflow: hidden;
+  background-color: White;
 }
  
 nav ul li {
