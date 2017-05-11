@@ -17,26 +17,26 @@ body {
 	float: left;
 	display: inline-grid;
 	border: 2px solid #eee;
-	width: 40%;
+	width: 30%;
 	height: 100%
 }
 
 label {
 	margin: 0 auto;
-	padding-left: 20%;
-	padding-right: 30%;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .rigth {
 	float: right;
 	display: inline-grid;
 	border: 2px solid #eee;
-	width: 40%;
+	width: 60%;
 	height: 100%
 }
 
 .left input[type="text"] {
-	width: 60%;
+	width: 40%;
 }
 
 .botones {
@@ -46,4 +46,14 @@ label {
 
 input[type="submit"], input[type="reset"], button {
 	padding: 0 10px;
+}
+
+.rigth input[type="number"] {
+	width: 40px;
+}
+
+.dia-hora {
+	display: block;
+	width: inherit;
+	float: right;
 }
