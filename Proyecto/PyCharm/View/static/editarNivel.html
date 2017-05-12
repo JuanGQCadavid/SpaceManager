@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Editar Nivel - SpaceManager</title>
+    <link rel="stylesheet" type="text/css" href="css/crearNivel.css">
+  </head>
+  <body>
+    <div class="container">
+  		<div class="nombre">
+        <form>
+          Nombre del nivel<input type="number" name="consecutivo" required min="0">
+          <input type="submit" name="form" value="Guardar">
+    		</form>
+        <form>
+          Descripcion<input type="text" name="descripcion" required maxlength="140" placeholder=     Descripcion del nivel">
+          <input type="submit" name="form" value="Guardar">
+        </form>
+      </div>
+      <div class="usuarioEncargado">
+      
+  		<form>
+        Usuario Encargado
+				  <input type="text" name="userEncargado" required maxlength="97" placeholder="Buscar por nombre o por id"><br>
+          <input type="submit" name="busqueda" value="Buscar"><br>
+          <br>
+      
+			 <label>Seleccione un usuario encargado del nivel</label>
+			 <select name="Usuario encargado" required>
+				  <option value="01">Usuario1</option>
+				  <option value="02">Usuario2</option>
+				  <option value="03">Usuario3</option>
+			  </select>
+			   <br>
+         <input type="submit" name="form" value="Guardar">
+      </form>
+
+      </div>
+
+      <form>
+        <div class="checkbox">
+          <label>Seleccione los espacios publicos que tiene el nivel</label>
+          <input type="checkbox" name="cocineta">Cocineta
+          <input type="checkbox" name="baño">Baño
+          <input type="checkbox" name="sala">Sala De Estar
+        </div>
+        <input type="submit" name="form" value="Guardar">
+      </form>
+
+      <div class="botones">
+  			 <button onclick="Volver()">Volver</button>
+	  	</div>
+
+      </div>
+  </body>
+
+</html>

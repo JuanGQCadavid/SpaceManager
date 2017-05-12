@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+b {
+	text-align: left;
+	padding: 0 10px;
+}
+
+body {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.left {
+	float: left;
+	display: inline-flex;
+	border: 2px solid #eee;
+	width: 40%;
+	height: 100%
+}
+
+label {
+	margin: 0 auto;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.rigth {
+	float: right;
+	display: inline-grid;
+	border: 2px solid #eee;
+	width: 59%;
+	height: 100%
+}
+
+.left input[type="text"] {
+	width: 40%;
+}
+
+.botones {
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+input[type="submit"], input[type="reset"], button {
+	padding: 0 10px;
+}
+
+.rigth input[type="number"] {
+	width: 40px;
+}
+
+.dia-hora {
+	display: block;
+	width: inherit;
+	float: right;
+}
