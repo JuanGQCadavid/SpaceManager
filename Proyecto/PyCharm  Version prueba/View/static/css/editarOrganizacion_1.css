@@ -1,0 +1,14 @@
+form {
+	margin: 0 auto;
+	text-align: center;
+	width: 80%;
+}
+
+.nombre, .descripcion  {
+	display: inline-flex;
+}
+
+.pie {
+	margin: 0 auto;
+	padding-left: 48%;
+}

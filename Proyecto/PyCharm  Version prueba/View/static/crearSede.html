@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Crear Sede - SpaceManager</title>
+    <link rel="stylesheet" type="text/css" href="css/crearSede.css">
+    <h1>Crear Sede</h1>
+  </head>
+  <body>
+  	<form>
+	  	<div class="left">
+	  	
+	  		Nombre de la sede
+	  		<input type="text" name="nombre" required maxlength="45" placeholder="Nombre de la sede"><br>
+	  		Direccion
+	  		 <select name="Departamento" required>
+	  			<option value="01">Antioquia</option>
+	  			<option value="02">Amazonas</option>
+	  			<option value="03">Choco</option>
+	  			<option value="04">La Guajira</option>
+			</select>
+	  		 <select name="Ciudad" required>
+	  			<option value="01">Medellin</option>
+	  			<option value="02">Leticia</option>
+	  			<option value="03">Quibdo</option>
+	  			<option value="04">Riohacha</option>
+			</select>
+			<input type="text" name="direccion" required maxlength="45" placeholder="Direccion"><br>
+			
+			
+				Usuario Encargado
+				<input type="text" name="userEncargado" required maxlength="97" placeholder="Buscar por nombre o 	por id"><br>
+				<input type="submit" name="busqueda" value="Buscar"><br>
+			
+			
+			<select name="Usuario encargado" required>
+				<option value="01">Usuario1</option>
+				<option value="02">Usuario2</option>
+				<option value="03">Usuario3</option>
+			</select>	
+	  	
+	  	</div>
+
+	  	<div class="rigth">
+	  		<b>Dias Habiles Rango de horas</b>
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="lunes"><label>Lunes</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="martes"><label>Martes</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="miercoles"><label>Miercoles</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="jueves"><label>Jueves</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="viernes"><label>Viernes</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="sabado"><label>Sabado</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="dia-hora">
+	  			<input type="checkbox" name="domingo"><label>Domingo</label>
+	  			<label>Desde</label><input type="number" name="desde" min="6" max="21">
+	  			<label>Hasta</label><input type="number" name="desde" min="6" max="21">
+	  				
+	  		</div><br>
+
+	  		<div class="botones">
+	  			<input type="submit" name="form" value="Crear">
+	  			<input type="reset" value="Limpiar">
+	  			<button onclick="Cancelar()">Cancelar</button>
+	  		</div>
+	  	</div>
+	</form>
+  </body>
+</html>

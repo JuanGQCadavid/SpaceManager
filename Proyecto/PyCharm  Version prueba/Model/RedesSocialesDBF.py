@@ -16,7 +16,7 @@ class RedesSocialesDBF(DataBaseConection):
 
     def insertarRedesSociales(self,idRedesSociales,FaceBook, Twitter, Linkedin, Instagram, Google):
         return self.run_query("SELECT insertar_RedesSociales('{}','{}','{}','{}','{}','{}')".format(idRedesSociales,FaceBook, Twitter,
-                                                                                                     Linkedin,Instagram,Google))
+                                                                                                     Linkedin,Instagram,Google))[0][0]
 
     def consultarRedesSociales(self, idRedesSociales):
         return self.generarRedessocialesObject(self.run_query("CALL mostrar_RedesSociales('{}') ".format(idRedesSociales))[0][0])
@@ -29,8 +29,9 @@ class RedesSocialesDBF(DataBaseConection):
                                                   redessocialesObject.getInstagram(),
                                                   redessocialesObject.getGoogle()))[0][0]
 
-
+'''
 
 clase = RedesSocialesDBF()
 
-print clase.insertarRedesSociales('Ermosa','FB','FB','FB','FB','FB')
+print clase.insertarRedesSociales('fghdfjg','FB','FB','FB','FB','FB')
+'''

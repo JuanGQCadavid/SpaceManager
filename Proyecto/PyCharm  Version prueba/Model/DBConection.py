@@ -1,6 +1,6 @@
 # -*- coding: cp1252 -*-
 
-import mysql.connector
+import MySQLdb
 
 
 class DataBaseConection(object):
@@ -15,8 +15,8 @@ class DataBaseConection(object):
 
     def createDBData(self):
         self.DB_HOST = '127.0.0.1' 
-        self.DB_USER = 'adminMySpace' 
-        self.DB_PASS = 'asd123' 
+        self.DB_USER = 'adminMySpace'
+        self.DB_PASS = 'asd123'
         self.DB_NAME = 'SpaceAdmind'
 
 
@@ -25,23 +25,21 @@ class DataBaseConection(object):
 
         print query
 
-        conn = mysql.connector.connect(user=self.DB_USER, password=self.DB_PASS,
-                                        host=self.DB_HOST,
-                                        database=self.DB_NAME)
+        datos = [self.DB_HOST, self.DB_USER, self.DB_PASS, self.DB_NAME]
+
+        conn = MySQLdb.connect(*datos)
         cursor = conn.cursor()
         cursor.execute(query)
 
 
-
- 
         if query.upper().startswith('SELECT'):
-
-
             try:
-                return cursor.fetchall()
-            except(mysql.connector.Error), e:
-                return cursor.fetchone()
-            
+                resp =  cursor.fetchall()
+            except(MySQLdb.Error), e:
+                resp = cursor.fetchone()
+
+            conn.commit()  # Hacer efectiva la escritura de datos
+            return resp
 
 
         elif query.upper().startswith('DESCRIBE'):
@@ -49,6 +47,7 @@ class DataBaseConection(object):
 
             for datos in cursor.fetchall():
                 data.append(datos[0])
+            return data
 
 
 
@@ -58,16 +57,13 @@ class DataBaseConection(object):
             for datos in cursor.fetchall():
                 datos = datos[0]
                 data.append(datos[0].upper() + datos[1:])# Poner la primera letra en mayuscula
+            return data
 
-            
-        else: 
-            conn.commit()              # Hacer efectiva la escritura de datos 
-            data = None 
- 
+
         cursor.close()                 # Cerrar el cursor 
         conn.close()                   # Cerrar la conexión 
  
-        return data
+
     
 
 '''

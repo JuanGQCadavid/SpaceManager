@@ -40,7 +40,8 @@ class UsuarioDBF(DataBaseConection):
         if respuesta != None:
             return respuesta[0]
 
-
+'''
 clase =UsuarioDBF()
 
 print clase.userLogin('0','1')
+'''

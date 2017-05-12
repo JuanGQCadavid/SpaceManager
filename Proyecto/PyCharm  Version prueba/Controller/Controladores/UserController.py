@@ -118,12 +118,18 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
                                         idRedesSociales = userList[6],idPrivacidad = userList[7] )
 
 
-userRegister(["jquiro12","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com"],
-             [0,0,0,0,0],['jquiro12',None,None,None,None,None])
+
+
+'''''''''
+
+
+userRegister(["Anita14","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com"],
+             [0,0,0,0,0],['Anita14',None,None,None,None,None])
 
 userLogin('jquiro12','bandoleo')
 
-'''''''''
+
+
 actualizarInfo([None,None,None,None,None],2,'jquiro12')
 userRegister(["jquiro12","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com"],
              [0,0,0,0,0],['jquiro12',None,None,None,None,None])

@@ -29,6 +29,8 @@ class PrivacidadUsuarioDBF(DataBaseConection):
                                                                                                  MostrarOrgPertenece,
                                                                                                  MostrarRedesSociales,
                                                                                                  MostrarTelefono))[0][0]
-
+'''
 clase = PrivacidadUsuarioDBF()
 print clase.insertarPrivacidad(1,1,0,1,1)
+
+'''
