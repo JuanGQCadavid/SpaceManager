@@ -1,0 +1,1 @@
+select VerboseCompare(5,10);
