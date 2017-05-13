@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 2px solid #eee;
+}
+
+.container {
+	width: 30%;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+table {
+	object-position: center;
+	margin: 0 16%;
+}
