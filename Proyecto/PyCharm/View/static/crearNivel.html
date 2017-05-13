@@ -8,17 +8,18 @@
     <link rel="stylesheet" type="text/css" href="css/crearNivel.css">
   </head>
   <body>
-  	<form>
+  	<form id="nivel">
     <div class="container">
   		<div class="nombre">
-        Nombre del nivel<input type="number" name="consecutivo" required min="0">
-    		Descripcion<input type="text" name="descripcion" required maxlength="140" placeholder="Descripcion del nivel">
+        Nombre del nivel<input type="number" name="consecutivo" required min="0"><br>
+    		<label>Descripcion</label><br>
+        <textarea name="descripcion" form="nivel" required>Descripcion del bloque</textarea>
       </div>
       <div class="usuarioEncargado">
   		Usuario Encargado
 				<input type="text" name="userEncargado" required maxlength="97" placeholder="Buscar por nombre o por id"><br>
 				<input type="submit" name="busqueda" value="Buscar"><br>
-			<br>
+			<br><br>
       
 			<label>Seleccione un usuario encargado del nivel</label>
 			<select name="Usuario encargado" required>
@@ -29,12 +30,13 @@
 			<br>
       </div>
       <div class="checkbox">
-        <label>Seleccione los espacios publicos que tiene el nivel</label>
+        <label>Seleccione los espacios publicos que tiene el nivel</label><br><br>
         <input type="checkbox" name="cocineta">Cocineta
         <input type="checkbox" name="baño">Baño
         <input type="checkbox" name="sala">Sala De Estar
       </div>
       <div class="botones">
+      <br>
 			<input type="submit" name="form" value="Crear">
   			<input type="reset" value="Limpiar">
   			<button onclick="Cancelar()">Cancelar</button>

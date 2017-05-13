@@ -4,21 +4,22 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>Editar Nivel - SpaceManager</title>
+    <title>Crear Espacio - SpaceManager</title>
     <link rel="stylesheet" type="text/css" href="css/crearEspacio.css">
   </head>
   <body>
-  	<form>
+  	<form id="espacio">
     <div class="container">
   		<div class="nombre">
-        Numero del espacio<input type="number" name="consecutivo" required min="0">
-        Capacidad<input type="number" name="consecutivo" required min="0">
-    		Descripcion<input type="text" name="descripcion" required maxlength="140" placeholder="Descripcion del nivel">
+        Numero del espacio<input type="number" name="consecutivo" required min="0"><br>
+        Capacidad<input type="number" name="consecutivo" required min="0"><br>
+    		<label>Descripcion</label><br>
+        <textarea name="descripcion" form="espacio" required>Descripcion del bloque</textarea>
       </div>
 			<br>
       
       <div class="checkbox">
-        <label>Permisos necesarios para reservar este espacio</label>
+        <label>Permisos necesarios para reservar este espacio</label><br><br>
         <input type="checkbox" name="reserva">Reserva
         <input type="checkbox" name="nivel">Nivel
         <input type="checkbox" name="bloque">Bloque
@@ -27,6 +28,7 @@
       </div>
       
       <div class="botones">
+      <br>
 			<input type="submit" name="form" value="Crear">
   			<input type="reset" value="Limpiar">
   			<button onclick="Cancelar()">Cancelar</button>
