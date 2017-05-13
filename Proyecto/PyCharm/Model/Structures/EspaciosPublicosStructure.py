@@ -1,8 +1,8 @@
 # -*- coding: cp1252 -*- 
-class EspaciosPublicos(object):
+class Espaciospublicos(object):
 	'''
 	Clase con Constructor, Getters y Setters
-	de la relacion EspaciosPublicos
+	de la relacion Espaciospublicos
 	'''
 	#Constructor con paso de parametros 
 	def __init__(self, idEspaciosPublcos= None, tieneBanos= None, tieneCocineta= None, tieneSalaEstar= None):
@@ -49,4 +49,4 @@ class EspaciosPublicos(object):
 
 
 
-#Autogenerado: Fri May  5 10:01:52 2017
+#Autogenerado: 05/06/17 23:33:57

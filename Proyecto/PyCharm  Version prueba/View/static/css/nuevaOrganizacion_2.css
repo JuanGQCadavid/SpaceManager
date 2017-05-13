@@ -1,0 +1,24 @@
+.unirse {
+	display: inline-block;
+	float: left;
+	text-align: left;
+	margin: 0 auto;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border-right: 2px solid #eee;
+}
+
+.permisos {
+	display: inline-block;
+	float: right;
+	text-align: left;
+	margin: 0 auto;
+	padding: 12px 20px;
+	box-sizing: border-box;
+}
+
+form {
+	margin: 0 auto;
+	text-align: center;
+	width: 30%;
+}

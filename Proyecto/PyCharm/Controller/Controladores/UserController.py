@@ -110,8 +110,6 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     userObject = claseUsuario.FormarUserObject(userList)
     claseUsuario.insertUser(userObject)
 
-userRegister(["jquiro12","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com","pk","pk",1,"fecha"],
-             ["jquiro12",0,0,0,0,0],['jquiro12',None,None,None,None,None])
 
 '''''''''
 actualizarInfo([None,None,None,None,None],2,'jquiro12')
@@ -121,6 +119,12 @@ userRegister(["pkUser","claveusuario","NombreUsuario","Descripcion","Telefono","
 
 userRegister(["jquiro12","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com","pk","pk",1,"fecha"],
              ["jquiro12",0,0,0,0,0],['jquiro12',None,None,None,None,None])
+             
+userRegister(["jquiro13","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com","pk","pk",1,"fecha"],
+             ["jquiro13",0,0,0,0,0],['jquiro13',None,None,None,None,None])
+
+userRegister(["jquiro14","bandoleo","Juan Gonzalo","El perreo Intenso","3147703216","juangonzalo23@gmail.com","pk","pk",1,"fecha"],
+             ["jquiro14",0,0,0,0,0],['jquiro14',None,None,None,None,None])
              
              
 Probando actualizarInfo

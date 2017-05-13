@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Crear Bloque - SpaceManager</title>
+    <link rel="stylesheet" type="text/css" href="css/crearBloque.css">
+  </head>
+  <body>
+  	<form>
+    <div class="container">
+  		<div class="nombre">
+        Nombre del bloque<input type="number" name="consecutivo" required min="0">
+    		Descripcion<input type="text" name="descripcion" required maxlength="140" placeholder="Descripcion del bloque">
+      </div>
+      <div class="usuarioEncargado">
+  		Usuario Encargado
+				<input type="text" name="userEncargado" required maxlength="97" placeholder="Buscar por nombre o por id"><br>
+				<input type="submit" name="busqueda" value="Buscar"><br>
+			<br>
+      
+			<label>Seleccione un usuario encargado del bloque</label>
+			<select name="Usuario encargado" required>
+				<option value="01">Usuario1</option>
+				<option value="02">Usuario2</option>
+				<option value="03">Usuario3</option>
+			</select>
+			<br>
+      </div>
+      <div class="botones">
+			<input type="submit" name="form" value="Crear">
+  			<input type="reset" value="Limpiar">
+  			<button onclick="Cancelar()">Cancelar</button>
+	  	</div>
+      </div>
+  	</form>
+  </body>
+
+</html>
