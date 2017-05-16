@@ -1,6 +1,4 @@
 
-from Controller.DBFunctions.DBOrgUser import DBOrgUser
-from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
 import time
 
 

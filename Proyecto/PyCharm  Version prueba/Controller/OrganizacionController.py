@@ -2,8 +2,6 @@
 #pragma once
 import time
 
-from Controller.DBFunctions.DBOrganizacion import DbFunctionOrganizacion
-
 from Controller.OrgUsuarioController import bossAsignation
 from Controller.PermisosController import insertarPermiso, actualizarPermiso
 from Controller.RedesSocialesController import insertarRedesSociales, actualizarRedesSociales

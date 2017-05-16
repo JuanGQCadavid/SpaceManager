@@ -136,9 +136,11 @@ def reservarVista(idOrgCreador,idOrgContador,idSede):
 def espacios_Disponibles(idOrgCreador,idOrgContador,idSede,horaInicio,horahoraFin,lunes,martes, miercoles, jueves,viernes, sabado, domingo):
 
 	if request.method == 'GET':
-		print '--------------------'
-		print request.args.get('dias')
-		print '--------------------'
+		print ':('
+
+		#reservar(idEspacio, idNivel, idBloque, idSede, idOrgCreador, idOrgConsecutivo, idUsuario, Lunes, Martes,
+		#		 Miercoles, Jueves, Viernes
+		#		 , Sabado, Domingo, fechaInicio, fechaFin, horaInicio, horaFin):
 
 	horaInicio = datetime.timedelta(hours=int(horaInicio), minutes=0, seconds=0)
 	horahoraFin = datetime.timedelta(hours=int(horahoraFin), minutes=0, seconds=0)
