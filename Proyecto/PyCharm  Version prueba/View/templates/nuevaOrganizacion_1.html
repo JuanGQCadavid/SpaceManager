@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+{% from '_macro.html' import render_Field%}
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -6,25 +9,23 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/nuevaOrganizacion_1.css') }}">
   </head>
   <body>
-  	<form action = "#" method="post">
+  	<form method="post">
   		<div class="nombre">
-  			Nombre de la organizacion
-		  		<input type="text" name="nombre" placeholder="Escribe el nombre de tu organizacion" required maxlength=100 size=40><br><br>
+  			{{render_Field(form.Nombre_Org, class='')}}
   		</div>
   		<div class="descripcion">
-  			Descripcion
-		  	   <input type="text" name="descripcion" placeholder="A que te dedicas ?" maxlength=140 size=40><br><br>
+  			{{render_Field(form.Descripcion, class='')}}
   		</div>
 
   		<div class="opcional">
 
 	  		<h3>Datos Opcionales</h3>
-	  		Facebook <input type="text" name="Facebook"><br>
-	  		Google <input type="text" name="Google"><br>
-	  		Twitter <input type="text" name="Twitter"><br>
-	  		LinkedIn <input type="text" name="LinkedIn"><br>
-	  		Instagram <input type="text" name="Instagram"><br>
-	  		Telefono <input type="text" name="Telefono"><br>
+	  		{{render_Field(form.Facebook, class='')}}<br>
+	  		{{render_Field(form.Google, class='')}}<br>
+	  		{{render_Field(form.Twitter, class='')}}<br>
+	  		{{render_Field(form.LinkedIn, class='')}}<br>
+	  		{{render_Field(form.Instagram, class='')}}<br>
+	  		{{render_Field(form.Telefono, class='')}}<br>
 		</div>
 
 		<div class="pie">

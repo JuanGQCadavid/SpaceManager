@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% from '_macro.html' import render_Field%}
 <html>
   <head>
     <meta charset="UTF-8">
@@ -8,54 +9,27 @@
   <body>
   	<div class="left">
   		<h3>Busqueda por horario</h3>
-  		<form>
-  			<b>Fecha Inicio</b> <input type="date" name="fechaInicio" min="today" required><br>
-  			<b>Hora Inicio</b> <input type="datetime-local" name="horaInicio" required><br>
-  			<b>Fecha Fin</b> <input type="date" name="fechaFin" required><br>
-  			<b>Hora Fin</b> <input type="datetime-local" name="horaFin" required><br>
+  		<form method="post">
+  			<b>{{render_Field(form.Fecha_Inicio, class='')}}</b><br>
+			<b>{{render_Field(form.Fecha_Fin, class='')}}</b><br>
+			<b>{{render_Field(form.Hora_Inicio, class='')}}</b><br>
+			<b>{{render_Field(form.Hora_Fin, class='')}}</b><br>
 
   			<b>Dias</b><br><br>
-  			<input type="checkbox" name="lunes" value="Lunes">Lunes<br>
-  			<input type="checkbox" name="martes" value="Martes">Martes<br>
-  			<input type="checkbox" name="miercoles" value="Miercoles">Miercoles<br>
-  			<input type="checkbox" name="jueves" value="Jueves">Jueves<br>
-  			<input type="checkbox" name="viernes" value="Viernes">Viernes<br>
-  			<input type="checkbox" name="sabado" value="Sabado">Sabado<br>
-  			<input type="checkbox" name="domingo" value="Domingo">Domingo<br>
+
+			<b>{{render_Field(form.Lunes, class='')}}</b><br>
+			<b>{{render_Field(form.Martes, class='')}}</b><br>
+			<b>{{render_Field(form.Miercoles, class='')}}</b><br>
+			<b>{{render_Field(form.Jueves, class='')}}</b><br>
+			<b>{{render_Field(form.Viernes, class='')}}</b><br>
+			<b>{{render_Field(form.Sabado, class='')}}</b><br>
+			<b>{{render_Field(form.Domingo, class='')}}</b><br>
 
   			<input type="reset" name="reset" value="Limpiar">
   			<input type="submit" name="enviar" value="Buscar">
   		</form>
   	</div>
 
-  	<div class="right">
-  		<h3>Busqueda por espacio</h3>
-  		<form>
-			<select name="sede" required>
-				<option value="01">Sede</option>
-				<option value="02">Sede</option>
-				<option value="03">Sede</option>
-			</select><br>
-			<select name="bloque" required="sede">
-				<option value="01">Bloque</option>
-				<option value="02">Bloque</option>
-				<option value="03">Bloque</option>
-			</select><br>
-			<select name="nivel" required="bloque">
-				<option value="01">Nivel</option>
-				<option value="02">Nivel</option>
-				<option value="03">Nivel</option>
-			</select><br>
-			<select name="espacio" required="nivel">
-				<option value="01">Espacio</option>
-				<option value="02">Espacio</option>
-				<option value="03">Espacio</option>
-			</select><br><br>
-			<b>Fecha Limite</b> <input type="date" name="fechaLimite" required><br><br><br><br><br><br><br>
 
-  			<input type="reset" name="reset" value="Limpiar">
-  			<input type="submit" name="enviar" value="Buscar">
-  		</form>
-  	</div>
   </body>
 </html>

@@ -45,6 +45,8 @@ def generarPkOrg(user_pk,orgName):
         3 -> Libre
 
 '''
+
+
 def crearOrg(userPk,  orgList ,redesSocialesList, permisosEstandarList,nombrePila):
     print 'Organizacion Controlador - crearOrg'
 

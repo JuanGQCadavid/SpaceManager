@@ -27,14 +27,13 @@
 						{% for espacios in disponibles ['lunes'] %}
 
 								<tr>
-
-								<td>Lunes</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td><form name="5" id="reservar_lunes" method="POST">
-									<button name="5" value="5">RESERVAR</button>
-								</form></td>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "lunes"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
+								</form>
 								</tr>
 
 						{%endfor%}
@@ -45,12 +44,13 @@
 						{% for espacios in disponibles ['martes'] %}
 
 								<tr>
-
-								<td>Martes</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "martes"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
+								</form>
 								</tr>
 
 						{%endfor%}
@@ -61,17 +61,13 @@
 						{% for espacios in disponibles ['miercoles'] %}
 
 								<tr>
-
-								<td>miercoles</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td>
-								<form name="5" id="reservaDias" method="POST">
-									<button name="5" value="5">RESERVAR</button>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "miercoles"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
 								</form>
-
-								</td>
 								</tr>
 
 						{%endfor%}
@@ -82,12 +78,13 @@
 						{% for espacios in disponibles ['jueves'] %}
 
 								<tr>
-
-								<td>jueves</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "jueves"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
+								</form>
 								</tr>
 
 						{%endfor%}
@@ -98,12 +95,13 @@
 						{% for espacios in disponibles ['viernes'] %}
 
 								<tr>
-
-								<td>viernes</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "viernes"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
+								</form>
 								</tr>
 
 						{%endfor%}
@@ -114,12 +112,13 @@
 						{% for espacios in disponibles ['sabado'] %}
 
 								<tr>
-
-								<td>sabado</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "sabado"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
+								</form>
 								</tr>
 
 						{%endfor%}
@@ -130,12 +129,13 @@
 						{% for espacios in disponibles ['domingo'] %}
 
 								<tr>
-
-								<td>domingo</td>
-								<td>{{espacios[2]}}</td>
-								<td>{{espacios[1]}}</td>
-								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<form  method="GET">
+										<td><input type="text"  name="dias" VALUE = "domingo"  ><br/></td>
+										<td ><input type="text" name="bloque" VALUE = {{espacios[2]}}  ><br/></td>
+										<td ><input type="text" name="nivel" VALUE = {{espacios[1]}}  ><br/></td>
+										<td ><input type="text" name="salon" VALUE = {{espacios[0]}}  ><br/></td>
+										<td><button type="submit">RESERVAR</button></td>
+								</form>
 								</tr>
 
 						{%endfor%}

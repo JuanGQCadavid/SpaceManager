@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -47,8 +48,9 @@
   	<div class = "right">
   		<div class="Organizaciones">
   			<div class="orgIzq">
-  			
-  				<button type="button" onclick="location.href = {{url_for(crearOrg)}};">Crear tu Organizacion</button>
+				<form action={{"/org/crear/{}".format(userList[0])}}>
+    				<input type="submit" value="Crear tu Organizacion" />
+				</form>
   			</div>
 
   			<div class=orgDer"">
