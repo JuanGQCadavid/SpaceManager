@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <title>Resultados Reserva - SpaceManager</title>
-    <link rel="stylesheet" type="text/css" href="css/reservarResultados.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/reservarResultados.css') }}">
     <h1>Reserva ID</h1><h3>#########</h3>
   </head>
   	<body>
@@ -32,7 +32,9 @@
 								<td>{{espacios[2]}}</td>
 								<td>{{espacios[1]}}</td>
 								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<td><form name="5" id="reservar_lunes" method="POST">
+									<button name="5" value="5">RESERVAR</button>
+								</form></td>
 								</tr>
 
 						{%endfor%}
@@ -64,7 +66,12 @@
 								<td>{{espacios[2]}}</td>
 								<td>{{espacios[1]}}</td>
 								<td>{{espacios[0]}}</td>
-								<td><button>RESERVAR</button></td>
+								<td>
+								<form name="5" id="reservaDias" method="POST">
+									<button name="5" value="5">RESERVAR</button>
+								</form>
+
+								</td>
 								</tr>
 
 						{%endfor%}

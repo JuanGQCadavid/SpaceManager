@@ -219,6 +219,11 @@ def reservar(idOrgCreador,idOrgContador ,idSede, fechaInicio ,
     return resultado
 
 
+
+
+'''
+
+
 horaInicio = datetime.timedelta(hours=15, minutes=0, seconds=0)
 horahoraFin = datetime.timedelta(hours=16, minutes=0, seconds=0)
 
@@ -226,9 +231,6 @@ result = reservar('jquiro12', 1, 1, None, None, horaInicio, horahoraFin, True, F
 
 for espacios in result['miercoles']:
     print espacios
-
-
-'''
 
 
 now = datetime.datetime.now()
