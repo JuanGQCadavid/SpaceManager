@@ -1,22 +1,41 @@
 from flask import Flask, render_template, request
 from Controller.Reserva_Controller import reservar
+from Controller.UserController import userLogin,obtenerUser
 import datetime
+from View import form
 
 app = Flask(__name__)
 app.debug = True
 
 
-@app.route('/')
+@app.route('/',methods = ['GET','POST'])
 def index():
-	return render_template('Login.html')
+	log_in = form.loguinForm(request.form)
 
+	if request.method == 'POST':
+		user = log_in.usuario.data
+		passw =  log_in.password.data
+		resp = userLogin(user,passw)
+		print resp;
+		if resp == 1:
+			return render_template('perfil.html', userList = obtenerUser(user))
+		else:
+			return render_template('Login.html', form = log_in, error = 'Datos Erroneos')
+
+	return render_template('Login.html',form = log_in, error = None)
+
+@app.route('/org/crear',methods = ['GET','POST'])
+def crearOrg():
+	return "Sap Nigga"
 
 @app.route('/reservar')
 def reservarVista():
 	return render_template('Reservar.html')
 
-@app.route('/reservar/espacios_disponibles')
+@app.route('/reservar/espacios_disponibles', methods = ['GET','POST'])
 def espacios_Disponibles():
+	if request.method == 'POST':
+		print "Hola"
 
 	horaInicio = datetime.timedelta(hours=15, minutes=0, seconds=0)
 	horahoraFin = datetime.timedelta(hours=16, minutes=0, seconds=0)

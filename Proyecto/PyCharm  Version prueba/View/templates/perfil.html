@@ -10,8 +10,8 @@
   	<div class="left">
   		<div class= "perfil">
   			<img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-8/htmlcss1-img_bike.png" class="fotoPerfil">
-  			<h3>Nombre</h3>
-  			<h6>Correo Electronico</h6>
+  			<h3>{{userList[2]}}</h3>
+  			<h6>{{userList[5]}}</h6>
   			<button type="button">Editar</button><br> 
   		</div>
   		<br>
@@ -48,7 +48,7 @@
   		<div class="Organizaciones">
   			<div class="orgIzq">
   			
-  				<button type="button">Crear tu Organizacion</button>
+  				<button type="button" onclick="location.href = {{url_for(crearOrg)}};">Crear tu Organizacion</button>
   			</div>
 
   			<div class=orgDer"">

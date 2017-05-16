@@ -1,13 +1,10 @@
-# -*- coding: cp1252 -*-
-#from Controller.Controladores.PrivacidadUserController import actualizarPrivacidad
-#from Controller.Controladores.RedesSocialesController import actualizarRedesSociales
 
 from Model.PrivacidadUsuarioDBF import PrivacidadUsuarioDBF
 from Model.RedesSocialesDBF import RedesSocialesDBF
 from Model.UsuarioDBF import UsuarioDBF
 
 import time
-
+'''
 
 def actualizarStatement(list,tipo,pk) :
 
@@ -22,13 +19,13 @@ def actualizarStatement(list,tipo,pk) :
 def actualizarInfo(list,tipo,user_PK):
     print 'usuario_Controller actualizarInfo'
     claseFunctionUser = DbFunctionUser()
-    '''''''''
+    ''
         0 -> Cambio de Clave FUNCIONANDO
         4 -> Cambio de Estado FUNCIONANDO
         1 -> Cambio basico info usuario FUNCIONANDO
         2 -> Cambio basico Redoes Sciales 
         3 -> Cambio basico Privacidad usuario FUNCIONANDO
-    '''''''''
+    ''
 
     if tipo == 0 or tipo == 4:
         return actualizarStatement(list,tipo,user_PK)
@@ -47,7 +44,7 @@ def actualizarInfo(list,tipo,user_PK):
         return actualizarPrivacidad(user_PK,list)
 
         pass
-
+'''
 def userLogin(idUsuario,claveUsuario):
     print 'usuario_Controller userLogin'
 
@@ -62,11 +59,7 @@ def userLogin(idUsuario,claveUsuario):
     #checking information
 
 
-    if respuesta == True:
-
-        print "Welcome to the Jungle!"
-    else:
-        print "No parse, no lo puedo dejar pasar"
+    return respuesta
 
 def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
     print 'usuario_Controller userRegister'
@@ -117,6 +110,10 @@ def userRegister (userList, permisosPrivacidadList, socialNetworkList) :
                                         descripcion = userList[3], telefonoCelular = userList[4] ,correoElectronico = userList[5] ,
                                         idRedesSociales = userList[6],idPrivacidad = userList[7] )
 
+
+def obtenerUser(userID):
+    claseUsuario = UsuarioDBF()
+    return claseUsuario.obtenerUsuario(userID)
 
 
 
