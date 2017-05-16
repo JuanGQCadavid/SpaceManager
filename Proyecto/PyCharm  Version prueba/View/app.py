@@ -36,5 +36,9 @@ def espacios_Disponibles():
 	return render_template('reservaResultados.html',disponibles = disponibles, lunes = lunes,martes =martes,miercoles =miercoles,
 						   jueves = jueves,viernes= viernes,sabado =sabado,domingo=domingo)
 
+
+def mo():
+	pass
+
 if __name__ == '__main__':
 	app.run()
