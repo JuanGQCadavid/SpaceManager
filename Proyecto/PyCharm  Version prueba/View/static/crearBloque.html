@@ -8,19 +8,21 @@
     <link rel="stylesheet" type="text/css" href="css/crearBloque.css">
   </head>
   <body>
-  	<form>
+  	<form id="bloque">
     <div class="container">
   		<div class="nombre">
-        Nombre del bloque<input type="number" name="consecutivo" required min="0">
-    		Descripcion<input type="text" name="descripcion" required maxlength="140" placeholder="Descripcion del bloque">
+        <label>Nombre del bloque</label><input type="number" name="consecutivo" required min="0"><br>
+    		<label>Descripcion</label><br>
+        <textarea name="descripcion" form="bloque" required>Descripcion del bloque</textarea>
       </div>
+
       <div class="usuarioEncargado">
   		Usuario Encargado
 				<input type="text" name="userEncargado" required maxlength="97" placeholder="Buscar por nombre o por id"><br>
 				<input type="submit" name="busqueda" value="Buscar"><br>
 			<br>
       
-			<label>Seleccione un usuario encargado del bloque</label>
+			<label>Seleccione un usuario encargado del bloque</label><br>
 			<select name="Usuario encargado" required>
 				<option value="01">Usuario1</option>
 				<option value="02">Usuario2</option>
@@ -28,10 +30,10 @@
 			</select>
 			<br>
       </div>
-      <div class="botones">
-			<input type="submit" name="form" value="Crear">
-  			<input type="reset" value="Limpiar">
-  			<button onclick="Cancelar()">Cancelar</button>
+      <div class="botones"><br>
+			<input type="submit" name="form" value="Crear" id="a">
+  			<input type="reset" value="Limpiar" id="a">
+  			<button onclick="Cancelar()" id="a">Cancelar</button>
 	  	</div>
       </div>
   	</form>

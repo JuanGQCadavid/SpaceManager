@@ -6,16 +6,19 @@
     <link rel="stylesheet" type="text/css" href="css/editarOrganizacion_2.css">
   </head>
   <body>
-  	<form>
+  	
   		<h4>Configuracion Estandar de Usuarios</h4>
   		<div class="unirse"> 
-	  		
+	  		<form>
 	  		<input type="checkbox" name="Por Invitacion">Invitacion<br>
 	  		<input type="checkbox" name="Por Solicitud">Solicitud<br>
-	  		<input type="checkbox" name="Libre">Libre<br><br><br><br><br>
-	  		<input type="submit" name="Guardar">
-  		</div>
-    </form>
+	  		<input type="checkbox" name="Libre">Libre<br><br>
+	  		<input type="reset" name="Limpiar" value="Limpiar">
+        <input type="submit" name="Guardar" value="Guardar"><br>
+  		  </form>
+      </div>
+    
+
       <div class="permisos">
         <form>
   	  		<input type="checkbox" name="Organizacion">Organizacion<br>
@@ -24,11 +27,13 @@
   	  		<input type="checkbox" name="Nivel">Nivel<br>
   	  		<input type="checkbox" name="Espacio">Espacio<br>
   	  		<input type="checkbox" name="Reserva">Reserva<br><br>
-  	  		<input type="button" onclick="nuevaOrganizacion_1.html" value="Atras">
-  	  		<input type="reset" name="Limpiar">
-    		</form>
-        <input type="submit" name="Guardar">
+  	  		<input type="reset" name="Limpiar" value="Limpiar">
+    		  <input type="submit" name="Guardar" value="Guardar">
+        </form>
   	 </div>
-     <button onclick="volver()">Volver</button>
+
+     <div class="boton">
+        <button onclick="volver()">Volver</button>
+     </div>
   </body>
 </html>

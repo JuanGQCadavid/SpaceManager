@@ -3,9 +3,8 @@
 	float: left;
 	text-align: left;
 	margin: 0 auto;
-	padding: 12px 20px;
+	padding: 0 auto;
 	box-sizing: border-box;
-	border-right: 2px solid #eee;
 }
 
 .permisos {
@@ -13,12 +12,18 @@
 	float: right;
 	text-align: left;
 	margin: 0 auto;
-	padding: 12px 20px;
+	padding: 0 auto;
 	box-sizing: border-box;
 }
 
-form {
-	margin: 0 auto;
+.boton {
+	width: 10%;
+}
+
+body {
+	object-position: center;
 	text-align: center;
-	width: 30%;
+	margin: 0 auto;
+	padding: 0 auto;
+	width: 40%;
 }
