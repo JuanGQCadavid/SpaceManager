@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Resultados Reserva - SpaceManager</title>
+    <link rel="stylesheet" type="text/css" href="css/reservarResultados.css">
+    <h1>Reserva ID</h1><h3>#########</h3>
+  </head>
+  	<body>
+		<div class="tabla">
+			<table>
+	  			<thead>
+	  				<tr>
+						<th scope="col">Dia</th>
+	  					<th scope="col">Bloque</th>
+	  					<th scope="col">Nivel</th>
+	  					<th scope="col">Indicador Espacio</th>
+	  					<th scope="col">RESERVAR</th>
+	  				</tr>
+	  			</thead>
+	  			<tbody>
+
+				{% if lunes %}
+
+						{% for espacios in disponibles ['lunes'] %}
+
+								<tr>
+
+								<td>Lunes</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+
+				{% if martes %}
+
+						{% for espacios in disponibles ['martes'] %}
+
+								<tr>
+
+								<td>Martes</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+
+				{% if miercoles %}
+
+						{% for espacios in disponibles ['miercoles'] %}
+
+								<tr>
+
+								<td>miercoles</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+
+				{% if jueves %}
+
+						{% for espacios in disponibles ['jueves'] %}
+
+								<tr>
+
+								<td>jueves</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+
+				{% if viernes %}
+
+						{% for espacios in disponibles ['viernes'] %}
+
+								<tr>
+
+								<td>viernes</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+
+				{% if sabado %}
+
+						{% for espacios in disponibles ['sabado'] %}
+
+								<tr>
+
+								<td>sabado</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+
+				{% if domingo %}
+
+						{% for espacios in disponibles ['domingo'] %}
+
+								<tr>
+
+								<td>domingo</td>
+								<td>{{espacios[2]}}</td>
+								<td>{{espacios[1]}}</td>
+								<td>{{espacios[0]}}</td>
+								<td><button>RESERVAR</button></td>
+								</tr>
+
+						{%endfor%}
+				{%endif%}
+	  			</tbody>
+	  		</table>
+		</div>
+
+		<div class="pie">
+			<button onclick="Volver()">Reserva Anterior</button>
+			<b>Reserva numero </b><label> ## </label><b> de </b><label> ## </label>
+			<button onclick="reservar()">Siguiente</button>
+		</div>
+	</body>
+</html>
