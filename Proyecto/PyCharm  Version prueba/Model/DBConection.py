@@ -32,13 +32,16 @@ class DataBaseConection(object):
         cursor.execute(query)
 
 
-        if query.upper().startswith('SELECT'):
+        if query.upper().startswith('SELECT') or query.upper().startswith('CALL') :
             try:
                 resp =  cursor.fetchall()
             except(MySQLdb.Error), e:
                 resp = cursor.fetchone()
 
-            conn.commit()  # Hacer efectiva la escritura de datos
+            try:
+                conn.commit()  # Hacer efectiva la escritura de datos
+            except(MySQLdb.Error), e:
+                print 'Shit'
             return resp
 
 
