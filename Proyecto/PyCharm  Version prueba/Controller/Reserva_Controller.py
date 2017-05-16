@@ -16,17 +16,30 @@ def reservar(idOrgCreador,idOrgContador ,idSede, fechaInicio ,
     #Arreglos
 
     lista_Espacios = []
+
+    listas_Espacios_Vistos = []
+
     lista_Dias = {'lunes':[],'martes':[],'miercoles':[],'jueves':[],'viernes':[],'sabado':[],'domingo':[]}
     resultado = {'lunes':[],'martes':[],'miercoles':[],'jueves':[],'viernes':[],'sabado':[],'domingo':[]}
 
-
+    superPerra = False
     for espacio in espacios:
+
+        for listos in listas_Espacios_Vistos:
+            if (listos == espacio):
+                superPerra = True
+
+        if superPerra:
+            superPerra = False
+            continue
 
         for subSpacios in espacios:
 
             if (subSpacios[0] == espacio[0] and subSpacios[1] == espacio[1] and subSpacios[2] == espacio[2] and
                 subSpacios[3] == espacio[3] and subSpacios[4] == espacio[4] and subSpacios[5] == espacio[5]):
 
+                print subSpacios
+                listas_Espacios_Vistos.append(subSpacios)
                 lista_Espacios.append(subSpacios)
 
 
@@ -68,7 +81,7 @@ def reservar(idOrgCreador,idOrgContador ,idSede, fechaInicio ,
                         break
 
                 if bandera:
-                    resultado['lunes'].append(lista_Dias.get('lunes')[0])
+                    resultado['lunes'].append(lista_Dias['lunes'][0])
                     pass
                 pass
 
@@ -206,18 +219,17 @@ def reservar(idOrgCreador,idOrgContador ,idSede, fechaInicio ,
     return resultado
 
 
+horaInicio = datetime.timedelta(hours=15, minutes=0, seconds=0)
+horahoraFin = datetime.timedelta(hours=16, minutes=0, seconds=0)
 
+result = reservar('jquiro12', 1, 1, None, None, horaInicio, horahoraFin, True, False, False, True, False, False, True)
 
-horaInicio = datetime.timedelta(hours=18, minutes=0, seconds=0)
-horahoraFin = datetime.timedelta(hours=20, minutes=0, seconds=0)
-
-result = reservar('jquiro12', 1,1,None,None,horaInicio,horahoraFin,True,False,False,True,False,False,True)
-
-for i in result:
-    print result[i]
+for espacios in result['miercoles']:
+    print espacios
 
 
 '''
+
 
 now = datetime.datetime.now()
 horahoraFin = now.replace(hour=17, minute=0, second=0, microsecond=0)
